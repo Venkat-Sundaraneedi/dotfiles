@@ -250,38 +250,6 @@ organize_with_index() {
   fi
 }
 
-
-
-# Stages and commits files with auto-generated message
-commit() {
-
-  local folders=(
-    "/home/greed/projects/rust/learning/"
-  )
-
-  # Loop through each folder in the list
-  for folder in "${folders[@]}"; do
-      # If there are changes, stage all files (force adding ignored ones)
-      echo "Staging files in $folder..."
-      git add -f "$folder"/*
-
-      # Get the current timestamp in a user-readable format (e.g., YYYY-MM-DD HH:MM:SS)
-      local timestamp=$(date "+%Y-%m-%d %H:%M:%S")
-
-      echo "Committing files in $folder..."
-
-      # Generate the commit message: auto-generated commit with timestamp for current folder
-      local commit_msg="Auto-generated commit for $folder on $timestamp"
-
-      # Commit the changes
-      git commit -am "$commit_msg"
-      
-
-    # Optionally, push changes
-    # git push
-  done
-}
-
 # Extracts common archive formats
 extract() {
   if [ -f "$1" ]; then
@@ -422,7 +390,6 @@ lista() {
 }
 
 
-# Update Dotfiles
 # Update Dotfiles
 dot() {
     # Color definitions
