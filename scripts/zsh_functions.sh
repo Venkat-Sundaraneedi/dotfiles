@@ -423,13 +423,17 @@ lista() {
 
 
 # Update Dotfiles
+# Update Dotfiles
 dot() {
-
-    local  bold_yellow='\033[1;33m' 
-    local  blue='\033[0;34m'
+    # Color definitions
+    local bold_yellow='\033[1;33m'
+    local blue='\033[0;34m'
     local green='\033[0;32m'
+    local red='\033[0;31m'
     local gray='\033[0;90m'
-    local  nc='\033[0m'
+    local cyan='\033[0;36m'
+    local purple='\033[0;35m'
+    local nc='\033[0m'  # No Color
 
     local dotfiles=(
         ".zshrc"
@@ -439,36 +443,43 @@ dot() {
     
     local dotfiles_repo="$HOME/dotfiles"
     
-    echo "Starting dotfiles sync..."
+    echo -e "${bold_yellow}🔄 Starting dotfiles sync...${nc}"
     
     for item in "${dotfiles[@]}"; do
         local source_path="$HOME/$item"
         local dest_path="$dotfiles_repo/$item"
         
         if [ ! -e "$source_path" ]; then
-            echo "Warning: $source_path does not exist, skipping..."
+            echo -e "${red}⚠️  Warning: ${gray}$source_path${red} does not exist, skipping...${nc}"
             continue
-         fi
+        fi
+        
+        echo -e "${cyan}📁 Processing: ${gray}$item${nc}"
         
         mkdir -p "$(dirname "$dest_path")"
         rm -rf "$dest_path"
         
         if [ -d "$source_path" ]; then
-            rsync -av --exclude='.git' --exclude='.gitignore' "$source_path/" "$dest_path"
+            echo -e "${purple}📂 Syncing directory...${nc}"
+            rsync -av --exclude='.git' --exclude='.gitignore' "$source_path/" "$dest_path" | sed 's/^/  /'
         else
+            echo -e "${purple}📄 Copying file...${nc}"
             cp "$source_path" "$dest_path"
         fi
         
-        echo "Synced: $item"
+        echo -e "${green}✅ Synced: ${gray}$item${nc}"
+        echo
     done
     
     if cd "$dotfiles_repo"; then
         if [ -n "$(git status --porcelain)" ]; then
+            echo -e "${cyan}📦 Committing changes...${nc}"
             git add .
             git commit -m "Update dotfiles: $(date '+%Y-%m-%d %H:%M:%S')"
-            echo -e "${green}Changes committed. Use 'git push' to update GitHub.${nc}"
+            echo -e "${green}✨ Changes committed successfully!${nc}"
+            echo -e "${bold_yellow}💡 Use ${cyan}'git push'${bold_yellow} to update GitHub${nc}"
         else
-            echo -e "${blue}No changes detected in dotfiles${nc}"
+            echo -e "${blue}ℹ️  No changes detected in dotfiles${nc}"
         fi
     fi
 }
