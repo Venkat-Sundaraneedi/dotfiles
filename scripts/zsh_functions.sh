@@ -406,6 +406,7 @@ dot() {
         ".zshrc"
         ".config/nvim"
         "scripts/"
+        "projects/scripts"
     )
     
     local dotfiles_repo="$HOME/dotfiles"
