@@ -33,6 +33,7 @@ eval "$(zoxide init --cmd cd zsh)"
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 
 alias n='nvim'
+alias s='zsh'
 alias a='asdf'
 alias e='exit'
 alias c='clear'
