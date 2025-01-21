@@ -28,6 +28,8 @@ for file in ~/scripts/*.sh; do
   [ -r "$file" ] && source "$file"
 done
 
+export BROWSER="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe"
+
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
@@ -53,12 +55,14 @@ alias lg='lazygit'
 alias al='asdf list'
 alias cdd='cd ..'
 alias gst='git status'
+alias ght='~/projects/scripts/gh-tui.sh'
 alias sla='sudo ls -la'
 alias rmf='rm -rf'
 alias sos='source ~/.zshrc'
 alias srmf='sudo rm -rf'
 alias confn='nvim ~/.config/nvim/'
 alias confs='n ~/.zshrc'
+alias brave="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe"
 . "/home/greed/.starkli/env"
 
 
@@ -90,3 +94,4 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 
 export PATH="$HOME/.fuelup/bin:$PATH"
+eval "$(gh copilot alias -- zsh)"

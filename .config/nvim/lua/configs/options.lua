@@ -23,9 +23,9 @@ o.cursorlineopt = "both" -- to enable cursorline!
 
 -- Indenting
 o.expandtab = true
-o.shiftwidth = 4
+o.shiftwidth = 2
 o.smartindent = true
-o.tabstop = 4
+o.tabstop = 2
 o.softtabstop = 2
 o.scrolloff = 28 -- Lines of context
 o.list = false

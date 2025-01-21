@@ -407,6 +407,7 @@ dot() {
         ".config/nvim"
         "scripts/"
         "projects/scripts"
+        "projects/rust/gitr"
     )
     
     local dotfiles_repo="$HOME/dotfiles"
