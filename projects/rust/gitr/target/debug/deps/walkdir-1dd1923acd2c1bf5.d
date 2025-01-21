@@ -1,0 +1,10 @@
+/home/greed/projects/rust/gitr/target/debug/deps/libwalkdir-1dd1923acd2c1bf5.rmeta: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/walkdir-2.5.0/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/walkdir-2.5.0/src/dent.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/walkdir-2.5.0/src/error.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/walkdir-2.5.0/src/util.rs
+
+/home/greed/projects/rust/gitr/target/debug/deps/libwalkdir-1dd1923acd2c1bf5.rlib: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/walkdir-2.5.0/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/walkdir-2.5.0/src/dent.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/walkdir-2.5.0/src/error.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/walkdir-2.5.0/src/util.rs
+
+/home/greed/projects/rust/gitr/target/debug/deps/walkdir-1dd1923acd2c1bf5.d: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/walkdir-2.5.0/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/walkdir-2.5.0/src/dent.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/walkdir-2.5.0/src/error.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/walkdir-2.5.0/src/util.rs
+
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/walkdir-2.5.0/src/lib.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/walkdir-2.5.0/src/dent.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/walkdir-2.5.0/src/error.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/walkdir-2.5.0/src/util.rs:

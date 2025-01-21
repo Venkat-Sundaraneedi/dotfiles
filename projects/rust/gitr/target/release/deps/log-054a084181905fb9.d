@@ -1,0 +1,10 @@
+/home/greed/projects/rust/gitr/target/release/deps/liblog-054a084181905fb9.rmeta: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.22/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.22/src/macros.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.22/src/serde.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.22/src/__private_api.rs
+
+/home/greed/projects/rust/gitr/target/release/deps/liblog-054a084181905fb9.rlib: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.22/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.22/src/macros.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.22/src/serde.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.22/src/__private_api.rs
+
+/home/greed/projects/rust/gitr/target/release/deps/log-054a084181905fb9.d: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.22/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.22/src/macros.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.22/src/serde.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.22/src/__private_api.rs
+
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.22/src/lib.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.22/src/macros.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.22/src/serde.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/log-0.4.22/src/__private_api.rs:

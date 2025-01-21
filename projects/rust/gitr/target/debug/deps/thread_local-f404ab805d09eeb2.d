@@ -1,0 +1,8 @@
+/home/greed/projects/rust/gitr/target/debug/deps/libthread_local-f404ab805d09eeb2.rmeta: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/cached.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/thread_id.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/unreachable.rs
+
+/home/greed/projects/rust/gitr/target/debug/deps/thread_local-f404ab805d09eeb2.d: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/cached.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/thread_id.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/unreachable.rs
+
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/lib.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/cached.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/thread_id.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/thread_local-1.1.8/src/unreachable.rs:

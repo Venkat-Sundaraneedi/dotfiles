@@ -1,0 +1,10 @@
+/home/greed/projects/rust/gitr/target/release/deps/libmemoffset-2a944c48809efa52.rmeta: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/memoffset-0.6.5/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/memoffset-0.6.5/src/raw_field.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/memoffset-0.6.5/src/offset_of.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/memoffset-0.6.5/src/span_of.rs
+
+/home/greed/projects/rust/gitr/target/release/deps/libmemoffset-2a944c48809efa52.rlib: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/memoffset-0.6.5/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/memoffset-0.6.5/src/raw_field.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/memoffset-0.6.5/src/offset_of.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/memoffset-0.6.5/src/span_of.rs
+
+/home/greed/projects/rust/gitr/target/release/deps/memoffset-2a944c48809efa52.d: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/memoffset-0.6.5/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/memoffset-0.6.5/src/raw_field.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/memoffset-0.6.5/src/offset_of.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/memoffset-0.6.5/src/span_of.rs
+
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/memoffset-0.6.5/src/lib.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/memoffset-0.6.5/src/raw_field.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/memoffset-0.6.5/src/offset_of.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/memoffset-0.6.5/src/span_of.rs:

@@ -1,0 +1,10 @@
+/home/greed/projects/rust/gitr/target/debug/deps/libidna-715acaa5ac32ee9c.rmeta: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/idna-1.0.3/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/idna-1.0.3/src/deprecated.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/idna-1.0.3/src/punycode.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/idna-1.0.3/src/uts46.rs
+
+/home/greed/projects/rust/gitr/target/debug/deps/libidna-715acaa5ac32ee9c.rlib: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/idna-1.0.3/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/idna-1.0.3/src/deprecated.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/idna-1.0.3/src/punycode.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/idna-1.0.3/src/uts46.rs
+
+/home/greed/projects/rust/gitr/target/debug/deps/idna-715acaa5ac32ee9c.d: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/idna-1.0.3/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/idna-1.0.3/src/deprecated.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/idna-1.0.3/src/punycode.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/idna-1.0.3/src/uts46.rs
+
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/idna-1.0.3/src/lib.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/idna-1.0.3/src/deprecated.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/idna-1.0.3/src/punycode.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/idna-1.0.3/src/uts46.rs:

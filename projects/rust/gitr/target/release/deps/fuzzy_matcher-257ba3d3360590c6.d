@@ -1,0 +1,10 @@
+/home/greed/projects/rust/gitr/target/release/deps/libfuzzy_matcher-257ba3d3360590c6.rmeta: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/fuzzy-matcher-0.3.7/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/fuzzy-matcher-0.3.7/src/clangd.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/fuzzy-matcher-0.3.7/src/skim.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/fuzzy-matcher-0.3.7/src/util.rs
+
+/home/greed/projects/rust/gitr/target/release/deps/libfuzzy_matcher-257ba3d3360590c6.rlib: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/fuzzy-matcher-0.3.7/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/fuzzy-matcher-0.3.7/src/clangd.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/fuzzy-matcher-0.3.7/src/skim.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/fuzzy-matcher-0.3.7/src/util.rs
+
+/home/greed/projects/rust/gitr/target/release/deps/fuzzy_matcher-257ba3d3360590c6.d: /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/fuzzy-matcher-0.3.7/src/lib.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/fuzzy-matcher-0.3.7/src/clangd.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/fuzzy-matcher-0.3.7/src/skim.rs /home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/fuzzy-matcher-0.3.7/src/util.rs
+
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/fuzzy-matcher-0.3.7/src/lib.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/fuzzy-matcher-0.3.7/src/clangd.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/fuzzy-matcher-0.3.7/src/skim.rs:
+/home/greed/.asdf/installs/rust/1.83.0/registry/src/index.crates.io-6f17d22bba15001f/fuzzy-matcher-0.3.7/src/util.rs:
