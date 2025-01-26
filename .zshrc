@@ -65,7 +65,7 @@ alias confs='n ~/.zshrc'
 alias brave="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe"
 . "/home/greed/.starkli/env"
 
-
+alias code="/mnt/c/Program\ Files/VSCodium/VSCodium.exe"
 
 # Load completions
 fpath=(~/zcompdump $fpath)
@@ -93,5 +93,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 
+export PATH="$PATH:/mnt/c/Program\ Files/Neovim/bin/"
 export PATH="$HOME/.fuelup/bin:$PATH"
 eval "$(gh copilot alias -- zsh)"

@@ -18,6 +18,18 @@ o.cmdheight = 1
 o.showmode = false
 
 o.clipboard = "unnamedplus"
+g.clipboard = {
+	name = "win32yank",
+	copy = {
+		["+"] = "win32yank.exe -i --crlf", -- Use CRLF for Windows compatibility
+		["*"] = "win32yank.exe -i --crlf",
+	},
+	paste = {
+		["+"] = "win32yank.exe -o --lf", -- Convert to LF when pasting into Neovim
+		["*"] = "win32yank.exe -o --lf",
+	},
+	cache_enabled = false,
+}
 o.cursorline = true
 o.cursorlineopt = "both" -- to enable cursorline!
 

@@ -7,73 +7,88 @@ lc() {
   local blue='\033[0;34m'
   local gray='\033[0;90m'
   local reset='\033[0m'
-
-  echo -e "${yellow}Custom Commands Available:${reset}"
-  echo -e "${gray}--------------------------------------${reset}\n"
-
-  # First pass: find the longest function name and description for padding
+  
+  # echo -e "${yellow}Custom Commands Available:${reset}"
+  # echo -e "${gray}--------------------------------------${reset}\n"
+  
+  # First pass: find the longest function name and description for padding across all files
   local max_func_length=0
   local max_desc_length=0
-  while IFS= read -r line; do
-    if [[ $line == function* || $line == *\(\)* ]]; then
-      func_name=$(echo "$line" | sed -E 's/(function )?([a-zA-Z0-9_-]+).*$/\2/')
-      [[ ${#func_name} -gt $max_func_length ]] && max_func_length=${#func_name}
-    elif [[ $line == \#* && $line != *"Usage:"* ]]; then
-      desc="${line#\# }"
-      [[ ${#desc} -gt $max_desc_length ]] && max_desc_length=${#desc}
-    fi
-  done < "${ZDOTDIR:-$HOME}/scripts/zsh_functions.sh"
-
+  
+  # Process all .sh files in the scripts directory
+  for file in "${ZDOTDIR:-$HOME}/scripts"/*.sh; do
+    while IFS= read -r line; do
+      if [[ $line == function* || $line == *\(\)* ]]; then
+        func_name=$(echo "$line" | sed -E 's/(function )?([a-zA-Z0-9_-]+).*$/\2/')
+        [[ ${#func_name} -gt $max_func_length ]] && max_func_length=${#func_name}
+      elif [[ $line == \#* && $line != *"Usage:"* ]]; then
+        desc="${line#\# }"
+        [[ ${#desc} -gt $max_desc_length ]] && max_desc_length=${#desc}
+      fi
+    done < "$file"
+  done
+  
   # Add padding
   ((max_func_length += 2))
-
-  # Second pass: print formatted output
-  while IFS= read -r line; do
-    if [[ $line == \#* ]]; then
-      comment="${line#\# }"
-      if [[ $comment == "Usage:"* ]]; then
-        usage="${gray}${comment}${reset}"
-      else
-        description="$comment"
+  
+  # Second pass: print formatted output for each file
+  for file in "${ZDOTDIR:-$HOME}/scripts"/*.sh; do
+    # Print filename header
+    filename=$(basename "$file")
+    echo -e "${yellow}Functions from ${filename}:${reset}"
+    echo -e "${gray}--------------------------------------${reset}"
+    
+    local description=""
+    local usage=""
+    
+    while IFS= read -r line; do
+      if [[ $line == \#* ]]; then
+        comment="${line#\# }"
+        if [[ $comment == "Usage:"* ]]; then
+          usage="${gray}${comment}${reset}"
+        else
+          description="$comment"
+        fi
+      elif [[ $line == function* || $line == *\(\)* ]]; then
+        func_name=$(echo "$line" | sed -E 's/(function )?([a-zA-Z0-9_-]+).*$/\2/')
+        # Print function name and description
+        printf "${green}%-${max_func_length}s${reset}" "$func_name"
+        echo -e "${blue}${description}${reset}"
+        # Print usage if available
+        [[ -n "$usage" ]] && echo -e "  $usage"
+        # Reset for next function
+        description=""
+        usage=""
       fi
-    elif [[ $line == function* || $line == *\(\)* ]]; then
-      func_name=$(echo "$line" | sed -E 's/(function )?([a-zA-Z0-9_-]+).*$/\2/')
-
-      # Print function name and description
-      printf "${green}%-${max_func_length}s${reset}" "$func_name"
-      echo -e "${blue}${description}${reset}"
-
-    fi
-  done < "${ZDOTDIR:-$HOME}/scripts/zsh_functions.sh"
-
-  # Additional pass for Rust commands (like 'commitr') in /usr/bin or $PATH
-  echo -e "\n${yellow}Other Commands in /usr/local/bin:${reset}"
+    done < "$file"
+    echo # Add blank line between files
+  done
+  
+  # Additional pass for Rust commands in /usr/local/bin
+  echo -e "${yellow}Other Commands in /usr/local/bin:${reset}"
   echo -e "${gray}--------------------------------------${reset}"
-
-# Define custom descriptions for each command
-declare -A cmd_descriptions=(
-  [gitr]="A Rust app for staging and committing code"
-  [lazygit]="GUI for git"
-)
-
-# List executables in /usr/local/bin/
-for cmd in /usr/local/bin/*; do
-  if [[ -x "$cmd" && ! -d "$cmd" ]]; then  # Check if it's executable and not a directory
-    cmd_name=$(basename "$cmd")  # Get the command name (e.g., 'commitr')
-    desc="${cmd_descriptions[$cmd_name]}"  # Get the description if available
-
-    # If description doesn't exist in the array, provide a default
-    if [[ -z "$desc" ]]; then
-      desc="${cmd_name} command is a custom Rust app."
+  
+  # Define custom descriptions for each command
+  declare -A cmd_descriptions=(
+    [gitr]="A Rust app for staging and committing code"
+    [lazygit]="GUI for git"
+    [todo]="ToDo TUI"
+    [eza]="Rust alternative for ls"
+  )
+  
+  # List executables in /usr/local/bin/
+  for cmd in /usr/local/bin/*; do
+    if [[ -x "$cmd" && ! -d "$cmd" ]]; then
+      cmd_name=$(basename "$cmd")
+      desc="${cmd_descriptions[$cmd_name]}"
+      if [[ -z "$desc" ]]; then
+        desc="${cmd_name} command is a custom Rust app."
+      fi
+      printf "${green}%-${max_func_length}s${reset}" "$cmd_name"
+      echo -e "${blue}${desc}${reset}"
     fi
-
-    # Print the command name and description with formatting
-    printf "${green}%-${max_func_length}s${reset}" "$cmd_name"
-    echo -e "${blue}${desc}${reset}"
-  fi
-done
+  done
 }
-
 
 
 
@@ -157,20 +172,6 @@ formatj() {
 
 
 
-# Creates directory and navigates into it
-md() {
-  # Use the argument as the directory name, or a human-readable default if none is provided
-  local dir_name="${1:-new_directory_$(date '+%Y-%m-%d_%H-%M-%S')}"
-
-  # Create the directory and navigate into it
-  mkdir -p "$dir_name" && cd "$dir_name" || {
-    echo "Error: Failed to create or navigate to '$dir_name'"
-    return 1
-  }
-
-  # Provide feedback
-  echo "Created and switched to directory: $dir_name"
-}
 
 
 # Organize directory
@@ -250,26 +251,6 @@ organize_with_index() {
   fi
 }
 
-# Extracts common archive formats
-extract() {
-  if [ -f "$1" ]; then
-    case "$1" in
-      *.tar.bz2) tar xjf "$1" ;;
-      *.tar.gz)  tar xzf "$1" ;;
-      *.bz2)     bunzip2 "$1" ;;
-      *.rar)     unrar x "$1" ;;
-      *.gz)      gunzip "$1" ;;
-      *.tar)     tar xf "$1" ;;
-      *.tbz2)    tar xjf "$1" ;;
-      *.tgz)     tar xzf "$1" ;;
-      *.zip)     unzip "$1" ;;
-      *.Z)       uncompress "$1" ;;
-      *)         echo "'$1' cannot be extracted" ;;
-    esac
-  else
-    echo "'$1' is not a valid file"
-  fi
-}
 
 
 
@@ -365,29 +346,6 @@ run() {
 }
 
 
-# List All Aliases
-lista() {
-  local yellow='\033[1;33m' # Bold Yellow
-  local blue='\033[0;34m'   # Blue
-  local green='\033[0;32m'
-  local gray='\033[0;90m'
-  local  nc='\033[0m'
-
-  echo -e "${yellow}User-Defined Aliases:${nc}"
-  echo -e "${gray}--------------------------------------${nc}"
-
-  # Process aliases from .zshrc and format correctly
-  grep '^alias ' ~/.zshrc | while IFS= read -r line; do
-    # Extract alias name and value
-    local name=$(echo "$line" | sed -E 's/^alias ([^=]+)=.*/\1/')
-    local value=$(echo "$line" | sed -E "s/^alias [^=]+='(.+)'/\1/")
-
-    # Print the alias in a clean, formatted way
-    printf "  ${green}%-20s${nc} ${blue}%s${nc}\n" "$name" "$value"
-  done
-
-  echo -e "${gray}--------------------------------------${nc}"
-}
 
 
 # Update Dotfiles

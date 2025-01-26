@@ -74,7 +74,11 @@ return {
 				pyright = {},
 				bashls = {},
 				solidity_ls_nomicfoundation = {},
-				rust_analyzer = {},
+				rust_analyzer = {
+					cmd = {
+						"/home/greed/.asdf/installs/rust/1.84.0/toolchains/1.84.0-x86_64-unknown-linux-gnu/bin/rust-analyzer",
+					},
+				},
 			}
 
 			-- Install Sway LSP as a custom	server
