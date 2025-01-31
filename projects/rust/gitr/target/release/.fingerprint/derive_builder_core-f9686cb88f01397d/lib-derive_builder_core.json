@@ -1,1 +1,46 @@
-{"rustc":11594289678289209806,"features":"[]","declared_features":"[\"clippy\"]","target":11552173099409814534,"profile":385020235239010606,"path":11928343957866243338,"deps":[[4407542395235463193,"darling",false,9433553249003610328],[8251810072013729314,"proc_macro2",false,9973714132238649634],[16133888191189175860,"quote",false,15789006902909231275],[17143850428905299221,"syn",false,1004338096697736735]],"local":[{"CheckDepInfo":{"dep_info":"release/.fingerprint/derive_builder_core-f9686cb88f01397d/dep-lib-derive_builder_core","checksum":false}}],"rustflags":[],"metadata":18217749730488347216,"config":2202906307356721367,"compile_kind":0}
+{
+  "rustc": 11594289678289209806,
+  "features": "[]",
+  "declared_features": "[\"clippy\"]",
+  "target": 11552173099409814534,
+  "profile": 385020235239010606,
+  "path": 11928343957866243338,
+  "deps": [
+    [
+      4407542395235463193,
+      "darling",
+      false,
+      9433553249003610328
+    ],
+    [
+      8251810072013729314,
+      "proc_macro2",
+      false,
+      9973714132238649634
+    ],
+    [
+      16133888191189175860,
+      "quote",
+      false,
+      15789006902909231275
+    ],
+    [
+      17143850428905299221,
+      "syn",
+      false,
+      1004338096697736735
+    ]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "release/.fingerprint/derive_builder_core-f9686cb88f01397d/dep-lib-derive_builder_core",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "metadata": 18217749730488347216,
+  "config": 2202906307356721367,
+  "compile_kind": 0
+}

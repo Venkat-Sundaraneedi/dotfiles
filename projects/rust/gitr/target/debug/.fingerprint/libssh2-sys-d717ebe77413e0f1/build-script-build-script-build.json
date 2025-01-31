@@ -1,1 +1,34 @@
-{"rustc":11594289678289209806,"features":"[]","declared_features":"[\"openssl-on-win32\", \"openssl-sys\", \"vendored-openssl\", \"zlib-ng-compat\"]","target":6423576478976419116,"profile":13232757476167777671,"path":1686413023595167652,"deps":[[286508155323266077,"pkg_config",false,7231694517373928883],[15348476808882278608,"cc",false,2560588888973379081]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/libssh2-sys-d717ebe77413e0f1/dep-build-script-build-script-build","checksum":false}}],"rustflags":[],"metadata":8466288806272927205,"config":2202906307356721367,"compile_kind":0}
+{
+  "rustc": 11594289678289209806,
+  "features": "[]",
+  "declared_features": "[\"openssl-on-win32\", \"openssl-sys\", \"vendored-openssl\", \"zlib-ng-compat\"]",
+  "target": 6423576478976419116,
+  "profile": 13232757476167777671,
+  "path": 1686413023595167652,
+  "deps": [
+    [
+      286508155323266077,
+      "pkg_config",
+      false,
+      7231694517373928883
+    ],
+    [
+      15348476808882278608,
+      "cc",
+      false,
+      2560588888973379081
+    ]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "debug/.fingerprint/libssh2-sys-d717ebe77413e0f1/dep-build-script-build-script-build",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "metadata": 8466288806272927205,
+  "config": 2202906307356721367,
+  "compile_kind": 0
+}

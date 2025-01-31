@@ -74,6 +74,8 @@ lc() {
     [lazygit]="GUI for git"
     [todo]="ToDo TUI"
     [eza]="Rust alternative for ls"
+    [avm]="Anchor Version manager"
+    [Anchor]="Solana Framework written in rust"
   )
   
   # List executables in /usr/local/bin/

@@ -46,6 +46,7 @@ alias f='fzf'
 alias y='ranger'
 alias nf="nvim \$(fzf --preview='cat {}')"
 alias f="fzf --preview='cat {}'"
+alias sp='spotify_player'
 alias la='eza -la'
 alias ls='ls --color'
 alias fb='forge build'
@@ -62,10 +63,11 @@ alias sos='source ~/.zshrc'
 alias srmf='sudo rm -rf'
 alias confn='nvim ~/.config/nvim/'
 alias confs='n ~/.zshrc'
-alias brave="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe"
-. "/home/greed/.starkli/env"
 
+alias brave="/mnt/c/Program\ Files/BraveSoftware/Brave-Browser/Application/brave.exe"
+alias firefox="/mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe"
 alias code="/mnt/c/Program\ Files/VSCodium/VSCodium.exe"
+alias kanata="/mnt/c/Users/Venkat/AppData/Roaming/kanata/kanata.exe -c /home/greed/.config/kanata/config.kbd"
 
 # Load completions
 fpath=(~/zcompdump $fpath)
@@ -92,7 +94,9 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-
+# export PATH="$HOME/.asdf/installs/rust/1.84.0/bin:$PATH"
+export PATH="$HOME/.asdf/installs/rust/1.79.0/bin:$PATH"
+export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 export PATH="$PATH:/mnt/c/Program\ Files/Neovim/bin/"
 export PATH="$HOME/.fuelup/bin:$PATH"
 eval "$(gh copilot alias -- zsh)"

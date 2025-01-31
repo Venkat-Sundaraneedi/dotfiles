@@ -1,1 +1,46 @@
-{"rustc":11594289678289209806,"features":"[\"alloc\", \"default\", \"std\"]","declared_features":"[\"alloc\", \"default\", \"formatting\", \"large-dates\", \"local-offset\", \"macros\", \"parsing\", \"quickcheck\", \"rand\", \"serde\", \"serde-human-readable\", \"serde-well-known\", \"std\", \"wasm-bindgen\"]","target":10852307404441741244,"profile":1904079986790964968,"path":17661473892441311034,"deps":[[6507801280989198808,"deranged",false,17950800970590452904],[10067829124648983663,"time_core",false,15220947705867558209],[13619580657554495515,"num_conv",false,13347187427361785000],[14356560995250965263,"powerfmt",false,85663572935545246]],"local":[{"CheckDepInfo":{"dep_info":"release/.fingerprint/time-18c48f9c477c0a0f/dep-lib-time","checksum":false}}],"rustflags":[],"metadata":3679670478084437657,"config":2202906307356721367,"compile_kind":0}
+{
+  "rustc": 11594289678289209806,
+  "features": "[\"alloc\", \"default\", \"std\"]",
+  "declared_features": "[\"alloc\", \"default\", \"formatting\", \"large-dates\", \"local-offset\", \"macros\", \"parsing\", \"quickcheck\", \"rand\", \"serde\", \"serde-human-readable\", \"serde-well-known\", \"std\", \"wasm-bindgen\"]",
+  "target": 10852307404441741244,
+  "profile": 1904079986790964968,
+  "path": 17661473892441311034,
+  "deps": [
+    [
+      6507801280989198808,
+      "deranged",
+      false,
+      17950800970590452904
+    ],
+    [
+      10067829124648983663,
+      "time_core",
+      false,
+      15220947705867558209
+    ],
+    [
+      13619580657554495515,
+      "num_conv",
+      false,
+      13347187427361785000
+    ],
+    [
+      14356560995250965263,
+      "powerfmt",
+      false,
+      85663572935545246
+    ]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "release/.fingerprint/time-18c48f9c477c0a0f/dep-lib-time",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "metadata": 3679670478084437657,
+  "config": 2202906307356721367,
+  "compile_kind": 0
+}

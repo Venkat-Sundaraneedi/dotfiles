@@ -3,7 +3,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "tokyonight",
+	theme = "yoru",
 	hl_add = {},
 	hl_override = {},
 	integrations = {},

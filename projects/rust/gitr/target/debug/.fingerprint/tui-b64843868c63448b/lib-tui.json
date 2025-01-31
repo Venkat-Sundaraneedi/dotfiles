@@ -1,1 +1,52 @@
-{"rustc":11594289678289209806,"features":"[\"crossterm\", \"default\"]","declared_features":"[\"crossterm\", \"default\", \"serde\", \"termion\"]","target":759281397900055320,"profile":10243973527296709326,"path":3335514496335644910,"deps":[[4623450596977474037,"unicode_width",false,15470198325585420454],[14051957667571541382,"bitflags",false,17657353348735530508],[16233166307772572446,"unicode_segmentation",false,18058676440240603326],[17416226074231966688,"cassowary",false,759875422209186236],[17801939341384340385,"crossterm",false,8643752574889948054]],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/tui-b64843868c63448b/dep-lib-tui","checksum":false}}],"rustflags":[],"metadata":34420493241238329,"config":2202906307356721367,"compile_kind":0}
+{
+  "rustc": 11594289678289209806,
+  "features": "[\"crossterm\", \"default\"]",
+  "declared_features": "[\"crossterm\", \"default\", \"serde\", \"termion\"]",
+  "target": 759281397900055320,
+  "profile": 10243973527296709326,
+  "path": 3335514496335644910,
+  "deps": [
+    [
+      4623450596977474037,
+      "unicode_width",
+      false,
+      15470198325585420454
+    ],
+    [
+      14051957667571541382,
+      "bitflags",
+      false,
+      17657353348735530508
+    ],
+    [
+      16233166307772572446,
+      "unicode_segmentation",
+      false,
+      18058676440240603326
+    ],
+    [
+      17416226074231966688,
+      "cassowary",
+      false,
+      759875422209186236
+    ],
+    [
+      17801939341384340385,
+      "crossterm",
+      false,
+      8643752574889948054
+    ]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "debug/.fingerprint/tui-b64843868c63448b/dep-lib-tui",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "metadata": 34420493241238329,
+  "config": 2202906307356721367,
+  "compile_kind": 0
+}

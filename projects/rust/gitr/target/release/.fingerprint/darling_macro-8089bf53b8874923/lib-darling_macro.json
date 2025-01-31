@@ -1,1 +1,40 @@
-{"rustc":11594289678289209806,"features":"[]","declared_features":"[]","target":3295090444689295509,"profile":385020235239010606,"path":13258440667565350964,"deps":[[8167231239390252077,"darling_core",false,1810000812131692035],[16133888191189175860,"quote",false,15789006902909231275],[17143850428905299221,"syn",false,1004338096697736735]],"local":[{"CheckDepInfo":{"dep_info":"release/.fingerprint/darling_macro-8089bf53b8874923/dep-lib-darling_macro","checksum":false}}],"rustflags":[],"metadata":7548132226108241928,"config":2202906307356721367,"compile_kind":0}
+{
+  "rustc": 11594289678289209806,
+  "features": "[]",
+  "declared_features": "[]",
+  "target": 3295090444689295509,
+  "profile": 385020235239010606,
+  "path": 13258440667565350964,
+  "deps": [
+    [
+      8167231239390252077,
+      "darling_core",
+      false,
+      1810000812131692035
+    ],
+    [
+      16133888191189175860,
+      "quote",
+      false,
+      15789006902909231275
+    ],
+    [
+      17143850428905299221,
+      "syn",
+      false,
+      1004338096697736735
+    ]
+  ],
+  "local": [
+    {
+      "CheckDepInfo": {
+        "dep_info": "release/.fingerprint/darling_macro-8089bf53b8874923/dep-lib-darling_macro",
+        "checksum": false
+      }
+    }
+  ],
+  "rustflags": [],
+  "metadata": 7548132226108241928,
+  "config": 2202906307356721367,
+  "compile_kind": 0
+}
