@@ -9,9 +9,14 @@ vim.opt.shell = "/bin/zsh"
 ------------------------------------ options ------------------------------------------
 -- code folding
 o.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+o.foldexpr = "nvim_treesitter#foldexpr()"
 o.foldlevel = 99
 o.foldlevelstart = 99
+o.conceallevel = 2
+
+-- Auto read when files change
+o.autoread = true
+o.updatetime = 250
 
 o.laststatus = 0
 o.cmdheight = 1
@@ -63,9 +68,6 @@ o.splitright = true
 o.timeoutlen = 300
 -- o.timeoutlen = g.vscode and 1000 or 300 -- Lower than default (1000) to quickly trigger which-key
 o.undofile = true
-
--- interval for writing swap file to disk, also used by gitsigns
-o.updatetime = 300
 
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line

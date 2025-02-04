@@ -1,5 +1,8 @@
 local autocmd = vim.api.nvim_create_autocmd
 
+-- //========== autocmds ==========//
+
+-- autocmd to be in normal mode when opening lazygit
 autocmd({ "TermOpen", "BufEnter" }, {
 	pattern = "term://*",
 	callback = function()
@@ -11,7 +14,8 @@ autocmd({ "TermOpen", "BufEnter" }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
+-- autocmd to set indentation and keymap for sway files
+autocmd({ "FileType" }, {
 	pattern = "sway",
 	callback = function()
 		-- Set indentation for Sway files
@@ -24,21 +28,33 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	end,
 })
 
-autocmd({ "BufLeave", "TermClose" }, {
-	pattern = "term://*",
-	callback = function()
-		local bufname = vim.api.nvim_buf_get_name(0)
-
-		if string.find(bufname, "lazygit") then
-			vim.api.nvim_buf_set_keymap(0, "t", "jk", "<Esc>", { noremap = true, silent = true })
-		end
-	end,
-})
-
+-- autocmd to format on save
 autocmd("BufWritePre", {
 	pattern = "*",
 	callback = function(args)
 		require("conform").format({ bufnr = args.buf })
+	end,
+})
+
+-- autocmd to refresh json file when it changes
+autocmd("FileChangedShell", {
+	pattern = "*.json",
+	command = "checktime",
+})
+
+-- autocmd to set the cursor to the last change of the file
+autocmd("BufReadPost", {
+	pattern = "*",
+	callback = function()
+		local line = vim.fn.line("'\"")
+		if
+			line > 1
+			and line <= vim.fn.line("$")
+			and vim.bo.filetype ~= "commit"
+			and vim.fn.index({ "xxd", "gitrebase" }, vim.bo.filetype) == -1
+		then
+			vim.cmd('normal! g`"')
+		end
 	end,
 })
 
@@ -64,22 +80,6 @@ autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
 					require("editorconfig").config(args.buf)
 				end
 			end)
-		end
-	end,
-})
-
--- autocmd to set the cursor to the last line of the file
-autocmd("BufReadPost", {
-	pattern = "*",
-	callback = function()
-		local line = vim.fn.line("'\"")
-		if
-			line > 1
-			and line <= vim.fn.line("$")
-			and vim.bo.filetype ~= "commit"
-			and vim.fn.index({ "xxd", "gitrebase" }, vim.bo.filetype) == -1
-		then
-			vim.cmd('normal! g`"')
 		end
 	end,
 })

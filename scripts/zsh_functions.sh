@@ -75,7 +75,12 @@ lc() {
     [todo]="ToDo TUI"
     [eza]="Rust alternative for ls"
     [avm]="Anchor Version manager"
-    [Anchor]="Solana Framework written in rust"
+    [anchor]="Solana Framework written in rust"
+    [figlet]="Text to ASCII art"
+    [nyancat]="TUI cat animation"
+    [ranger]="TUI file manager"
+    [bat]="Better version of cat"
+
   )
   
   # List executables in /usr/local/bin/
@@ -367,7 +372,7 @@ dot() {
         ".config/nvim"
         "scripts/"
         "projects/scripts"
-        "projects/rust/gitr"
+        # "projects/rust/gitr"
     )
     
     local dotfiles_repo="$HOME/dotfiles"

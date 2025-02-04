@@ -91,8 +91,8 @@ return {
 				},
 
 				sources = {
-					{ name = "nvim_lsp" },
-					{ name = "luasnip" },
+					{ name = "nvim_lsp", keyword_length = 0 },
+					{ name = "luasnip", keyword_length = 0 },
 					{
 						name = "dictionary",
 						keyword_length = 2,

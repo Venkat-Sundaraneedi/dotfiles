@@ -70,13 +70,18 @@ return {
 				cairo_ls = {},
 				gradle_ls = {},
 				biome = {},
-				-- pylyzer = {},
 				pyright = {},
+				marksman = {
+					filetypes = { "markdown" },
+					root_dir = function()
+						return vim.loop.cwd()
+					end,
+				},
 				bashls = {},
 				solidity_ls_nomicfoundation = {},
 				rust_analyzer = {
 					cmd = {
-						"/home/greed/.asdf/installs/rust/1.84.0/toolchains/1.84.0-x86_64-unknown-linux-gnu/bin/rust-analyzer",
+						"/home/greed/.asdf/installs/rust/1.84.0/bin/rust-analyzer",
 					},
 				},
 			}

@@ -3,10 +3,6 @@ local map = vim.keymap.set
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
--- map({ "n", "t" }, "<A-i>", function()
--- 	require("nvterm.terminal").toggle("horizontal")
--- end, { desc = "horizontal terminal" })
-
 -- comment
 map("n", "<leader>;", "gcc", { desc = "comment toggle", remap = true })
 map("v", "<leader>;", "gc", { desc = "comment toggle", remap = true })
@@ -51,13 +47,10 @@ map({ "i", "t" }, "<A-j>", "<Down>", { desc = "move down" })
 map({ "i", "t" }, "<A-k>", "<Up>", { desc = "move up" })
 
 --navigating windows
-map("n", "<A-h>", "<C-w>h", { desc = "switch window left" })
-map("n", "<A-l>", "<C-w>l", { desc = "switch window right" })
-map("n", "<A-j>", "<C-w>j", { desc = "switch window down" })
-map("n", "<A-k>", "<c-w>k", { desc = "switch window up" })
-
--- NVCHAD mappings
--- map("n", "<leader>ch", "<cmd>NvCheatsheet<CR>", { desc = "toggle nvcheatsheet" })
+-- map("n", "<A-h>", "<C-w>h", { desc = "switch window left" })
+-- map("n", "<A-l>", "<C-w>l", { desc = "switch window right" })
+-- map("n", "<A-j>", "<C-w>j", { desc = "switch window down" })
+-- map("n", "<A-k>", "<c-w>k", { desc = "switch window up" })
 
 -- format
 map("n", "<leader>fa", function()
@@ -90,11 +83,6 @@ vim.keymap.set("n", "<leader>bo", function()
 	require("nvchad.tabufline").closeAllBufs(false) -- excludes current buf
 end, { desc = "Delete other buffers " })
 
--- themes
-vim.api.nvim_create_user_command("Nvthemes", function()
-	require("nvchad.themes").open()
-end, { desc = "Open NvChad themes with Telescope" })
-
 -- Keybinding to toggle nvim-cmp
 map("n", "<leader>i", function()
 	ToggleCmp()
@@ -121,5 +109,3 @@ cmp.setup({
 		return cmp_enabled
 	end,
 })
-
--- vim.keymap.set("n", "<leader>mt", api.toggle, { noremap = true, silent = true, desc = "Toggle supermaven-nvim" })
