@@ -39,8 +39,9 @@ return {
 	-- nvim-tree
 	{
 		"nvim-tree/nvim-tree.lua",
+		enabled = false,
 		cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-		lazy = false,
+		lazy = true,
 		keys = {
 			{
 				"<leader>e",

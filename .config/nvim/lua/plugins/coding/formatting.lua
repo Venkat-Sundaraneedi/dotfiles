@@ -2,37 +2,26 @@ return {
 	-- conform.nvim
 	{
 		"stevearc/conform.nvim",
-		lazy = false,
+		lazy = true,
 		event = "BufWritePre",
 		opts = {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				sh = { "beautysh" },
-				python = { "black" },
+				python = { "autoflake" },
 				solidity = { "forge_fmt" },
 				javascript = { "biome" },
 				json = { "biome" },
 				typescript = { "biome" },
 				markdown = { "cbfmt" },
-				-- solidity = { "prettierd" },
-				-- kotlin = { "ktfmt" },
-				-- java = { "clang_format" },
-				-- html = { "prettierd" },
-				-- c = { "ast_grep" },
-				-- cpp = { "ast_grep" },
-				-- css = { "prettier" },
-				-- html = { "prettier" },
 			},
 
 			formatters = {
 				stylua = {},
 				cbfmt = {},
 				beautysh = {},
-				clang_format = {},
-				black = {},
+				autoflake = {},
 				biome = {},
-				prettier = {},
-				prettierd = {},
 				forge_fmt = {
 					{
 						cmd = "/home/greed/.foundry/bin/forge",

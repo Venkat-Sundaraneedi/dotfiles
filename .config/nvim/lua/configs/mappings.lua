@@ -1,14 +1,120 @@
 local map = vim.keymap.set
--- local nomap = vim.keymap.del
 
 --------------------------------------------------------------------------------------------------------------------------------------------
+
+-- NOMAP KEYS
+map("n", "za", "<Nop>")
+map("n", "zA", "<Nop>")
+map("n", "zb", "<Nop>")
+map("n", "zc", "<Nop>")
+map("n", "zC", "<Nop>")
+map("n", "zd", "<Nop>")
+map("n", "zD", "<Nop>")
+map("n", "ze", "<Nop>")
+map("n", "zE", "<Nop>")
+map("n", "zf", "<Nop>")
+map("n", "zg", "<Nop>")
+map("n", "zh", "<Nop>")
+map("n", "zH", "<Nop>")
+map("n", "zi", "<Nop>")
+map("n", "zL", "<Nop>")
+map("n", "zm", "<Nop>")
+map("n", "zM", "<Nop>")
+map("n", "zo", "<Nop>")
+map("n", "zO", "<Nop>")
+map("n", "zr", "<Nop>")
+map("n", "zR", "<Nop>")
+map("n", "zs", "<Nop>")
+map("n", "zt", "<Nop>")
+map("n", "zv", "<Nop>")
+map("n", "zw", "<Nop>")
+map("n", "zx", "<Nop>")
+map("n", "zz", "<Nop>")
+map("n", "z<CR>", "<Nop>")
+map("n", "z=", "<Nop>")
+
+map("n", "f", "<Nop>")
+map("n", "F", "<Nop>")
+map("n", "t", "<Nop>")
+map("n", "T", "<Nop>")
+map("n", "M", "<Nop>")
+map("n", "!", "<Nop>")
+map("n", ",", "<Nop>")
+map("n", "<", "<Nop>")
+map("n", ">", "<Nop>")
+map("n", "`", "<Nop>")
+map("n", "?", "<Nop>")
+map("n", "{", "<Nop>")
+map("n", "}", "<Nop>")
+map("n", "~", "<Nop>")
+map("n", "q", "<Nop>")
+map("n", '"', "<Nop>")
+map("n", "q", "<Nop>")
+map("n", "'", "<Nop>")
+map("n", "g~", "<Nop>")
+map("n", "gu", "<Nop>")
+map("n", "gU", "<Nop>")
+map("n", "gv", "<Nop>")
+map("n", "gw", "<Nop>")
+map("n", "g%", "<Nop>")
+map("n", "g[", "<Nop>")
+map("n", "g]", "<Nop>")
+map("n", "g`", "<Nop>")
+map("n", "g'", "<Nop>")
+map("n", "gn", "<Nop>")
+map("n", "gx", "<Nop>")
+map("n", "gf", "<Nop>")
+map("n", "gN", "<Nop>")
+map("n", "gt", "<Nop>")
+map("n", "gT", "<Nop>")
+map("n", "[m", "<Nop>")
+map("n", "[M", "<Nop>")
+map("n", "[s", "<Nop>")
+map("n", "[%", "<Nop>")
+map("n", "]m", "<Nop>")
+map("n", "]M", "<Nop>")
+map("n", "]s", "<Nop>")
+map("n", "]%", "<Nop>")
+map("n", "[(", "<Nop>")
+map("n", "[}", "<Nop>")
+map("n", "](", "<Nop>")
+map("n", "]}", "<Nop>")
+map("n", "]<", "<Nop>")
+map("n", "]<", "<Nop>")
+map("n", "K", "<Nop>")
+map("n", "[d", "<Nop>")
+map("n", "]d", "<Nop>")
+map("n", "]]", "<Nop>")
+map("n", "][", "<Nop>")
+map("n", "[]", "<Nop>")
+map("n", "[[", "<Nop>")
+map("n", "/", "<Nop>")
+
+-- Swap v and V for visual modes
+map("n", "<A-v>", "V", { noremap = true })
+
+map("n", "<leader>gf", "gf", { desc = "Go to file under cursor", noremap = true })
+map("n", "<leader>gx", "gx", { desc = "Go to url", noremap = true })
+
+map("n", "gpfs", "[m", { desc = "Go to previous function start", noremap = true })
+map("n", "gpfe", "[M", { desc = "Go to previous function end", noremap = true })
+
+map("n", "gnfs", "]m", { desc = "Go to next function start", noremap = true })
+map("n", "gnfe", "]M", { desc = "Go to next  function end", noremap = true })
+
+map("n", "gpb", "[(", { desc = "Go to previous (", noremap = true })
+map("n", "gpcb", "[{", { desc = "Go to previous {", noremap = true })
+
+map("n", "gnb", "](", { desc = "Go to next (", noremap = true })
+map("n", "gncb", "]{", { desc = "Go to next {", noremap = true })
+map("n", "<leader><space>", "/", { noremap = true })
+
+-- Map gj to go to the end of the file
+map({ "n", "v" }, "ga", "G", { desc = "Go to bottom line", noremap = true })
 
 -- comment
 map("n", "<leader>;", "gcc", { desc = "comment toggle", remap = true })
 map("v", "<leader>;", "gc", { desc = "comment toggle", remap = true })
-
--- LazyGit
-map("n", "<leader>gl", "<cmd>LazyGit<cr>")
 
 -- Keymap to toggle maximization of the current window
 map("n", "<a-m>", ":MaximizerToggle<CR>", { noremap = true, silent = true })
@@ -25,6 +131,7 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 -- shortcut for escape
 map({ "i", "c" }, "jk", "<cmd>noh<CR><ESC>")
 map({ "n", "i", "c" }, "<ESC>", "<cmd>noh<CR><ESC>")
+map("v", "u", "<cmd>noh<CR><ESC>")
 
 -- terminal
 map("t", "jk", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
@@ -47,25 +154,18 @@ map({ "i", "t" }, "<A-j>", "<Down>", { desc = "move down" })
 map({ "i", "t" }, "<A-k>", "<Up>", { desc = "move up" })
 
 --navigating windows
--- map("n", "<A-h>", "<C-w>h", { desc = "switch window left" })
--- map("n", "<A-l>", "<C-w>l", { desc = "switch window right" })
--- map("n", "<A-j>", "<C-w>j", { desc = "switch window down" })
--- map("n", "<A-k>", "<c-w>k", { desc = "switch window up" })
+map("n", "<A-h>", "<C-w>h", { desc = "switch window left" })
+map("n", "<A-l>", "<C-w>l", { desc = "switch window right" })
+map("n", "<A-k>", "<c-w>k", { desc = "switch window up" })
+map("n", "<A-j>", "<C-w>j", { desc = "switch window down" })
 
+map("n", "<leader>d", function()
+	require("dbee").toggle()
+end, { desc = "general format file" })
 -- format
 map("n", "<leader>fa", function()
 	require("conform").format({ lsp_fallback = true })
 end, { desc = "general format file" })
-
--- buffer/tabs
-map("n", "<leader>tn", ":tabnew<cr>", { desc = "opens tabpage after the current one" })
-map("n", "<leader>ts", ":tab split<cr>", { desc = "opens current buffer in new tab page" })
-map("n", "<leader>tc", ":tabclose<cr>", { desc = "close the current tab page" })
-map("n", "<leader>to", ":tabonly<cr>", { desc = "close all tab pages except the current one" })
-map("n", "<leader>tk", ":+tabnext<cr>", { desc = "go to the next tab page" })
-map("n", "<leader>tj", ":-tabnext<cr>", { desc = "go to the previous tab page" })
-map("n", "<leader>tmk", ":-tabmove<cr>", { desc = "move the tab page to the right" })
-map("n", "<leader>tmj", ":-tabmove<cr>", { desc = "move the tab page to the left" })
 
 map("n", "<tab>", function()
 	require("nvchad.tabufline").next()
@@ -75,37 +175,33 @@ map("n", "<S-tab>", function()
 	require("nvchad.tabufline").prev()
 end, { desc = "buffer goto prev" })
 
--- buffers
-map("n", "<leader>bd", function()
-	require("nvchad.tabufline").close_buffer()
-end, { desc = "buffer delete" })
-vim.keymap.set("n", "<leader>bo", function()
-	require("nvchad.tabufline").closeAllBufs(false) -- excludes current buf
-end, { desc = "Delete other buffers " })
-
 -- Keybinding to toggle nvim-cmp
 map("n", "<leader>i", function()
 	ToggleCmp()
 end, { desc = "Toggle nvim-cmp", noremap = true, silent = true })
 
-local cmp = require("cmp")
-local cmp_enabled = true
+map("n", "<leader>tp", function()
+	-- require("telescope").extensions.plugins.search()
+end, { desc = "Search for plugin", noremap = true, silent = true })
 
-local api = require("supermaven-nvim.api")
-
-_G.ToggleCmp = function()
-	cmp_enabled = not cmp_enabled
-	if cmp_enabled then
-		api.stop()
-		vim.notify("nvim-cmp Enabled and supermaven Disabled", vim.log.levels.INFO)
-	else
-		api.start()
-		vim.notify("nvim-cmp Disabled and supermaven Enabled", vim.log.levels.WARN)
-	end
-end
-
-cmp.setup({
-	enabled = function()
-		return cmp_enabled
-	end,
-})
+-- local cmp = require("cmp")
+-- local cmp_enabled = false
+--
+-- local api = require("supermaven-nvim.api")
+--
+-- _G.ToggleCmp = function()
+-- 	cmp_enabled = not cmp_enabled
+-- 	if cmp_enabled then
+-- 		api.stop()
+-- 		vim.notify("nvim-cmp Enabled and supermaven Disabled", vim.log.levels.INFO)
+-- 	else
+-- 		api.start()
+-- 		vim.notify("nvim-cmp Disabled and supermaven Enabled", vim.log.levels.WARN)
+-- 	end
+-- end
+--
+-- cmp.setup({
+-- 	enabled = function()
+-- 		return cmp_enabled
+-- 	end,
+-- })

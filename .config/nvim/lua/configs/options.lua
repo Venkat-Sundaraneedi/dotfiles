@@ -5,14 +5,17 @@ local g = vim.g
 ------------------------------------ globals -----------------------------------------
 g.autoformat = true
 
-vim.opt.shell = "/bin/zsh"
+opt.shell = "/bin/zsh"
 ------------------------------------ options ------------------------------------------
 -- code folding
-o.foldmethod = "expr"
-o.foldexpr = "nvim_treesitter#foldexpr()"
-o.foldlevel = 99
-o.foldlevelstart = 99
-o.conceallevel = 2
+-- o.foldmethod = "expr"
+-- o.foldexpr = "nvim_treesitter#foldexpr()"
+-- o.foldlevel = 99
+-- o.foldlevelstart = 99
+-- o.conceallevel = 2
+
+-- Disable diagnostics globally
+vim.diagnostic.disable()
 
 -- Auto read when files change
 o.autoread = true

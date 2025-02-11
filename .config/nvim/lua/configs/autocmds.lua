@@ -2,6 +2,15 @@ local autocmd = vim.api.nvim_create_autocmd
 
 -- //========== autocmds ==========//
 
+-- nvdash on buffer close
+vim.api.nvim_create_autocmd("BufDelete", {
+	callback = function()
+		local bufs = vim.t.bufs
+		if #bufs == 1 and vim.api.nvim_buf_get_name(bufs[1]) == "" then
+			vim.cmd("Nvdash")
+		end
+	end,
+})
 -- autocmd to be in normal mode when opening lazygit
 autocmd({ "TermOpen", "BufEnter" }, {
 	pattern = "term://*",
@@ -81,5 +90,23 @@ autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
 				end
 			end)
 		end
+	end,
+})
+
+vim.api.nvim_create_autocmd("BufEnter", {
+	pattern = "[Prompt]",
+	callback = function()
+		require("cmp").setup({
+			enabled = false,
+		})
+	end,
+})
+
+vim.api.nvim_create_autocmd("BufLeave", {
+	pattern = "[Prompt]",
+	callback = function()
+		require("cmp").setup({
+			enabled = true,
+		})
 	end,
 })

@@ -97,8 +97,6 @@ lc() {
   done
 }
 
-
-
 # Formats JSON with optional menu selection
 formatj() {
     # Check if required tools are installed
@@ -121,9 +119,9 @@ formatj() {
             find . -type f -name "*.json" | while read -r file; do
                 echo "Processing $file..."
                 temp_file=$(mktemp)
-                
+
                 jq '.' "$file" > "$temp_file"
-                
+
                 if [ $? -eq 0 ]; then
                     if cmp -s "$temp_file" "$file"; then
                         echo "Skipping $file (already formatted)"
@@ -138,7 +136,7 @@ formatj() {
                 fi
             done
             ;;
-            
+
         "2. Select specific JSON files to format")
             # Interactive file selection using fzf
             selected_files=$(find . -type f -name "*.json" | \
@@ -152,9 +150,9 @@ formatj() {
             echo "$selected_files" | while read -r file; do
                 echo "Processing $file..."
                 temp_file=$(mktemp)
-                
+
                 jq '.' "$file" > "$temp_file"
-                
+
                 if [ $? -eq 0 ]; then
                     if cmp -s "$temp_file" "$file"; then
                         echo "Skipping $file (already formatted)"
@@ -169,17 +167,13 @@ formatj() {
                 fi
             done
             ;;
-            
+
         *)
             echo "No option selected. Exiting."
             return 0
             ;;
     esac
 }
-
-
-
-
 
 # Organize directory
 org() {
@@ -416,3 +410,83 @@ dot() {
         fi
     fi
 }
+
+# This function adds config to foundry.toml
+soldeer_template() {
+ # Find foundry.toml files recursively, starting from the current directory.
+  # -maxdepth 10 limits search to 10 levels deep.  Adjust as needed.
+  find . -maxdepth 2 -name "foundry.toml" -print0 | while IFS= read -r -d $'\0' file; do
+    # Check if the file already exists.
+    if [[ -f "$file" ]]; then
+      echo "Found foundry.toml at: $file"
+
+      # Remove the comment line.  Use sed for this.
+      # The -i option modifies the file in-place.
+      # The regular expression matches the entire comment line.
+      sed -i '/# See more config options/d' "$file"
+
+      # Check if the [soldeer] section already exists.
+      if grep -q "\[soldeer\]" "$file"; then
+        echo "  [soldeer] section already exists.  Checking for necessary options..."
+
+        # Check each option individually and append if missing.
+        if ! grep -q "remappings_generate = true" "$file"; then
+          echo "  Appending remappings_generate = true"
+          echo "remappings_generate = true" >> "$file"
+        fi
+        if ! grep -q "remappings_regenerate = true" "$file"; then
+          echo "  Appending remappings_regenerate = true"
+          echo "remappings_regenerate = true" >> "$file"
+        fi
+        if ! grep -q "remappings_version = true" "$file"; then
+          echo "  Appending remappings_version = true"
+          echo "remappings_version = true" >> "$file"
+        fi
+        if ! grep -q 'remappings_prefix = ""' "$file"; then
+          echo '  Appending remappings_prefix = ""'
+          echo 'remappings_prefix = ""' >> "$file"
+        fi
+        if ! grep -q 'remappings_location = "config"' "$file"; then
+          echo '  Appending remappings_location = "config"'
+          echo 'remappings_location = "config"' >> "$file"
+        fi
+
+      else
+        # Append the entire [soldeer] section.
+        echo "  Appending [soldeer] section."
+        {
+          echo ""
+          echo "[soldeer]"
+          echo "remappings_generate = true"
+          echo "remappings_regenerate = true"
+          echo "remappings_version = true"
+          echo 'remappings_prefix = ""'
+          echo 'remappings_location = "config"'
+        } >> "$file"
+      fi
+
+    else
+      # this part is not necessary, normally users have foundry.toml file
+      # but this is good to have it
+      echo "foundry.toml not found at: $file"
+      echo "Creating foundry.toml and adding [soldeer] section at: $file"
+      # Create the directory if it doesn't exist.  This is crucial!
+      mkdir -p "$(dirname "$file")"  # -p creates parent directories as needed.
+
+      {
+        echo "[soldeer]"
+        echo "remappings_generate = true"
+        echo "remappings_regenerate = true"
+        echo "remappings_version = true"
+        echo 'remappings_prefix = ""'
+        echo 'remappings_location = "config"'
+      } > "$file"
+    fi
+  done
+
+  echo "Finished processing foundry.toml files."
+}
+
+
+
+

@@ -2,6 +2,7 @@ return {
 	-- load luasnips + cmp related in insert mode only
 	{
 		"hrsh7th/nvim-cmp",
+		lazy = true,
 		event = "InsertEnter",
 		dependencies = {
 			-- snippet plugin
@@ -105,6 +106,7 @@ return {
 
 			-- Disable cmp in TelescopePrompt buffers
 			require("cmp").setup.filetype("TelescopePrompt", {
+				buftypes = { "prompt" },
 				enabled = false,
 			})
 

@@ -2,11 +2,12 @@ return {
 	-- nvim treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
+		lazy = true,
 		event = { "BufReadPost", "BufNewFile" },
 		cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
 		build = ":TSUpdate",
 		opts = {
-			ensure_installed = { "lua", "luadoc", "printf", "vim", "vimdoc", "solidity", "rust" },
+			ensure_installed = { "lua", "luadoc", "printf", "vim", "vimdoc", "solidity", "rust", "kdl", "bash" },
 
 			highlight = {
 				enable = true,

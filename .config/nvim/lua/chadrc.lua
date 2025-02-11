@@ -1,4 +1,3 @@
--- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
 ---@type ChadrcConfig
 local M = {}
 
@@ -10,49 +9,35 @@ M.base46 = {
 	changed_themes = {},
 	transparency = false,
 	theme_toggle = { "onedark", "one_light" },
-	-- hl_override = {
-	-- 	Comment = { italic = true },
-	-- 	["@comment"] = { italic = true },
-	-- },
 }
 
 M.ui = {
 	cmp = {
 		lspkind_text = true,
-		style = "default", -- default/flat_light/flat_dark/atom/atom_colored
+		style = "default", -- default/flat_light/flat_dark/atom/atom_coloreda
 		format_colors = {
 			tailwind = false,
 			icon = "󱓻",
 		},
 	},
 
-	telescope = { style = "borderless" }, -- borderless / bordered
+	telescope = { style = "bordered" }, -- borderless / bordered
 
 	statusline = {
-		enabled = true,
-		theme = "minimal", -- default/vscode/vscode_colored/minimal
-		-- default/round/block/arrow separators work only for default statusline theme
-		-- round and block will work for minimal theme only
-		separator_style = "block",
-		order = nil,
-		modules = nil,
+		enabled = false,
 	},
 
-	-- lazyload it when there are 1+ buffers
+	-- lazyload it When There are 1+ buffers
 	tabufline = {
 		enabled = true,
 		lazyload = true,
 		order = { "buffers", "tabs", "btns", "treeOffset" },
-		modules = {
-			abc = function()
-				return "hi"
-			end,
-		}, --nil
+		modules = {}, --nil
 	},
 }
 
 M.nvdash = {
-	load_on_startup = false,
+	load_on_startup = true,
 
 	header = {
 		"                            ",
@@ -69,11 +54,26 @@ M.nvdash = {
 		"                            ",
 	},
 
-	-- buttons = {
-	--   { txt = "  Find File", keys = "Spc f f", cmd = "Telescope find_files" },
-	--   { txt = "  Recent Files", keys = "Spc f o", cmd = "Telescope oldfiles" },
-	--   -- more... check nvconfig.lua file for full list of buttons
-	-- },
+	buttons = {
+		{ txt = "  Find File", keys = "f", cmd = "Telescope find_files" },
+		{ txt = "🧾 Recent Files", keys = "o", cmd = "Telescope oldfiles" },
+		{ txt = "  Session", keys = "s", cmd = "lua require('persistence').load({ last = true })" },
+		{ txt = "󰩈 Quit", keys = "q", cmd = ":qa" },
+
+		{ txt = "─", hl = "NvDashFooter", no_gap = true, rep = true },
+
+		{
+			txt = function()
+				local stats = require("lazy").stats()
+				local ms = math.floor(stats.startuptime) .. " ms"
+				return "  Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms
+			end,
+			hl = "NvDashFooter",
+			no_gap = true,
+		},
+
+		{ txt = "─", hl = "NvDashFooter", no_gap = true, rep = true },
+	},
 }
 
 M.term = {

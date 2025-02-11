@@ -38,6 +38,7 @@ return {
 	-- rainbow csv
 	{
 		"cameron-wags/rainbow_csv.nvim",
+		lazy = true,
 		config = true,
 		ft = {
 			"csv",
