@@ -55,10 +55,10 @@ M.nvdash = {
 	},
 
 	buttons = {
-		{ txt = "  Find File", keys = "f", cmd = "Telescope find_files" },
+		{ txt = "   Find File", keys = "f", cmd = "Telescope find_files" },
 		{ txt = "🧾 Recent Files", keys = "o", cmd = "Telescope oldfiles" },
-		{ txt = "  Session", keys = "s", cmd = "lua require('persistence').load({ last = true })" },
-		{ txt = "󰩈 Quit", keys = "q", cmd = ":qa" },
+		{ txt = "   Session", keys = "s", cmd = "lua require('persistence').load({ last = true })" },
+		{ txt = " 󰩈 Quit", keys = "q", cmd = ":qa" },
 
 		{ txt = "─", hl = "NvDashFooter", no_gap = true, rep = true },
 

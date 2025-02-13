@@ -19,12 +19,18 @@ return {
 			formatters = {
 				stylua = {},
 				cbfmt = {},
-				beautysh = {},
+				beautysh = {
+					{
+						cmd = "/home/greed/.asdf/shims/beautysh",
+						-- args = { "fmt" },
+						-- stdin = false,
+					},
+				},
 				autoflake = {},
 				biome = {},
 				forge_fmt = {
 					{
-						cmd = "/home/greed/.foundry/bin/forge",
+						cmd = "/home/greed/.config/.cargo/bin/forge",
 						args = { "fmt" },
 						stdin = false,
 					},

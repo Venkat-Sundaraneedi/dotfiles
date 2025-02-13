@@ -2,6 +2,28 @@ local autocmd = vim.api.nvim_create_autocmd
 
 -- //========== autocmds ==========//
 
+-- Autocommand to prevent reopening of specific buffers
+vim.api.nvim_create_autocmd({ "BufLeave", "BufUnload", "BufDelete" }, {
+	pattern = "*", -- Apply to all buffers
+	callback = function()
+		local bufnr = vim.api.nvim_get_current_buf()
+		local bufname = vim.api.nvim_buf_get_name(bufnr)
+
+		-- Check if the buffer name contains "health", "lspinfo", or "conforminfo"
+		if string.find(bufname, "health") or string.find(bufname, "lspinfo") or string.find(bufname, "conforminfo") then
+			-- Prevent the buffer from being listed (hidden from buffer list)
+			vim.api.nvim_buf_set_option(bufnr, "buflisted", false)
+
+			-- Optionally, clear the buffer contents to ensure it's truly gone
+			-- vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, {})
+			-- This line is commented out because it might not be desirable in all cases.
+			-- It completely clears the buffer's content.
+
+			print("Preventing buffer from reopening: " .. bufname)
+		end
+	end,
+})
+
 -- nvdash on buffer close
 vim.api.nvim_create_autocmd("BufDelete", {
 	callback = function()

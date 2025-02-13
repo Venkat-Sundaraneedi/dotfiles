@@ -8,7 +8,7 @@ alias l='eza -l'
 alias m='zellij'
 alias f='fzf'
 alias y='yazi'
-alias fsi='forge soldeer init  && rm -rf remappings.txt  && soldeer_template && forge soldeer install && clear'
+alias fsi='forge soldeer init  && rm -rf remappings.txt  && soldeer_template && forge soldeer install && mkdir src test script && clear'
 alias sp='spotify_player'
 alias la='eza -la'
 alias ls='ls --color'
@@ -36,8 +36,10 @@ alias code="/mnt/c/Program\ Files/VSCodium/VSCodium.exe"
 alias kanata="/mnt/c/Users/Venkat/AppData/Roaming/kanata/kanata.exe -c /home/greed/.config/kanata/config.kbd"
 
 cdf() {
-    cd "$(fdfind --type dir --follow --hidden --color=always --exclude .git | fzf --preview 'bat -n --color=always {}')"
+    cd "$(fdfind --type dir --follow --hidden --color=always --exclude .git  | fzf --preview 'bat -n --color=always {}')"
 }
 nf() {
-    nvim "$(fdfind --type file --follow --hidden --color=always --exclude .git | fzf --preview 'bat -n --color=always {}')"
+    nvim "$(fdfind --type file --follow --hidden --color=always --exclude .git  | fzf --preview 'bat -n --color=always {}')"
 }
+
+

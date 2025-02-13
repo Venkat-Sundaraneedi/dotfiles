@@ -159,9 +159,6 @@ map("n", "<A-l>", "<C-w>l", { desc = "switch window right" })
 map("n", "<A-k>", "<c-w>k", { desc = "switch window up" })
 map("n", "<A-j>", "<C-w>j", { desc = "switch window down" })
 
-map("n", "<leader>d", function()
-	require("dbee").toggle()
-end, { desc = "general format file" })
 -- format
 map("n", "<leader>fa", function()
 	require("conform").format({ lsp_fallback = true })

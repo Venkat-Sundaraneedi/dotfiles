@@ -7,6 +7,11 @@ return {
 		cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
 		build = ":TSUpdate",
 		opts = {
+
+			--WARN: THIS IS FOR WINDOWS ONLY
+			-- prefer_git = false,
+			-- compilers ={"gcc"},
+
 			ensure_installed = { "lua", "luadoc", "printf", "vim", "vimdoc", "solidity", "rust", "kdl", "bash" },
 
 			highlight = {

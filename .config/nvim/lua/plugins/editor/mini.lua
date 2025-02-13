@@ -30,7 +30,7 @@ return {
 	-- mini.ai
 	{
 		"echasnovski/mini.ai",
-		-- lazy = true,
+		lazy = true,
 		event = "VeryLazy",
 		opts = function()
 			local ai = require("mini.ai")

@@ -1,4 +1,38 @@
 return {
+	-- mason
+	{
+		"williamboman/mason.nvim",
+		lazy = true,
+		cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
+		opts = function()
+			return require("nvchad.configs.mason")
+		end,
+	},
+	-- mason-lspconfig
+	{
+		"williamboman/mason-lspconfig.nvim",
+		lazy = true,
+		config = function()
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"lua_ls",
+					"jdtls",
+					"biome",
+					"pyright",
+					"marksman",
+					"bashls",
+					"solidity_ls_nomicfoundation",
+					"rust_analyzer",
+					"autoflake",
+					"beautysh",
+					"cbfmt",
+					"stylua",
+					"vale",
+				},
+			})
+		end,
+	},
+
 	-- lspconfig
 	{
 		"neovim/nvim-lspconfig",
@@ -79,11 +113,24 @@ return {
 						return vim.loop.cwd()
 					end,
 				},
-				bashls = {},
+				bashls = {
+					cmd = { "bash-language-server", "start" },
+					settings = {
+						bashIde = {
+							globPattern = vim.env.GLOB_PATTERN or "*@(.sh|.inc|.bash|.command)",
+						},
+					},
+					filetypes = { "bash", "sh" },
+					root_dir = function(fname)
+						return vim.fs.dirname(vim.fs.find(".git", { path = fname, upward = true })[1])
+					end,
+					single_file_support = true,
+				},
+
 				solidity_ls_nomicfoundation = {},
 				rust_analyzer = {
 					cmd = {
-						"/home/greed/.asdf/installs/rust/1.84.0/bin/rust-analyzer",
+						"/home/greed/.asdf/installs/rust/1.84.1/bin/rust-analyzer",
 					},
 				},
 			}
@@ -120,15 +167,6 @@ return {
 
 				require("lspconfig")[name].setup(opts)
 			end
-		end,
-	},
-
-	-- mason
-	{
-		"williamboman/mason.nvim",
-		cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
-		opts = function()
-			return require("nvchad.configs.mason")
 		end,
 	},
 }

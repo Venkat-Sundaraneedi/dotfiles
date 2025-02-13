@@ -89,3 +89,21 @@ zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'
 
 
 eval "$(gh copilot alias -- zsh)"
+
+# rust
+export RUST_HOME="$HOME/.cargo/env"
+case ":$PATH:" in
+  *":$RUST_HOME:"*) ;;
+  *) export PATH="$RUST_HOME:$PATH" ;;
+esac
+# rust end
+
+
+# solana
+export SOLANA_HOME="$HOME/.local/share/solana/install/active_release/bin"
+case ":$PATH:" in
+  *":$SOLANA_HOME:"*) ;;
+  *) export PATH="$SOLANA_HOME:$PATH" ;;
+esac
+# solana end
+

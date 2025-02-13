@@ -84,7 +84,7 @@ return {
 	-- TEST:
 	{
 		"folke/todo-comments.nvim",
-		lazy = true,
+		lazy = false,
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = {
 			{

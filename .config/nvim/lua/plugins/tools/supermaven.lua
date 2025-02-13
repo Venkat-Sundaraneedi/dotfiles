@@ -1,6 +1,6 @@
 return {
 	"supermaven-inc/supermaven-nvim",
-	lazy = true,
+	lazy = false,
 	config = function()
 		require("supermaven-nvim").setup({
 			-- keymaps

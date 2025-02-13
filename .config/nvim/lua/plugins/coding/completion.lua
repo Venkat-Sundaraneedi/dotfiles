@@ -8,6 +8,7 @@ return {
 			-- snippet plugin
 			{
 				"L3MON4D3/LuaSnip",
+				lazy = true,
 				dependencies = "rafamadriz/friendly-snippets",
 				opts = { history = true, updateevents = "TextChanged,TextChangedI" },
 
@@ -20,6 +21,7 @@ return {
 			-- autopairing of (){}[] etc
 			{
 				"windwp/nvim-autopairs",
+				lazy = true,
 				opts = {
 					fast_wrap = {},
 					disable_filetype = { "TelescopePrompt", "vim" },
