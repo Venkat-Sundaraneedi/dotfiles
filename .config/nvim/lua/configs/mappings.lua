@@ -177,28 +177,27 @@ map("n", "<leader>i", function()
 	ToggleCmp()
 end, { desc = "Toggle nvim-cmp", noremap = true, silent = true })
 
-map("n", "<leader>tp", function()
-	-- require("telescope").extensions.plugins.search()
-end, { desc = "Search for plugin", noremap = true, silent = true })
+local cmp = require("cmp")
+local cmp_enabled = false
 
--- local cmp = require("cmp")
--- local cmp_enabled = false
---
--- local api = require("supermaven-nvim.api")
---
--- _G.ToggleCmp = function()
--- 	cmp_enabled = not cmp_enabled
--- 	if cmp_enabled then
--- 		api.stop()
--- 		vim.notify("nvim-cmp Enabled and supermaven Disabled", vim.log.levels.INFO)
--- 	else
--- 		api.start()
--- 		vim.notify("nvim-cmp Disabled and supermaven Enabled", vim.log.levels.WARN)
--- 	end
--- end
---
--- cmp.setup({
--- 	enabled = function()
--- 		return cmp_enabled
--- 	end,
--- })
+local api = require("supermaven-nvim.api")
+
+_G.ToggleCmp = function()
+	cmp_enabled = not cmp_enabled
+	if cmp_enabled then
+		api.stop()
+		vim.notify("nvim-cmp Enabled and supermaven Disabled", vim.log.levels.INFO)
+	else
+		api.start()
+		vim.notify("nvim-cmp Disabled and supermaven Enabled", vim.log.levels.WARN)
+	end
+end
+
+cmp.setup({
+	enabled = function()
+		return cmp_enabled
+	end,
+})
+
+-- Telescope diagnostics (requires telescope.nvim and telescope-lsp-handlers.nvim)
+vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "Search Diagnostics" })

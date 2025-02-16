@@ -15,7 +15,7 @@ opt.shell = "/bin/zsh"
 -- o.conceallevel = 2
 
 -- Disable diagnostics globally
-vim.diagnostic.disable()
+vim.diagnostic.enable(true)
 
 -- Auto read when files change
 o.autoread = true

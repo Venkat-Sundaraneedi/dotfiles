@@ -100,11 +100,41 @@ return {
 				},
 			}
 
+			local util = require("lspconfig.util")
 			local servers = {
+				denols = {
+					cmd = { "deno", "lsp" },
+					cmd_env = { NO_COLOR = true },
+					filetypes = {
+						"javascript",
+						"javascriptreact",
+						"javascript.jsx",
+						"typescript",
+						"typescriptreact",
+						"typescript.tsx",
+					},
+					root_dir = util.root_pattern("deno.json", "deno.jsonc", ".git"),
+					settings = {
+						deno = {
+							enable = true,
+							suggest = {
+								imports = {
+									hosts = {
+										["https://deno.land"] = true,
+									},
+								},
+							},
+						},
+					},
+					handlers = {
+						["textDocument/definition"] = denols_handler,
+						["textDocument/typeDefinition"] = denols_handler,
+						["textDocument/references"] = denols_handler,
+					},
+				},
 				lua_ls = {},
 				jdtls = {},
 				cairo_ls = {},
-				gradle_ls = {},
 				biome = {},
 				pyright = {},
 				marksman = {

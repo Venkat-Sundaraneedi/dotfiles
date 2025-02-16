@@ -10,13 +10,20 @@ return {
 				sh = { "beautysh" },
 				python = { "autoflake" },
 				solidity = { "forge_fmt" },
-				javascript = { "biome" },
-				json = { "biome" },
-				typescript = { "biome" },
+				javascript = { "deno_fmt" },
+				json = { "deno_fmt" },
+				typescript = { "deno_fmt" },
 				markdown = { "cbfmt" },
 			},
 
 			formatters = {
+				deno_fmt = {
+					{
+						cmd = "deno",
+						args = { "fmt" },
+						stdin = false,
+					},
+				},
 				stylua = {},
 				cbfmt = {},
 				beautysh = {

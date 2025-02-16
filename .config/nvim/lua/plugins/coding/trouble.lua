@@ -1,7 +1,7 @@
 --trouble nvim
 return {
 	"folke/trouble.nvim",
-	enabled = false,
+	enabled = true,
 	lazy = true,
 	cmd = { "Trouble" },
 	opts = {

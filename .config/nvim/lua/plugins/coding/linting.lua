@@ -5,12 +5,16 @@ return {
 		require("lint").linters_by_ft = {
 			markdown = { "vale" },
 			bash = { "shellcheck" },
-			json = { "biome" },
-			javascript = { "biome" },
-			typescript = { "biome" },
+			json = { "deno_lint" },
+			javascript = { "deno_lint" },
+			typescript = { "deno_lint" },
 		}
 		require("lint").linters = {
 			vale = {},
+			deno_lint = {
+				cmd = "deno",
+				args = { "lint" }, -- list of arguments. Can contain functions with zero arguments that will be evaluated once the linter is used.
+			},
 			shellcheck = {
 				cmd = "/home/greed/.local/share/nvim/mason/packages/shellcheck/shellcheck",
 			},
