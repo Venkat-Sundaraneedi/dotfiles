@@ -1,0 +1,9 @@
+[[keymaps]]
+command = { VolumeChange = { offset = 5 } }
+key_sequence = "e"
+[[keymaps]]
+command = { VolumeChange = { offset = -5 } }
+key_sequence = "w"
+[[keymaps]]
+command = "PreviousPage"
+key_sequence = "b"

@@ -1,0 +1,11 @@
+{
+    "diagnostics.globals": [
+        "vim",
+        "denols_handler",
+        "Snacks"
+    ],
+    "diagnostics.disable": [
+        "undefined-doc-name",
+        "inject-field"
+    ]
+}
