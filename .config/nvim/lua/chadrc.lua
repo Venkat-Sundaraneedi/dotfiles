@@ -2,7 +2,7 @@
 local M = {}
 
 M.base46 = {
-	theme = "yoru",
+	theme = "horizon",
 	hl_add = {},
 	hl_override = {},
 	integrations = {},

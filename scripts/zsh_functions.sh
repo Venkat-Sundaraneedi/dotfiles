@@ -372,7 +372,7 @@ dot() {
         ".config/ohmyposh"
         ".config/spotify-player"
         ".zshrc"
-        ".zshenv"
+        # ".zshenv"
         ".config/nvim"
         "scripts/"
         "projects/scripts"

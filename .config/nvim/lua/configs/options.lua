@@ -38,6 +38,7 @@ g.clipboard = {
 	},
 	cache_enabled = false,
 }
+
 o.cursorline = true
 o.cursorlineopt = "both" -- to enable cursorline!
 
