@@ -80,7 +80,6 @@ return {
 			require("luasnip").config.set_config(opts)
 
 			local ls = require("luasnip")
-			local cmp = require("blink.cmp")
 			local map = vim.keymap.set
 
 			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
@@ -88,7 +87,6 @@ return {
 			map({ "i", "s" }, "<tab>", function()
 				if ls.expand_or_jumpable() then
 					ls.expand_or_jump()
-					cmp.hide()
 				end
 			end, { silent = true })
 

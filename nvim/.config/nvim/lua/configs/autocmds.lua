@@ -158,7 +158,7 @@ autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
 -- Auto Command to hide blink cmp menu when autosnippets expand
 autocmd("User", {
 	pattern = "LuasnipPreExpand",
-	p = vim.api.nvim_create_augroup("LuasnipBlinkCmpHide", { clear = true }),
+	group = vim.api.nvim_create_augroup("LuasnipBlinkCmpHide", { clear = true }),
 	callback = function()
 		require("blink.cmp").hide()
 	end,
