@@ -76,7 +76,6 @@ alias gi="git init"
 alias gcl="git clone"
 alias gs="git status --short"
 
-direnv hook fish | source
 
 
   function neoup
