@@ -40,10 +40,10 @@ map({ "n", "v", "o" }, "<S-h>", "^", { desc = "move beginning of line" })
 map({ "n", "v", "o" }, "<S-l>", "g_", { desc = "move end of line" })
 
 --remap of arrow keys
--- map({ "i" }, "<A-h>", "<Left>", { desc = "move left" })
--- map({ "i" }, "<A-l>", "<Right>", { desc = "move right" })
--- map({ "i" }, "<A-j>", "<Down>", { desc = "move down" })
--- map({ "i" }, "<A-k>", "<Up>", { desc = "move up" })
+map({ "i" }, "<A-h>", "<Left>", { desc = "move left" })
+map({ "i" }, "<A-l>", "<Right>", { desc = "move right" })
+map({ "i" }, "<A-j>", "<Down>", { desc = "move down" })
+map({ "i" }, "<A-k>", "<Up>", { desc = "move up" })
 
 --navigating windows
 map("n", "<A-h>", "<C-w>h", { desc = "switch window left" })

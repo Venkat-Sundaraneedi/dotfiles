@@ -5,52 +5,6 @@ return {
 		event = { "InsertEnter", "CmdLineEnter" },
 
 		dependencies = {
-			{
-				-- snippet plugin
-				"L3MON4D3/LuaSnip",
-				version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-				opts = function()
-					return {
-						history = true,
-						updateevents = "TextChanged,TextChangedI",
-						enable_autosnippets = true,
-					}
-				end,
-				config = function(_, opts)
-					require("luasnip").config.set_config(opts)
-
-					local ls = require("luasnip")
-					local cmp = require("blink.cmp")
-					local map = vim.keymap.set
-
-					require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
-
-					map({ "i", "s" }, "<A-l>", function()
-						if ls.expand_or_jumpable() then
-							ls.expand_or_jump()
-							cmp.hide()
-						end
-					end, { silent = true })
-
-					map({ "i", "s" }, "<A-h>", function()
-						if ls.jumpable(-1) then
-							ls.jump(-1)
-						end
-					end, { silent = true })
-
-					map({ "i", "s" }, "<A-j>", function()
-						if ls.choice_active() then
-							ls.change_choice(1)
-						end
-					end, { silent = true })
-
-					map({ "i", "s" }, "<A-k>", function()
-						if ls.choice_active() then
-							ls.change_choice(-1)
-						end
-					end, { silent = true })
-				end,
-			},
 
 			{
 				"windwp/nvim-autopairs",
@@ -94,6 +48,7 @@ return {
 					["<CR>"] = { "accept", "fallback" },
 					["<C-b>"] = { "scroll_documentation_up", "fallback" },
 					["<C-f>"] = { "scroll_documentation_down", "fallback" },
+					["<C-space>"] = { "hide", "show" },
 				},
 
 				completion = {
@@ -107,6 +62,47 @@ return {
 					menu = require("nvchad.blink").menu,
 				},
 			}
+		end,
+	},
+
+	{
+		-- snippet plugin
+		"L3MON4D3/LuaSnip",
+		version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+		opts = function()
+			return {
+				history = true,
+				updateevents = "TextChanged,TextChangedI",
+				enable_autosnippets = true,
+			}
+		end,
+		config = function(_, opts)
+			require("luasnip").config.set_config(opts)
+
+			local ls = require("luasnip")
+			local cmp = require("blink.cmp")
+			local map = vim.keymap.set
+
+			require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
+
+			map({ "i", "s" }, "<tab>", function()
+				if ls.expand_or_jumpable() then
+					ls.expand_or_jump()
+					cmp.hide()
+				end
+			end, { silent = true })
+
+			map({ "i", "s" }, "<s-tab>", function()
+				if ls.jumpable(-1) then
+					ls.jump(-1)
+				end
+			end, { silent = true })
+
+			map({ "i", "s" }, "<A-c>", function()
+				if ls.choice_active() then
+					ls.change_choice(1)
+				end
+			end, { silent = true })
 		end,
 	},
 }
