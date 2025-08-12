@@ -107,7 +107,7 @@ ls.add_snippets("rust", {
 
 	-- 4. let (Autosnippet)
 	s(
-		"rlet",
+		"let",
 		fmta("let <1> = <2>;", {
 			i(1, "var"),
 			i(2, "equal"),
@@ -133,7 +133,7 @@ ls.add_snippets("rust", {
 
 	-- 6. format_bang (Autosnippet)
 	s(
-		"rformat", -- Renamed from `rformat` to `rformat_bang` for uniqueness
+		"format", -- Renamed from `rformat` to `rformat_bang` for uniqueness
 		fmta('format!("<1>")', { i(1, "Hello, {}!") }),
 
 		{ condition = create_not_in_comment_or_string_condition() }
@@ -141,7 +141,7 @@ ls.add_snippets("rust", {
 
 	-- 7. panic (Autosnippet)
 	s(
-		"rpanic",
+		"panic",
 		fmta('panic!("<1>");', { i(1, "Error message: {}") }),
 
 		{ condition = create_not_in_comment_or_string_condition() }
@@ -231,7 +231,7 @@ ls.add_snippets("rust", {
 
 	-- 15. Public Return Function (Autosnippet)
 	s(
-		"prfn",
+		"prnf",
 		fmta(
 			[[
             pub fn <1>(<2>: <3>) ->> <4> { 
@@ -312,7 +312,7 @@ ls.add_snippets("rust", {
 
 	-- 19. rif_let (Autosnippet)
 	s(
-		"iflet",
+		"lif",
 		fmta(
 			[[
             if let <1> = <2> {
@@ -331,7 +331,7 @@ ls.add_snippets("rust", {
 
 	-- 20. if (Autosnippet)
 	s(
-		"rif",
+		"if",
 		fmta(
 			[[
             if <1> {
@@ -384,7 +384,7 @@ ls.add_snippets("rust", {
 	),
 
 	-- 23. match (Autosnippet)
-	s("match", fmta("match <1> {}", { i(1, "expr") }), { condition = create_not_in_comment_or_string_condition() }),
+	s("rmatch", fmta("match <1> {}", { i(1, "expr") }), { condition = create_not_in_comment_or_string_condition() }),
 
 	-- 23. Mod Block (Autosnippet)
 	s(
