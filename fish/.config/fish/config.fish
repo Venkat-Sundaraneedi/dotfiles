@@ -43,7 +43,8 @@ fish_add_path "$HOME/.cyfrin/bin"
 fish_add_path "$HOME/.bun/bin"
 fish_add_path "$HOME/.cargo/bin"
 fish_add_path "$HOME/.atuin/bin"
-fish_add_path "/usr/local/RustRover-2025.2/bin"
+fish_add_path "$HOME/.avm/bin"
+fish_add_path "$HOME/.local/share/solana/install/active_release/bin/"
 
 
 set -gx fish_user_paths "$HOME/.local/bin" $fish_user_paths
@@ -84,7 +85,7 @@ alias gs="git status --short"
     end
 
 
-  function gitcompany
+  function gitp
         git config --local user.name "wdcs-venkatsundaraneedi"
         git config --local user.email "venkat.sundaraneedi4@codezeros.com"
         echo "Git user.name set to: wdcs-venkatsundaraneedi"

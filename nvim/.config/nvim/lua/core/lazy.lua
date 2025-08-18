@@ -106,8 +106,24 @@ vim.api.nvim_create_autocmd("VimEnter", {
 vim.lsp.enable({
 	"lua_ls",
 	"rust_analyzer",
-	"move_analyzer",
+	-- "move_analyzer",
 	"denols",
 	"marksman",
 	"solidity_ls_nomicfoundation",
+	"taplo",
 })
+
+-- vim.treesitter.language.add("move", { path = "~/.config/suiup/tree-sitter-move.wasm" })
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+parser_config.move = {
+	install_info = {
+		url = "/home/greed/projects/git/sui/external-crates/move/tooling/tree-sitter/",
+		files = { "src/parser.c" },
+		branch = "main",
+		generate_requires_npm = false,
+		requires_generate_from_grammer = false,
+	},
+	filetype = "move",
+}
+
+vim.treesitter.language.register("move", "move")
