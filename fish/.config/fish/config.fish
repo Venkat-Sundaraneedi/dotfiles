@@ -57,6 +57,8 @@ zoxide init --cmd cd fish | source
 set -gx fish_user_paths "$HOME/.foundry/bin" $fish_user_paths
 
 alias l="eza -l"
+alias nc="ncspot"
+alias hx="helix"
 alias ls="eza -lah --group-directories-first"
 alias rmf="rm -rf"
 alias cn="clear && nvim"

@@ -388,7 +388,7 @@ ls.add_snippets("rust", {
 
 	-- 23. Mod Block (Autosnippet)
 	s(
-		"mod",
+		"rmod",
 		fmta(
 			[[
             mod <1> {
