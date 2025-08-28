@@ -24,6 +24,10 @@ return {
 
 					require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
 
+					map({ "i" }, "<C-u>", function()
+						ls.expand()
+					end, { silent = true })
+
 					map({ "i", "s" }, "<tab>", function()
 						if ls.expand_or_jumpable() then
 							ls.expand_or_jump()
@@ -57,6 +61,7 @@ return {
 			dofile(vim.g.base46_cache .. "blink")
 
 			return {
+				snippets = { preset = "luasnip" },
 				cmdline = {
 					enabled = true,
 				},
@@ -79,7 +84,8 @@ return {
 				},
 				accept = { auto_brackets = { enabled = true } },
 				signature = { enabled = true, window = { border = "single", show_documentation = false } },
-				sources = { default = { "lsp", "buffer", "path" } },
+				sources = { default = { "lsp", "snippets", "buffer", "path" } },
+				-- sources = { default = { "lsp", "buffer", "path" } },
 
 				keymap = {
 					preset = "default",

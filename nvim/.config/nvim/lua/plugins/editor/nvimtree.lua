@@ -1,10 +1,9 @@
-local map = vim.keymap.set
--- nvimtree
-map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
+-- local map = vim.keymap.set
+-- map("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
 
 return {
 	"nvim-tree/nvim-tree.lua",
-	enabled = true,
+	enabled = false,
 	cmd = { "NvimTreeToggle" },
 	opts = function()
 		dofile(vim.g.base46_cache .. "nvimtree")

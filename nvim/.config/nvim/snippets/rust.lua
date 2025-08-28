@@ -58,7 +58,7 @@ ls.add_snippets("rust", {}, { key = "rust_manual_snippets" }) -- Good practice t
 -- Add AUTO snippets with the 'r' prefix
 ls.add_snippets("rust", {
 
-	-- 1. allow (Autosnippet)
+	-- 1. allow
 	s(
 		"allow",
 		fmta(
@@ -73,11 +73,10 @@ ls.add_snippets("rust", {
 				}),
 			}
 		),
-
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 2. deny (Autosnippet)
+	-- 2. deny
 	s(
 		"deny",
 		fmta("#![deny(<1>)]", {
@@ -87,11 +86,10 @@ ls.add_snippets("rust", {
 				i(nil, "your_custom_lint"),
 			}),
 		}),
-
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 3. warn (Autosnippet)
+	-- 3. warn
 	s(
 		"warn",
 		fmta("#![warn(<1>)]", {
@@ -101,21 +99,20 @@ ls.add_snippets("rust", {
 				i(nil, "your_custom_lint"),
 			}),
 		}),
-
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 4. let (Autosnippet)
+	-- 4. let
 	s(
 		"let",
 		fmta("let <1> = <2>;", {
 			i(1, "var"),
 			i(2, "equal"),
 		}),
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 5. cfg (Autosnippet)
+	-- 5. cfg
 	s(
 		"cfg",
 		fmta("#[cfg(<1>)]", {
@@ -127,59 +124,32 @@ ls.add_snippets("rust", {
 				i(nil, ""), -- Empty insert node: LSP suggestions trigger here
 			}),
 		}),
-
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 6. format_bang (Autosnippet)
+	-- 6. format_bang
 	s(
 		"format", -- Renamed from `rformat` to `rformat_bang` for uniqueness
 		fmta('format!("<1>")', { i(1, "Hello, {}!") }),
-
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 7. panic (Autosnippet)
-	s(
-		"panic",
-		fmta('panic!("<1>");', { i(1, "Error message: {}") }),
+	-- 7. panic
+	s("panic", fmta('panic!("<1>");', { i(1, "Error message: {}") }), {}),
 
-		{ condition = create_not_in_comment_or_string_condition() }
-	),
+	-- 8. println
+	s("print", fmta('println!("<1>");', { i(1, "Hello, world!") }), {}),
 
-	-- 8. println (Autosnippet)
-	s(
-		"print",
-		fmta('println!("<1>");', { i(1, "Hello, world!") }),
+	-- 9. vec_bang
+	s("vec", fmta("vec![<1>]", { i(1, "elem1, elem2") }), {}),
 
-		{ condition = create_not_in_comment_or_string_condition() }
-	),
+	-- 10. assert_bang
+	s("assert", fmta("assert!(<1>);", { i(1, "condition") }), {}),
 
-	-- 9. vec_bang (Autosnippet)
-	s(
-		"rvec",
-		fmta("vec![<1>]", { i(1, "elem1, elem2") }),
+	-- 11. assert_eq_bang
+	s("eqassert", fmta("assert_eq!(<1>, <2>);", { i(1, "expected"), i(2, "actual") }), {}),
 
-		{ condition = create_not_in_comment_or_string_condition() }
-	),
-
-	-- 10. assert_bang (Autosnippet)
-	s(
-		"assert",
-		fmta("assert!(<1>);", { i(1, "condition") }),
-
-		{ condition = create_not_in_comment_or_string_condition() }
-	),
-
-	-- 11. assert_eq_bang (Autosnippet)
-	s(
-		"eqassert",
-		fmta("assert_eq!(<1>, <2>);", { i(1, "expected"), i(2, "actual") }),
-
-		{ condition = create_not_in_comment_or_string_condition() }
-	),
-
-	-- 12. const (Autosnippet)
+	-- 12. const
 	s(
 		"const",
 		fmta([[const <1>: <2> = <3>;]], {
@@ -187,11 +157,10 @@ ls.add_snippets("rust", {
 			i(2, "Type"),
 			i(3, "init_value"),
 		}),
-
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 13. derive (Autosnippet)
+	-- 13. derive
 	s(
 		"derive",
 		fmta("#[derive(<1>)]", {
@@ -204,40 +173,38 @@ ls.add_snippets("rust", {
 				i(nil, "Trait"), -- Custom derive
 			}),
 		}),
-
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 14. enum (Autosnippet)
+	-- 14. enum
 	s(
 		"enum",
 		fmta(
 			[[
-            #[derive(Debug)]
-            enum <1> {
-                <2>,
-                <3>,
-            }
-            ]],
+	            #[derive(Debug)]
+	            enum <1> {
+	                <2>,
+	                <3>,
+	            }
+	            ]],
 			{
 				i(1, "Name"),
 				i(2, "Variant1"),
 				i(3, "Variant2"),
 			}
 		),
-
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 15. Public Return Function (Autosnippet)
+	-- 15. Public Return Function
 	s(
 		"prnf",
 		fmta(
 			[[
-            pub fn <1>(<2>: <3>) ->> <4> { 
-                <5>
-            }
-            ]],
+	            pub fn <1>(<2>: <3>) ->> <4> {
+	                <5>
+	            }
+	            ]],
 			{
 				i(1, "name"),
 				i(2, "arg"),
@@ -246,19 +213,18 @@ ls.add_snippets("rust", {
 				i(5, "todo!();"), -- Default implementation placeholder
 			}
 		),
-
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 16. Function (Autosnippet)
+	-- 16. Function
 	s(
 		"fn",
 		fmta(
 			[[
-            fn <1>(<2>: <3>) {
-                <4>
-            }
-            ]],
+	            fn <1>(<2>: <3>) {
+	                <4>
+	            }
+	            ]],
 			{
 				i(1, "name"),
 				i(2, "arg"),
@@ -266,19 +232,18 @@ ls.add_snippets("rust", {
 				i(4, "todo!();"),
 			}
 		),
-
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 17. Return Function (Autosnippet)
+	-- 17. Return Function
 	s(
 		"rnf",
 		fmta(
 			[[
-            fn <1>(<2>: <3>) ->> <4> {
-                <5>
-            }
-            ]],
+	            fn <1>(<2>: <3>) ->> <4> {
+	                <5>
+	            }
+	            ]],
 			{
 				i(1, "name"),
 				i(2, "arg"),
@@ -287,148 +252,137 @@ ls.add_snippets("rust", {
 				i(5, "todo!();"),
 			}
 		),
-
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 18. for (Autosnippet)
+	-- 18. for
 	s(
 		"for",
 		fmta(
 			[[
-            for <1> in <2> {
-                <3>
-            }
-            ]],
+	            for <1> in <2> {
+	                <3>
+	            }
+	            ]],
 			{
 				i(1, "pat"),
 				i(2, "expr"),
 				i(3, "todo!();"),
 			}
 		),
-
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 19. rif_let (Autosnippet)
+	-- 19. rif_let
 	s(
 		"lif",
 		fmta(
 			[[
-            if let <1> = <2> {
-                <0>
-            }
-            ]],
+	            if let <1> = <2> {
+	                <0>
+	            }
+	            ]],
 			{
 				i(1, "Some(value)"),
 				i(2, "expression"),
 				[0] = i(0, "todo!();"), -- Corrected `[0] =` for i(0)
 			}
 		),
-
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 20. if (Autosnippet)
+	-- 20. if
 	s(
 		"if",
 		fmta(
 			[[
-            if <1> {
-                <2>
-            }
-            ]],
+	            if <1> {
+	                <2>
+	            }
+	            ]],
 			{
 				i(1, "condition"),
 				i(2, "todo!();"),
 			}
 		),
-
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 21. implement Trait (Autosnippet)
+	-- 21. implement Trait
 	s(
 		"impt",
 		fmta(
 			[[
-            impl <1> for <2> {
-                <3>
-            }
-            ]],
+	            impl <1> for <2> {
+	                <3>
+	            }
+	            ]],
 			{
 				i(1, "Trait"),
 				i(2, "Type"),
 				i(3, "// add code here"),
 			}
 		),
-
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 22. main (Autosnippet)
+	-- 22. main
 	s(
 		"main",
 		fmta(
 			[[
-	           fn main() {
-	               <1>
-	           }
-	           ]],
+	            fn main() {
+	                <1>
+	            }
+	            ]],
 			{
 				i(1, "todo!();"),
 			}
 		),
-
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 23. match (Autosnippet)
-	s("rmatch", fmta("match <1> {}", { i(1, "expr") }), { condition = create_not_in_comment_or_string_condition() }),
+	-- 23. match
+	s("rmatch", fmta("match <1> {}", { i(1, "expr") }), {}),
 
-	-- 23. Mod Block (Autosnippet)
+	-- 23. Mod Block
 	s(
 		"rmod",
 		fmta(
 			[[
-            mod <1> {
-                <2>
-            }
-            ]],
+	            mod <1> {
+	                <2>
+	            }
+	            ]],
 			{
 				i(1, "name"),
 				i(2, "// add code here"),
 			}
 		),
 
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 24. Struct Tuple (Autosnippet)
-	s(
-		"tstruct",
-		fmta("struct <1>(<2>);", { i(1, "Name"), i(2, "Type") }),
-
-		{ condition = create_not_in_comment_or_string_condition() }
-	),
+	-- 24. Struct Tuple
+	s("tstruct", fmta("struct <1>(<2>);", { i(1, "Name"), i(2, "Type") }), {}),
 
 	-- 25. Struct Unit
-	s("ustruct", fmta("struct <1>;", { i(1, "Name") }), { condition = create_not_in_comment_or_string_condition() }),
+	s("ustruct", fmta("struct <1>;", { i(1, "Name") }), {}),
 
-	-- 26. struct (Autosnippet)
+	-- 26. struct
 	s(
 		"struct",
 		fmta(
 			[[
-           #[derive(Debug)]
-           struct <1> {
-               <2>: <3>,
-           }
+	           #[derive(Debug)]
+	           struct <1> {
+	               <2>: <3>,
+	           }
 
-           impl <> {
-             <>
-           }
-           ]],
+	           impl <> {
+	             <>
+	           }
+	           ]],
 			{
 				i(1, "Name"),
 				i(2, "field"),
@@ -437,71 +391,71 @@ ls.add_snippets("rust", {
 				i(0),
 			}
 		),
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 27. Mod Unit Test (Autosnippet)
+	-- 27. Mod Unit Test
 	s(
 		"modtest",
 		fmta(
 			[[
-            #[cfg(test)]
-            mod tests {
-              use super::*;
+	            #[cfg(test)]
+	            mod tests {
+	              use super::*;
 
-                #[test]
-                fn <1>() {
-                    <2>
-                }
-            }
-            ]],
+	                #[test]
+	                fn <1>() {
+	                    <2>
+	                }
+	            }
+	            ]],
 			{
 				i(1, "name"),
 				i(2, "todo!();"),
 			}
 		),
 
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 28. test (Autosnippet)
+	-- 28. test
 	s(
 		"test",
 		fmta(
 			[[
-            #[test]
-            fn <1>() {
-                <2>
-            }
-            ]],
+	            #[test]
+	            fn <1>() {
+	                <2>
+	            }
+	            ]],
 			{
 				i(1, "name"),
 				i(2, "todo!();"),
 			}
 		),
 
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 29. trait (Autosnippet)
+	-- 29. trait
 	s(
 		"trait",
 		fmta(
 			[[
-            trait <1> {
-                <2>
-            }
-            ]],
+	            trait <1> {
+	                <2>
+	            }
+	            ]],
 			{
 				i(1, "Name"),
 				i(2, "// add code here"),
 			}
 		),
 
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 30. type (Autosnippet)
+	-- 30. type
 	s("type", fmta("type <1> = <2>;", { i(1, "Alias"), i(2, "Type") })),
 
 	-- 31. While Let (Autosnippet)
@@ -509,10 +463,10 @@ ls.add_snippets("rust", {
 		"wlet",
 		fmta(
 			[[
-            while let <1> = <2> {
-                <0>
-            }
-            ]],
+	            while let <1> = <2> {
+	                <0>
+	            }
+	            ]],
 			{
 				i(1, "Some(pat)"),
 				i(2, "expr"),
@@ -520,36 +474,36 @@ ls.add_snippets("rust", {
 			}
 		),
 
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 32. While (Autosnippet)
+	-- 32. While
 	s(
 		"while",
 		fmta(
 			[[
-            while <1> {
-                <2>
-            }
-            ]],
+	            while <1> {
+	                <2>
+	            }
+	            ]],
 			{
 				i(1, "condition"),
 				i(2, "todo!();"),
 			}
 		),
 
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 33. Public Async Return Function (Autosnippet)
+	-- 33. Public Async Return Function
 	s(
 		"parfn",
 		fmta(
 			[[
-            pub async fn <1>(<2>: <3>) ->> <4> {
-                <5>
-            }
-            ]],
+	            pub async fn <1>(<2>: <3>) ->> <4> {
+	                <5>
+	            }
+	            ]],
 			{
 				i(1, "name"),
 				i(2, "arg"),
@@ -559,18 +513,18 @@ ls.add_snippets("rust", {
 			}
 		),
 
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 34. Async Return Function (Autosnippet)
+	-- 34. Async Return Function
 	s(
 		"arfn",
 		fmta(
 			[[
-            async fn <1>(<2>: <3>) ->> <4> {
-                <5>
-            }
-            ]],
+	            async fn <1>(<2>: <3>) ->> <4> {
+	                <5>
+	            }
+	            ]],
 			{
 				i(1, "name"),
 				i(2, "arg"),
@@ -580,28 +534,28 @@ ls.add_snippets("rust", {
 			}
 		),
 
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 35. Comment (Autosnippet)
+	-- 35. Comment
 	s(
 		"comment",
 		fmta(
 			[[
-            /// <1>
-            ///
-            /// # Arguments
-            ///
-            /// * <3> - <4>
-            ///
-            /// # Returns
-            /// <2>
-            ///
-            /// # Examples
-            /// ```rust
-            /// <5>
-            /// ```
-            <0>]], -- Explicitly use <0> for final cursor position
+	            /// <1>
+	            ///
+	            /// # Arguments
+	            ///
+	            /// * <3> - <4>
+	            ///
+	            /// # Returns
+	            /// <2>
+	            ///
+	            /// # Examples
+	            /// ```rust
+	            /// <5>
+	            /// ```
+	            <0>]], -- Explicitly use <0> for final cursor position
 			{
 				i(1, "Description."),
 				i(2, "type and description of the returned object."),
@@ -612,21 +566,21 @@ ls.add_snippets("rust", {
 			}
 		),
 
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
 
-	-- 36. Test Doc (Autosnippet)
+	-- 36. Test Doc
 	s(
 		"tdoc", -- Renamed from "test" to avoid conflict with `rtest` from main list
 		fmta(
 			[[
-            /// <1>
-            ///
-            /// # Examples
-            /// ```rust
-            /// <2>
-            /// ```
-            <0>]], -- Explicitly use <0> for final cursor position
+	            /// <1>
+	            ///
+	            /// # Examples
+	            /// ```rust
+	            /// <2>
+	            /// ```
+	            <0>]], -- Explicitly use <0> for final cursor position
 			{
 				i(1, "Description."),
 				i(2, "write me later"),
@@ -634,6 +588,6 @@ ls.add_snippets("rust", {
 			}
 		),
 
-		{ condition = create_not_in_comment_or_string_condition() }
+		{}
 	),
-}, { type = "autosnippets", key = "rust_auto_snippets" }) -- Mark as autosnippets and give it a key
+}, { key = "rust_auto_snippets" })

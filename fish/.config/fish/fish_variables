@@ -1,5 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export EDITOR:nvim
+SETUVAR --export HELIX_RUNTIME:/home/greed/projects/git/helix/runtime/
 SETUVAR __fish_initialized:3800
 SETUVAR fish_color_autosuggestion:4D5566
 SETUVAR fish_color_cancel:\x2d\x2dreverse
@@ -40,4 +42,4 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3dE6B450
 SETUVAR fish_pager_color_selected_completion:\x1d
 SETUVAR fish_pager_color_selected_description:\x1d
 SETUVAR fish_pager_color_selected_prefix:\x1d
-SETUVAR fish_user_paths:/home/greed/\x2easdf/shims\x1e/home/greed/\x2easdf/downloads\x1e/home/greed/\x2elocal/share/nvim/mason/bin\x1e/home/greed/\x2ecyfrin/bin\x1e/home/greed/\x2ebun/bin\x1e/home/greed/\x2ecargo/bin\x1e/home/greed/\x2eatuin/bin\x1e/usr/local/RustRover\x2d2025\x2e2/bin\x1e/home/greed/\x2eavm/bin\x1e/home/greed/\x2elocal/share/solana/install/active_release/bin/
+SETUVAR fish_user_paths:/home/greed/\x2efoundry/bin\x1e/home/greed/\x2elocal/bin\x1e/home/greed/\x2easdf/shims\x1e/home/greed/\x2easdf/downloads\x1e/home/greed/\x2elocal/share/nvim/mason/bin\x1e/home/greed/\x2ecyfrin/bin\x1e/home/greed/\x2ebun/bin\x1e/home/greed/\x2ecargo/bin\x1e/home/greed/\x2eatuin/bin\x1e/usr/local/RustRover\x2d2025\x2e2/bin\x1e/home/greed/\x2eavm/bin\x1e/home/greed/\x2elocal/share/solana/install/active_release/bin/\x1e/home/greed/\x2efuelup/bin

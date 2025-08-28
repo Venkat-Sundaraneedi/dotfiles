@@ -1,10 +1,10 @@
 local map = vim.keymap.set
 
 -- telescope
-map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "telescope find files" })
+map("n", "<leader>e", "<cmd>Telescope find_files<CR>", { desc = "telescope find files" })
 map(
 	"n",
-	"<leader>fa",
+	"<leader>a",
 	"<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
 	{ desc = "telescope find all files" }
 )

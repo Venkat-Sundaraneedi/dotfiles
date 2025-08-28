@@ -1,0 +1,136 @@
+theme = "onedark"
+
+# ====================================================================================================
+
+[editor]
+scrolloff = 28
+continue-comments = false
+bufferline = "multiple"
+trim-final-newlines = true
+trim-trailing-whitespace = true
+clipboard-provider = "wayland"
+line-number = "relative"
+color-modes = true
+auto-pairs = true
+mouse = false
+
+# ====================================================================================================
+
+[editor.auto-save]
+after-delay.enable = true
+after-delay.timeout = 500
+
+# ====================================================================================================
+
+[editor.statusline]
+left = [
+  "mode",
+  "spinner",
+  "file-name",
+  "read-only-indicator",
+  "file-modification-indicator",
+]
+center = []
+right = [
+  "version-control",
+  "spacer",
+  "diagnostics",
+  "total-line-numbers",
+  "position",
+  "file-encoding",
+  "file-type",
+]
+separator = "│"
+mode.normal = "NOR"
+mode.insert = "INS"
+mode.select = "SEL"
+diagnostics = ["warning", "error"]
+workspace-diagnostics = ["warning", "error"]
+
+# ====================================================================================================
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "block"
+
+# ====================================================================================================
+
+[editor.file-picker]
+hidden = false
+
+# ====================================================================================================
+
+[keys.select]
+"space" = { ";" = "toggle_comments" }
+"A-e" = "match_brackets"
+
+"S-h" = "goto_line_start"
+"S-l" = "goto_line_end"
+
+
+[keys.normal]
+"A-v" = ["select_mode", "extend_to_line_bounds"]
+"A-e" = "match_brackets"
+"C-c" = "@%y"
+
+"S-h" = "goto_line_start"
+"S-l" = "goto_line_end"
+
+"tab" = ":buffer-next"
+"S-tab" = ":buffer-previous"
+
+[keys.normal.space]
+";" = "toggle_comments"
+"q" = ":write-quit-all"
+"o" = [":wa", ":config-reload"]
+"e" = "file_picker"
+"a" = "file_explorer"
+
+
+"F" = "no_op"
+# "a" = "no_op"
+"r" = "no_op"
+"'" = "no_op"
+"E" = "no_op"
+# "y" = "no_op"
+"Y" = "no_op"
+"P" = "no_op"
+"d" = "no_op"
+"D" = "no_op"
+"C" = "no_op"
+"g" = "no_op"
+"S" = "no_op"
+"j" = "no_op"
+"/" = "no_op"
+"?" = "no_op"
+"A-c" = "no_op"
+
+[keys.normal.space.c]
+"a" = "code_action"
+"r" = "rename_symbol"
+
+[keys.normal.space.s]
+"k" = "command_palette"
+"g" = "global_search"
+"b" = "search"
+
+[keys.normal.space.f]
+"b" = "buffer_picker"
+"s" = "symbol_picker"
+"d" = "diagnostics_picker"
+"S" = "workspace_symbol_picker"
+"D" = "workspace_diagnostics_picker"
+"j" = "jumplist_picker"
+
+[keys.normal.space.b]
+"d" = ":buffer-close"
+"o" = ":buffer-close-others"
+
+[keys.insert]
+"A-h" = "move_char_left"
+"A-l" = "move_char_right"
+"A-j" = "move_line_down"
+"A-k" = "move_line_up"
+
+"j" = { "k" = "normal_mode" }

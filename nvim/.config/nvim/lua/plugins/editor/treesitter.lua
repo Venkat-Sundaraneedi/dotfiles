@@ -6,6 +6,10 @@ return {
 			return {
 				require("nvchad.configs.treesitter"),
 				ensure_installed = { "lua", "luadoc", "printf", "vim", "vimdoc", "rust", "solidity" },
+				highlight = {
+					enable = true,
+					additional_vim_regex_highlighting = false,
+				},
 			}
 		end,
 		config = function(_, opts)

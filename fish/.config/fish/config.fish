@@ -32,10 +32,6 @@ function fish_add_path --description "Add a path to fish_user_paths if it's not 
 end
 
 
-# # ASDF Paths
-# set -gx fish_user_paths (string replace "$HOME" "~" "$ASDF_DATA_DIR")"/shims" $fish_user_paths
-# set -gx fish_user_paths "$HOME/.asdf/downloads" $fish_user_paths
-
 fish_add_path "$HOME/.asdf/shims"
 fish_add_path "$HOME/.asdf/downloads"
 fish_add_path "$HOME/.local/share/nvim/mason/bin"
@@ -45,20 +41,22 @@ fish_add_path "$HOME/.cargo/bin"
 fish_add_path "$HOME/.atuin/bin"
 fish_add_path "$HOME/.avm/bin"
 fish_add_path "$HOME/.local/share/solana/install/active_release/bin/"
+fish_add_path "$HOME/.local/bin"
+fish_add_path "$HOME/.fuelup/bin"
+fish_add_path "$HOME/.foundry/bin"
 
 
-set -gx fish_user_paths "$HOME/.local/bin" $fish_user_paths
-
+set -Ux EDITOR nvim
+set -Ux HELIX_RUNTIME ~/projects/git/helix/runtime/
 # Zoxide
 set -gx _ZO_CD 'zi'
 zoxide init --cmd cd fish | source
 
 # Foundry
-set -gx fish_user_paths "$HOME/.foundry/bin" $fish_user_paths
+# set -gx fish_user_paths "$HOME/.foundry/bin" $fish_user_paths
 
 alias l="eza -l"
 alias nc="ncspot"
-alias hx="helix"
 alias ls="eza -lah --group-directories-first"
 alias rmf="rm -rf"
 alias cn="clear && nvim"
@@ -88,10 +86,10 @@ alias gs="git status --short"
 
 
   function gitp
-        git config --local user.name "wdcs-venkatsundaraneedi"
-        git config --local user.email "venkat.sundaraneedi4@codezeros.com"
-        echo "Git user.name set to: wdcs-venkatsundaraneedi"
-        echo "Git user.email set to: venkat.sundaraneedi4@codezeros.com"
+        git config --local user.name "Venkat-Sundaraneedi"
+        git config --local user.email "venkat.subrahmanyam.34@gmail.com"
+        echo "Git user.name set to: Venkat-Sundaraneedi"
+        echo "Git user.email set to: venkat.subrahmanyam.34@gmail.com"
     end
 
 fish_vi_key_bindings
