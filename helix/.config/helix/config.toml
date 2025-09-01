@@ -70,7 +70,7 @@ hidden = false
 
 
 [keys.normal]
-"A-v" = ["select_mode", "extend_to_line_bounds"]
+"A-v" = ["select_mode", "extend_to_line_bounds", "goto_line_end"]
 "A-e" = "match_brackets"
 "C-c" = "@%y"
 
@@ -83,7 +83,7 @@ hidden = false
 [keys.normal.space]
 ";" = "toggle_comments"
 "q" = ":write-quit-all"
-"o" = [":wa", ":config-reload"]
+"o" = ":config-reload"
 "e" = "file_picker"
 "a" = "file_explorer"
 

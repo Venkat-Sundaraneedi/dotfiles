@@ -3,7 +3,7 @@
 
 return {
 	"nvim-tree/nvim-tree.lua",
-	enabled = false,
+	enabled = true,
 	cmd = { "NvimTreeToggle" },
 	opts = function()
 		dofile(vim.g.base46_cache .. "nvimtree")
