@@ -108,6 +108,7 @@ vim.lsp.enable({
 	"rust_analyzer",
 	-- "move_analyzer",
 	"denols",
+	"pyright",
 	"marksman",
 	"solidity_ls_nomicfoundation",
 	"taplo",

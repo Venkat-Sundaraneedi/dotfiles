@@ -31,7 +31,6 @@ function fish_add_path --description "Add a path to fish_user_paths if it's not 
     end
 end
 
-
 fish_add_path "$HOME/.asdf/shims"
 fish_add_path "$HOME/.asdf/downloads"
 fish_add_path "$HOME/.local/share/nvim/mason/bin"
@@ -45,11 +44,10 @@ fish_add_path "$HOME/.local/bin"
 fish_add_path "$HOME/.fuelup/bin"
 fish_add_path "$HOME/.foundry/bin"
 
-
 set -Ux EDITOR nvim
-set -Ux HELIX_RUNTIME ~/projects/git/helix/runtime/
+# set -Ux HELIX_RUNTIME ~/projects/git/helix/runtime/
 # Zoxide
-set -gx _ZO_CD 'zi'
+set -gx _ZO_CD zi
 zoxide init --cmd cd fish | source
 
 # Foundry
@@ -63,8 +61,11 @@ alias cn="clear && nvim"
 alias cdd="cd .."
 alias lg="lazygit"
 alias c="clear"
-alias n="nvim"
 alias e="exit"
+alias n="nvim"
+alias p="poetry"
+alias pya="source .venv/bin/activate.fish"
+alias pyd="deactivate"
 
 alias ga="git add"
 alias gb="git branch"
@@ -77,25 +78,29 @@ alias gi="git init"
 alias gcl="git clone"
 alias gs="git status --short"
 
-
-
-  function neoup
+function neoup
     asdf uninstall neovim nightly
     asdf install neovim nightly
-    end
+end
 
+function gitp
+    git config --local user.name Venkat-Sundaraneedi
+    git config --local user.email "venkat.subrahmanyam.34@gmail.com"
+    echo "Git user.name set to: Venkat-Sundaraneedi"
+    echo "Git user.email set to: venkat.subrahmanyam.34@gmail.com"
+end
 
-  function gitp
-        git config --local user.name "Venkat-Sundaraneedi"
-        git config --local user.email "venkat.subrahmanyam.34@gmail.com"
-        echo "Git user.name set to: Venkat-Sundaraneedi"
-        echo "Git user.email set to: venkat.subrahmanyam.34@gmail.com"
-    end
+function gitc
+    git config --local user.name wdcs-venkatsundaraneedi
+    git config --local user.email "venkat.sundaraneedi@codezeros.com"
+    echo "Git user.name set to: wdcs-venkatsundaraneedi"
+    echo "Git user.email set to: venkat.sundaraneedi@codezeros.com"
+end
 
 fish_vi_key_bindings
 
-bind --mode default \ck 'history-search-backward'
-bind --mode default \cj 'history-search-forward'
+bind --mode default \ck history-search-backward
+bind --mode default \cj history-search-forward
 
 # This binds the sequence j,k to switch to normal mode in vi mode.
 # If you kept it like that, every time you press "j",

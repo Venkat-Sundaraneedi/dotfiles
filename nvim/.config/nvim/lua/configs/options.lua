@@ -13,7 +13,7 @@ o.fileencoding = "utf-8"
 
 g.have_nerd_font = true
 
-vim.diagnostic.enable(false)
+vim.diagnostic.enable(true)
 
 vim.schedule(function()
 	o.clipboard = "unnamedplus"

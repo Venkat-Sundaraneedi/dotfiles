@@ -7,6 +7,7 @@ return {
 		opts = {
 			formatters_by_ft = {
 				lua = { "stylua" },
+				python = { "black" },
 				toml = { "taplo" },
 				solidity = { "forge_fmt" },
 				move = { "prettier-move" },
@@ -39,6 +40,7 @@ return {
 					},
 				},
 				stylua = {},
+				black = {},
 				forge_fmt = {
 					{
 						cmd = "/home/codezeros/.foundry/bin/forge",

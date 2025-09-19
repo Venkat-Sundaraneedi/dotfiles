@@ -19,6 +19,7 @@ map({ "n", "x", "s" }, "<a-e>", "%", { noremap = true, silent = true })
 map("n", "<c-c>", "<cmd>%y+<cr>", { desc = "file copy whole" })
 
 -- enter the command mode
+map("n", ":", "/", { desc = "Search inside the file" })
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("n", ";;", ":! ", { desc = "CMD enter command mode" })
 
