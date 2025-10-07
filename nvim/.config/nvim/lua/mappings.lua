@@ -1,6 +1,40 @@
 local map = vim.keymap.set
 
--------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+-- inc_rename
+map("n", "<leader>cr", function()
+  return ":IncRename " .. vim.fn.expand "<cword>"
+end, { desc = "inc_rename", expr = true })
+
+-- nvimtree
+map("n", "-", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
+
+-- telescope
+map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "telescope help page" })
+map("n", "<leader>fm", "<cmd>Telescope marks<CR>", { desc = "telescope find marks" })
+map("n", "<leader>fo", "<cmd>Telescope oldfiles<CR>", { desc = "telescope find oldfiles" })
+map("n", "<leader>sg", "<cmd>Telescope live_grep<CR>", { desc = "telescope live grep" })
+map("n", "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "telescope find in current buffer" })
+map("n", "<leader>sk", "<cmd>Telescope keymaps<CR>", { desc = "telescope search keymaps" })
+map("n", "<leader>gc", "<cmd>Telescope git_commits<CR>", { desc = "telescope git commits" })
+map("n", "<leader>gt", "<cmd>Telescope git_status<CR>", { desc = "telescope git status" })
+map(
+  "n",
+  "<leader>fa",
+  "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>",
+  { desc = "telescope find all files" }
+)
+map(
+  "n",
+  "<leader>e",
+  "<cmd>Telescope find_files follow=true no_ignore=false hidden=false<CR>",
+  { desc = "telescope find all files" }
+)
+
+-- toggleable
+map({ "n", "t" }, "<C-t>", function()
+  require("nvchad.term").toggle { pos = "sp", id = "htoggleTerm" }
+end, { desc = "terminal toggleable horizontal term" })
 
 -- Swap v and V for visual modes
 map("n", "<A-v>", "V", { noremap = true })
@@ -54,13 +88,13 @@ map("n", "<A-j>", "<C-w>j", { desc = "switch window down" })
 
 -- Toggle
 map("n", "<leader>td", function()
-	local is_enabled = vim.diagnostic.is_enabled()
-	vim.diagnostic.enable(not is_enabled)
-	if not is_enabled then
-		vim.notify("Diagnostics enabled", vim.log.levels.INFO)
-	else
-		vim.notify("Diagnostics disabled", vim.log.levels.INFO)
-	end
+  local is_enabled = vim.diagnostic.is_enabled()
+  vim.diagnostic.enable(not is_enabled)
+  if not is_enabled then
+    vim.notify("Diagnostics enabled", vim.log.levels.INFO)
+  else
+    vim.notify("Diagnostics disabled", vim.log.levels.INFO)
+  end
 end, { desc = "Toggle diagnostics" })
 
 ----------------------------------------------------------------------------------------------------------------------
@@ -68,30 +102,30 @@ end, { desc = "Toggle diagnostics" })
 
 -- Buffers
 map("n", "<tab>", function()
-	require("nvchad.tabufline").next()
+  require("nvchad.tabufline").next()
 end, { desc = "Buffer goto next" })
 
 map("n", "<S-tab>", function()
-	require("nvchad.tabufline").prev()
+  require("nvchad.tabufline").prev()
 end, { desc = "Buffer goto prev" })
 
 map("n", "<leader>bd", function()
-	require("nvchad.tabufline").close_buffer()
+  require("nvchad.tabufline").close_buffer()
 end, { desc = "[B]uffer [D]elete" })
 
 map("n", "<leader>bo", function()
-	require("nvchad.tabufline").closeAllBufs(false) -- excludes current buf
+  require("nvchad.tabufline").closeAllBufs(false) -- excludes current buf
 end, { desc = "Delete other buffers" })
 
 map("n", "<leader>bn", function()
-	require("nvchad.tabufline").move_buf(1)
+  require("nvchad.tabufline").move_buf(1)
 end, { desc = "Move buffer right" })
 
 map("n", "<leader>bp", function()
-	require("nvchad.tabufline").move_buf(-1)
+  require("nvchad.tabufline").move_buf(-1)
 end, { desc = "Move buffer left" })
 
 -- Theme
 map("n", "<leader>tt", function()
-	require("nvchad.themes").open()
+  require("nvchad.themes").open()
 end, { desc = "Nvchad themes list" })
