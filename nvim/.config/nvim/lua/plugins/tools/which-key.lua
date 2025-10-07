@@ -13,13 +13,13 @@ return {
 			spec = {
 				{ "<BS>", desc = "Decrement Selection", mode = "x" },
 				{ "<c-space>", desc = "Increment Selection", mode = { "x", "n" } },
-				{ "<leader>b", group = "Buffers" }, -- group
-				{ "<leader>c", group = "Code" }, -- group
-				{ "<leader>f", group = "Find" }, -- group
-				{ "<leader>s", group = "Search" }, -- group
-				{ "<leader>l", group = "Linter" }, -- group
-				{ "<leader>o", group = "Obsidian" }, -- group
-				{ "<leader>t", group = "Toggles and Trouble" }, -- group
+				{ "<leader>b", group = "Buffers" },
+				{ "<leader>c", group = "Code" },
+				{ "<leader>f", group = "Find" },
+				{ "<leader>s", group = "Search" },
+				{ "<leader>l", group = "Linter" },
+				{ "<leader>o", group = "Obsidian" },
+				{ "<leader>t", group = "Toggles and Trouble" },
 			},
 		},
 

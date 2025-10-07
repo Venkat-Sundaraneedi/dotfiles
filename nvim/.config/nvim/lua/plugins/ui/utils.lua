@@ -1,12 +1,4 @@
 ---@diagnostic disable: missing-parameter
--- Keymap to toggle maximization of the current window
-local map = vim.keymap.set
-
--- inc-rename
-map("n", "<leader>cr", function()
-	local inc_rename = require("inc_rename")
-	return ":" .. inc_rename.config.cmd_name .. " " .. vim.fn.expand("<cword>")
-end, { expr = true, desc = "Rename with inc_rename", silent = true })
 
 return {
 	{
@@ -21,7 +13,14 @@ return {
 		lazy = false,
 		cmd = "IncRename",
 		opts = {},
-		config = function() end,
+		config = function()
+			local map = vim.keymap.set
+
+			map("n", "<leader>cr", function()
+				local inc_rename = require("inc_rename")
+				return ":" .. inc_rename.config.cmd_name .. " " .. vim.fn.expand("<cword>")
+			end, { expr = true, desc = "Rename with inc_rename", silent = true })
+		end,
 	},
 
 	-- flash
@@ -31,7 +30,7 @@ return {
 		vscode = true,
 		opts = {
 			jump = {
-				autojump = true, -- Automatically jump when there's only one match
+				autojump = true,
 			},
 		},
 		keys = {

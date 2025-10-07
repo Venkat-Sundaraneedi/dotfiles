@@ -5,10 +5,21 @@ return {
 		event = { "InsertEnter", "CmdLineEnter" },
 
 		dependencies = {
+			-- {
+			--   -- snippet plugin
+			--   "L3MON4D3/LuaSnip",
+			--   dependencies = "rafamadriz/friendly-snippets",
+			--   opts = { history = true, updateevents = "TextChanged,TextChangedI" },
+			--   config = function(_, opts)
+			--     require("luasnip").config.set_config(opts)
+			--     require "nvchad.configs.luasnip"
+			--   end,
+			-- },
 			{
 				-- snippet plugin
 				"L3MON4D3/LuaSnip",
 				version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+				dependencies = "rafamadriz/friendly-snippets",
 				opts = function()
 					return {
 						history = true,
@@ -18,11 +29,10 @@ return {
 				end,
 				config = function(_, opts)
 					require("luasnip").config.set_config(opts)
-
+					require("nvchad.configs.luasnip")
 					local ls = require("luasnip")
-					local map = vim.keymap.set
 
-					require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
+					local map = vim.keymap.set
 
 					map({ "i" }, "<C-u>", function()
 						ls.expand()

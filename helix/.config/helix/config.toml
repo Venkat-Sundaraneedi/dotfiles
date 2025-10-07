@@ -1,5 +1,6 @@
-theme = "onedark"
-
+# theme = "onedark"
+theme = "gruvbox-material"
+# theme = "ashen"
 # ====================================================================================================
 
 [editor]
@@ -12,12 +13,15 @@ clipboard-provider = "wayland"
 line-number = "relative"
 color-modes = true
 auto-pairs = true
+auto-format = true
+completion-trigger-len = 1
+true-color = true
 mouse = false
 
 # ====================================================================================================
 
 [editor.auto-save]
-after-delay.enable = true
+after-delay.enable = false
 after-delay.timeout = 500
 
 # ====================================================================================================
@@ -62,31 +66,36 @@ hidden = false
 # ====================================================================================================
 
 [keys.select]
-"space" = { ";" = "toggle_comments" }
 "A-e" = "match_brackets"
-
 "S-h" = "goto_line_start"
 "S-l" = "goto_line_end"
+"f" = ["normal_mode", "collapse_selection"]
+";" = "toggle_comments"
+"g" = { "a" = "goto_last_line", "e" = "no_op" }
 
+"s" = "goto_word"
+"S" = "select_regex"
 
 [keys.normal]
-"A-v" = ["select_mode", "extend_to_line_bounds", "goto_line_end"]
+"A-v" = ["goto_line_start","select_mode","goto_line_end"]
 "A-e" = "match_brackets"
 "C-c" = "@%y"
-
-"S-h" = "goto_line_start"
+"S-h" = ["insert_at_line_start", "normal_mode"]
 "S-l" = "goto_line_end"
-
 "tab" = ":buffer-next"
+"f" = "collapse_selection"
+"D" = ["select_mode","goto_line_end","delete_selection"]
+"s" = "goto_word"
+"S" = "select_regex"
 "S-tab" = ":buffer-previous"
+"g" = { "a" = "goto_last_line", "e" = "no_op" }
+";" = { "e" = ":write-quit-all", "w" = ":write-all", "s" = "search", "n" = ":quit-all!" }
 
 [keys.normal.space]
 ";" = "toggle_comments"
-"q" = ":write-quit-all"
 "o" = ":config-reload"
-"e" = "file_picker"
 "a" = "file_explorer"
-
+"e" = "file_picker"
 
 "F" = "no_op"
 # "a" = "no_op"
@@ -99,7 +108,7 @@ hidden = false
 "d" = "no_op"
 "D" = "no_op"
 "C" = "no_op"
-"g" = "no_op"
+# "g" = "no_op"
 "S" = "no_op"
 "j" = "no_op"
 "/" = "no_op"
@@ -114,14 +123,11 @@ hidden = false
 "k" = "command_palette"
 "g" = "global_search"
 "b" = "search"
+"d" = "diagnostics_picker"
+"D" = "workspace_diagnostics_picker"
 
 [keys.normal.space.f]
 "b" = "buffer_picker"
-"s" = "symbol_picker"
-"d" = "diagnostics_picker"
-"S" = "workspace_symbol_picker"
-"D" = "workspace_diagnostics_picker"
-"j" = "jumplist_picker"
 
 [keys.normal.space.b]
 "d" = ":buffer-close"

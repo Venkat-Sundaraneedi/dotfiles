@@ -26,6 +26,17 @@ require("lazy").setup({
 		priority = 1000, -- Load this first
 		import = "nvchad.plugins",
 	},
+	{
+		"sainnhe/gruvbox-material",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			-- Optionally configure and load the colorscheme
+			-- directly inside the plugin declaration.
+			vim.g.gruvbox_material_enable_italic = true
+			vim.cmd.colorscheme("gruvbox-material")
+		end,
+	},
 
 	{ import = "plugins.init" },
 
@@ -112,6 +123,7 @@ vim.lsp.enable({
 	"marksman",
 	"solidity_ls_nomicfoundation",
 	"taplo",
+	"denols",
 })
 
 -- vim.treesitter.language.add("move", { path = "~/.config/suiup/tree-sitter-move.wasm" })

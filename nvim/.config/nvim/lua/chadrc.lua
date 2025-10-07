@@ -2,13 +2,13 @@
 local M = {}
 
 M.base46 = {
-	theme = "onedark",
+	theme = "gruvchad",
 	hl_add = {},
 	hl_override = {},
 	integrations = {},
 	changed_themes = {},
 	transparency = false,
-	theme_toggle = { "onedark", "one_light" },
+	theme_toggle = { "gruvchad", "one_light" },
 }
 
 M.ui = {

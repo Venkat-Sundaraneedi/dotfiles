@@ -14,7 +14,6 @@ end
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
-    atuin init fish | source
 end
 
 # Automatically start Zellij if not already inside Zellij
@@ -37,7 +36,6 @@ fish_add_path "$HOME/.local/share/nvim/mason/bin"
 fish_add_path "$HOME/.cyfrin/bin"
 fish_add_path "$HOME/.bun/bin"
 fish_add_path "$HOME/.cargo/bin"
-fish_add_path "$HOME/.atuin/bin"
 fish_add_path "$HOME/.avm/bin"
 fish_add_path "$HOME/.local/share/solana/install/active_release/bin/"
 fish_add_path "$HOME/.local/bin"
@@ -99,8 +97,8 @@ end
 
 fish_vi_key_bindings
 
-bind --mode default \ck history-search-backward
-bind --mode default \cj history-search-forward
+bind --mode default ctrl-k history-search-backward
+bind --mode default ctrl-j history-search-forward
 
 # This binds the sequence j,k to switch to normal mode in vi mode.
 # If you kept it like that, every time you press "j",

@@ -46,8 +46,11 @@ font-family = "JetBrainsMono Nerd Font"
 font-style = default
 font-size = 12
 
-theme = Horizon
-# theme = GruvboxDarkHard
+# theme = Horizon
+# theme = Gruvbox Dark 
+theme = Catppuccin Frappe 
+# theme = Catppuccin Macchiato 
+# theme = Catppuccin Mocha 
 
 # Valid values are:
 #
@@ -78,7 +81,7 @@ window-padding-balance = false
 #   * `display-p3` - Interpret colors in the Display P3 color space.
 #
 # This setting is currently only supported on macOS.
-window-colorspace = display-p3
+# window-colorspace = srgb
 
 
 # Valid values are:
