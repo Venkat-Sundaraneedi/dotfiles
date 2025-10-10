@@ -7,7 +7,7 @@ map("n", "<leader>cr", function()
 end, { desc = "inc_rename", expr = true })
 
 -- nvimtree
-map("n", "-", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
+map("n", "<C-n>", "<cmd>NvimTreeToggle<CR>", { desc = "nvimtree toggle window" })
 
 -- telescope
 map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "telescope help page" })
@@ -64,7 +64,7 @@ map("v", "u", "<cmd>noh<CR><ESC>")
 
 -- terminal
 map("t", "jk", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
-map("t", "<ESC>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
+-- map("t", "<ESC>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 
 -- write and exit commands
 map({ "n", "v" }, ";e", "<cmd> wqa <cr>")
