@@ -266,14 +266,6 @@ return {
 
       return {
         on_attach = my_on_attach,
-        filters = { dotfiles = false },
-        disable_netrw = true,
-        hijack_cursor = true,
-        sync_root_with_cwd = true,
-        update_focused_file = {
-          enable = true,
-          update_root = false,
-        },
         view = {
           side = "left",
           width = 30,
@@ -372,6 +364,8 @@ return {
         { "<BS>", desc = "Decrement Selection", mode = "x" },
         { "<c-space>", desc = "Increment Selection", mode = { "x", "n" } },
         { "<leader>b", group = "Buffers" }, -- group
+        { "<leader>g", group = "Git" }, -- group
+        { "<leader>w", group = "Workspace" }, -- group
         { "<leader>c", group = "Code" }, -- group
         { "<leader>f", group = "Find" }, -- group
         { "<leader>s", group = "Search" }, -- group
