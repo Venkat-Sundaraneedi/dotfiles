@@ -29,14 +29,6 @@ autocmd("BufReadPost", {
   end,
 })
 
--- autocmd to format on save
-autocmd("BufWritePre", {
-  pattern = "*",
-  callback = function(args)
-    require("conform").format { bufnr = args.buf }
-  end,
-})
-
 -- close some filetypes with <q>
 autocmd("FileType", {
   pattern = {
