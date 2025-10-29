@@ -42,6 +42,7 @@ fish_add_path "$HOME/.local/bin"
 fish_add_path "$HOME/.fuelup/bin"
 fish_add_path "$HOME/.foundry/bin"
 
+set -x FOUNDRY_DISABLE_NIGHTLY_WARNING 1
 set -Ux EDITOR nvim
 # set -Ux HELIX_RUNTIME ~/projects/git/helix/runtime/
 # Zoxide
@@ -81,6 +82,20 @@ function neoup
     asdf install neovim nightly
 end
 
+function mg
+    # echo "Modda gudu Prab athuuuu"
+    echo (set_color cyan)"
+      _________________________
+     < Modda gudu Prab athuuuu! >
+      -------------------------
+             \\
+              \\
+               /\\_/\\
+              ( o.o )
+               > ^ <
+    "(set_color normal)
+end
+
 function gitp
     git config --local user.name Venkat-Sundaraneedi
     git config --local user.email "venkat.subrahmanyam.34@gmail.com"
@@ -110,3 +125,11 @@ bind -M insert -m default j,k cancel repaint-mode
 set -g fish_sequence_key_delay_ms 200
 
 fish_ssh_agent
+
+export PATH="$PATH:/home/greed/.local/bin"
+
+export PATH="$PATH:/home/greed/.local/bin"
+
+export NARGO_HOME="/home/greed/.nargo"
+
+export PATH="$PATH:$NARGO_HOME/bin"

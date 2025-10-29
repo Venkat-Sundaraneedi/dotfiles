@@ -1,10 +1,4 @@
 return {
-  -- inc-rename
-  {
-    "smjonas/inc-rename.nvim",
-    opts = {},
-  },
-
   {
     "stevearc/conform.nvim",
     event = "BufWritePre",
