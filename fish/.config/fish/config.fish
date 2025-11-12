@@ -44,7 +44,7 @@ fish_add_path "$HOME/.foundry/bin"
 
 set -x FOUNDRY_DISABLE_NIGHTLY_WARNING 1
 set -Ux EDITOR nvim
-# set -Ux HELIX_RUNTIME ~/projects/git/helix/runtime/
+
 # Zoxide
 set -gx _ZO_CD zi
 zoxide init --cmd cd fish | source
@@ -59,6 +59,7 @@ alias rmf="rm -rf"
 alias cn="clear && nvim"
 alias cdd="cd .."
 alias lg="lazygit"
+alias ld="lazydocker"
 alias c="clear"
 alias e="exit"
 alias n="nvim"
@@ -80,20 +81,6 @@ alias gs="git status --short"
 function neoup
     asdf uninstall neovim nightly
     asdf install neovim nightly
-end
-
-function mg
-    # echo "Modda gudu Prab athuuuu"
-    echo (set_color cyan)"
-      _________________________
-     < Modda gudu Prab athuuuu! >
-      -------------------------
-             \\
-              \\
-               /\\_/\\
-              ( o.o )
-               > ^ <
-    "(set_color normal)
 end
 
 function gitp
@@ -126,9 +113,6 @@ set -g fish_sequence_key_delay_ms 200
 
 fish_ssh_agent
 
-export PATH="$PATH:/home/greed/.local/bin"
-
-export PATH="$PATH:/home/greed/.local/bin"
 
 export NARGO_HOME="/home/greed/.nargo"
 
