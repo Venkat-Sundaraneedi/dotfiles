@@ -39,7 +39,6 @@ fish_add_path "$HOME/.cargo/bin"
 fish_add_path "$HOME/.avm/bin"
 fish_add_path "$HOME/.local/share/solana/install/active_release/bin/"
 fish_add_path "$HOME/.local/bin"
-fish_add_path "$HOME/.fuelup/bin"
 fish_add_path "$HOME/.foundry/bin"
 
 set -x FOUNDRY_DISABLE_NIGHTLY_WARNING 1
@@ -48,6 +47,7 @@ set -Ux EDITOR nvim
 # Zoxide
 set -gx _ZO_CD zi
 zoxide init --cmd cd fish | source
+mise activate fish | source
 
 # Foundry
 # set -gx fish_user_paths "$HOME/.foundry/bin" $fish_user_paths
