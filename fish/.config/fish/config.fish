@@ -79,8 +79,8 @@ alias gcl="git clone"
 alias gs="git status --short"
 
 function neoup
-    asdf uninstall neovim nightly
-    asdf install neovim nightly
+  mise uninstall asdf:neovim@nightly
+  mise use -g asdf:neovim@nightly
 end
 
 function gitp
@@ -105,7 +105,8 @@ bind --mode default ctrl-j history-search-forward
 # This binds the sequence j,k to switch to normal mode in vi mode.
 # If you kept it like that, every time you press "j",
 # fish would wait for a "k" or other key to disambiguate
-bind -M insert -m default j,k cancel repaint-mode
+bind -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"
+bind -M insert alt-l forward-char
 
 # After setting this, fish only waits 200ms for the "k",
 # or decides to treat the "j" as a separate sequence, inserting it.
