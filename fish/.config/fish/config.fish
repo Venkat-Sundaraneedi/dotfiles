@@ -30,19 +30,14 @@ function fish_add_path --description "Add a path to fish_user_paths if it's not 
     end
 end
 
-fish_add_path "$HOME/.asdf/shims"
-fish_add_path "$HOME/.asdf/downloads"
 fish_add_path "$HOME/.local/share/nvim/mason/bin"
-fish_add_path "$HOME/.cyfrin/bin"
 fish_add_path "$HOME/.bun/bin"
 fish_add_path "$HOME/.cargo/bin"
-fish_add_path "$HOME/.avm/bin"
-fish_add_path "$HOME/.local/share/solana/install/active_release/bin/"
 fish_add_path "$HOME/.local/bin"
-fish_add_path "$HOME/.foundry/bin"
 
 set -x FOUNDRY_DISABLE_NIGHTLY_WARNING 1
 set -Ux EDITOR nvim
+set -Ux NH_FLAKE "/home/greed/mysystem"
 
 # Zoxide
 set -gx _ZO_CD zi
@@ -52,20 +47,22 @@ mise activate fish | source
 # Foundry
 # set -gx fish_user_paths "$HOME/.foundry/bin" $fish_user_paths
 
-alias l="eza -l"
-alias nc="ncspot"
-alias ls="eza -lah --group-directories-first"
+alias l="eza -l --icons"
+alias ls="eza -lah --group-directories-first --icons"
 alias rmf="rm -rf"
 alias cn="clear && nvim"
 alias cdd="cd .."
+alias config="nvim ~/mysystem/nixos/configuration.nix"
 alias lg="lazygit"
 alias ld="lazydocker"
+alias lj="jjui"
 alias c="clear"
 alias e="exit"
 alias n="nvim"
 alias p="poetry"
 alias pya="source .venv/bin/activate.fish"
 alias pyd="deactivate"
+alias dev="nom develop --command fish"
 
 alias ga="git add"
 alias gb="git branch"
@@ -114,7 +111,3 @@ set -g fish_sequence_key_delay_ms 200
 
 fish_ssh_agent
 
-
-export NARGO_HOME="/home/greed/.nargo"
-
-export PATH="$PATH:$NARGO_HOME/bin"

@@ -1,8 +1,11 @@
 require("nvchad.configs.lspconfig").defaults()
 
 vim.lsp.config("rust_analyzer", {})
-vim.lsp.config("denols", {})
-vim.lsp.config("copilot", {})
+vim.lsp.config("nil_ls", {
+  formatting = {
+    command = { "nixfmt" },
+  },
+})
 
-local servers = { "rust_analyzer", "denols", "copilot" }
+local servers = { "rust_analyzer", "nil_ls" }
 vim.lsp.enable(servers)
