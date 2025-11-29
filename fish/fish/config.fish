@@ -43,6 +43,7 @@ set -Ux NH_FLAKE "/home/greed/mysystem"
 set -gx _ZO_CD zi
 zoxide init --cmd cd fish | source
 mise activate fish | source
+direnv hook fish | source
 
 # Foundry
 # set -gx fish_user_paths "$HOME/.foundry/bin" $fish_user_paths
