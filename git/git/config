@@ -1,0 +1,27 @@
+[user]
+  name = Venkat-Sundaraneedi
+  email = venkat.subrahmanyam.34@gmail.com
+
+[core]
+  compression = 9
+  whitespace = error
+  prelodeindex = true
+
+[advice]
+  addEmptyPathspec = false
+  pushNonFastForward = false
+  statusHints = false
+
+[init]
+  defaultBranch = main
+
+[status]
+  branch = true
+  showStash = true
+  ; showUntrackedFiles = all
+
+[pager]
+  diff = diff-so-fancy | $PAGER
+
+[diff-so-fancy]
+  markEmptyLines = false

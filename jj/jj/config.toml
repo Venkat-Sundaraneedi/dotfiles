@@ -1,0 +1,22 @@
+[user]
+name = "0xgsvs"
+email = "local"
+
+[ui]
+pager = ":builtin"
+paginate = "auto"
+editor = "nvim"
+
+# Builtin formats: ":color-words" (default), ":git",
+#                  ":summary", ":stat", ":types", ":name-only"
+# diff-formatter = ":color-words"
+diff-formatter = ["difft", "--color=always", "$left", "$right"]
+diff-editor = ":builtin"
+merge-editor = ":builtin"
+
+[diff.color-words]
+max-inline-alternation = 3
+context = 3
+
+[diff.git]
+context = 3
