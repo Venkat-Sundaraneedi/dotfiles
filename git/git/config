@@ -20,8 +20,5 @@
   showStash = true
   ; showUntrackedFiles = all
 
-[pager]
-  diff = diff-so-fancy | $PAGER
-
-[diff-so-fancy]
-  markEmptyLines = false
+[diff]
+	external = difft

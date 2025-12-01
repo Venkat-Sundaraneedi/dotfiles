@@ -7,10 +7,10 @@ function rebuild
     nvim nixos/configuration.nix
     
     # Format all nix files
-    nixfmt nixos/*.nix 2>/dev/null
+    alejandra nixos/*.nix 2>/dev/null
     
     # Show what changed
-    git diff -U0 nixos/*.nix
+    git diff nixos/*.nix
     
     # Rebuild NixOS
     echo "NixOS Rebuilding..."
@@ -20,25 +20,22 @@ function rebuild
         set -l gen_date (date '+%Y-%m-%d %H:%M:%S')
         
         # Create commit message
+        set -l commit_msg "NixOS rebuild on $gen_date"
         if test -n "$gen_info"
-            set -l commit_msg "NixOS: $gen_info"
-        else
-            set -l commit_msg "NixOS rebuild on $gen_date"
+            set commit_msg "$commit_msg - $gen_info"
         end
         
         # Commit changes
         git add -A
-        
-        # Prompt user before committing (in case SSH passphrase is needed)
-        echo ""
-        echo "Commit message: $commit_msg"
-        read -P "Commit changes? (y/n): " -n 1 commit_choice
-        
-        if test "$commit_choice" = "y"
-            git commit -m "$commit_msg"
+        if git commit -m "$commit_msg"
             echo "✓ Changes committed!"
+            if git push
+                echo "✓ Changes pushed!"
+            else
+                echo "Failed to push"
+            end
         else
-            echo "Skipping commit"
+            echo "Commit failed"
         end
         
         echo "✓ Rebuild successful!"

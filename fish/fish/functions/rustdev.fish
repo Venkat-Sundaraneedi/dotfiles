@@ -25,12 +25,10 @@ function rustdev
     # Initialize nix flake
     echo "Initializing Nix flake with Rust template..."
     nix flake init -t templates#rust; or return 1
-    touch mise.toml; or return 1
     
     # Create .envrc for direnv
     echo "Creating .envrc for direnv..."
-    echo 'export _nix_direnv_nix="$(which nom)"' > .envrc
-    echo 'use flake' >> .envrc
+    echo 'use_flake' >> .envrc
     
     # Allow direnv first so we get access to cargo and other tools
     echo "Allowing direnv for this directory..."
@@ -48,6 +46,7 @@ function rustdev
     echo '.direnv/' >> .gitignore
     echo '.envrc' >> .gitignore
     
+    cargo build; or return 1
     # Initialize jujutsu
     echo "Initializing Jujutsu repository..."
     jj git init; or return 1
