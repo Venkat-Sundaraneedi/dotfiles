@@ -48,8 +48,8 @@ direnv hook fish | source
 # Foundry
 # set -gx fish_user_paths "$HOME/.foundry/bin" $fish_user_paths
 
-alias l="eza -l --icons"
-alias ls="eza -lah --group-directories-first --icons"
+alias l="eza -lah --group-directories-first --icons"
+alias ls="eza -lah --group-directories-first --icons --tree --level=2 --git-ignore"
 alias rmf="rm -rf"
 alias cn="clear && nvim"
 alias cdd="cd .."
