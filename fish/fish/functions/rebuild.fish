@@ -2,6 +2,7 @@ function rebuild
     # Save current directory and change to config location
     set -l prev_dir (pwd)
     cd ~/mysystem
+    nix flake update
     
     # Edit configuration
     nvim nixos/configuration.nix
@@ -25,17 +26,23 @@ function rebuild
             set commit_msg "$commit_msg - $gen_info"
         end
         
-        # Commit changes
-        git add -A
-        if git commit -m "$commit_msg"
-            echo "✓ Changes committed!"
-            if git push
-                echo "✓ Changes pushed!"
+        # Ask user if proceed with commit and push
+        read -P "Proceed with commit and push? (Y/n): " choice
+        if test "$choice" != "n" -a "$choice" != "N"
+            # Commit changes
+            git add -A
+            if git commit -m "$commit_msg"
+                echo "✓ Changes committed!"
+                if git push
+                    echo "✓ Changes pushed!"
+                else
+                    echo "Failed to push"
+                end
             else
-                echo "Failed to push"
+                echo "Commit failed"
             end
         else
-            echo "Commit failed"
+            echo "Skipping commit and push"
         end
         
         echo "✓ Rebuild successful!"
