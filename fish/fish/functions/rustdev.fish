@@ -25,6 +25,7 @@ function rustdev
     # Initialize nix flake
     echo "Initializing Nix flake with Rust template..."
     nix flake init -t templates#rust; or return 1
+    touch mise.toml; or return 1
     
     # Create .envrc for direnv
     echo "Creating .envrc for direnv..."
