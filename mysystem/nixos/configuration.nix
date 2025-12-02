@@ -59,8 +59,9 @@
   };
 
   services.displayManager = {
-    # gdm.enable = true;
-    cosmic-greeter.enable = true;
+    gdm.enable = true;
+    # cosmic-greeter.enable = true; # throwing me into tty after authentication
+    # defaultSession = "cosmic";
   };
   services.desktopManager = {
     # gnome.enable = true;
