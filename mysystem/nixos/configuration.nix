@@ -117,7 +117,7 @@
   # ============================================================================
 
   services = {
-    printing.enable = true;
+    # printing.enable = true;
     flatpak.enable = true;
     fwupd.enable = true;
     openssh.enable = true;
