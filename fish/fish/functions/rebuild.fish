@@ -1,7 +1,7 @@
 function rebuild
     # Save current directory and change to config location
     set -l prev_dir (pwd)
-    cd ~/mysystem
+    cd ~/git/dotfiles/mysystem/
     nix flake update
     
     # Edit configuration
