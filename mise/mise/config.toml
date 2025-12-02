@@ -1,5 +1,5 @@
 [tools]
-"asdf:neovim" = "stable"
+"asdf:neovim" = "nightly"
 atuin = "18.10.0"
 difftastic = "0.67.0"
 docker-cli = "29.0.0"

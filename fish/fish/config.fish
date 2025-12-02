@@ -53,10 +53,9 @@ zoxide init --cmd cd fish | source
 # Foundry
 # set -gx fish_user_paths "$HOME/.foundry/bin" $fish_user_paths
 
-alias l="eza -l --icons"
+alias l='eza -l --icons --group-directories-first '
 alias nc="ncspot"
-alias ls="eza -lah --group-directories-first --icons"
-alias lt='eza --icons --group-directories-first --tree --level=2'
+alias ls='eza --icons --group-directories-first --tree --level=2'
 alias rmf="rm -rf"
 alias cn="clear && nvim"
 alias cdd="cd .."
