@@ -265,7 +265,7 @@
       };
       to = {
         type = "path";
-        path = "/home/greed/mysystem/nixos/nixos-templates/";
+        path = "/home/greed/git/dotfiles/mysystem/nixos/nixos-templates/";
       };
     };
 

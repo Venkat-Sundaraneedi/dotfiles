@@ -13,6 +13,7 @@ editor = "nvim"
 diff-formatter = ["difft", "--color=always", "$left", "$right"]
 diff-editor = ":builtin"
 merge-editor = ":builtin"
+default-command = "log"
 
 [diff.color-words]
 max-inline-alternation = 3

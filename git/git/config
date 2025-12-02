@@ -22,3 +22,5 @@
 
 [diff]
 	external = difft
+[coderabbit]
+	machineId = cli/4a27865db3074b0caec7b6ff945358a0
