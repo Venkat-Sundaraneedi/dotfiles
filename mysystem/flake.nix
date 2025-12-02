@@ -7,15 +7,24 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    opencode = {
+      url = "github:sst/opencode";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # ============================================================================
   # OUTPUTS
   # ============================================================================
 
-  outputs = {nixpkgs, ...} @ inputs: {
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  } @ inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
+      # specialArgs.inputs = inputs;
       modules = [
         # Core configuration
         ./nixos/configuration.nix

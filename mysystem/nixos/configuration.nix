@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [./hardware-configuration.nix];
 
   # ============================================================================
@@ -162,7 +166,8 @@
     # CLI - Search & Text Processing
     fzf
     jq
-    opencode
+    # opencode
+    inputs.opencode.packages.x86_64-linux.default
 
     # CLI - File Operations
     unzip

@@ -37,7 +37,7 @@ fish_add_path "$HOME/.local/bin"
 
 set -x FOUNDRY_DISABLE_NIGHTLY_WARNING 1
 set -Ux EDITOR nvim
-set -Ux NH_FLAKE "/home/greed/mysystem"
+set -Ux NH_FLAKE "/home/greed/git/dotfiles/mysystem/"
 
 # Zoxide
 set -gx _ZO_CD zi
@@ -55,7 +55,6 @@ alias rmf="rm -rf"
 alias srmf="sudo rm -rf"
 alias cn="clear && nvim"
 alias cdd="cd .."
-alias config="nvim ~/mysystem/nixos/configuration.nix"
 alias lg="lazygit"
 alias ld="lazydocker"
 alias lj="jjui"
