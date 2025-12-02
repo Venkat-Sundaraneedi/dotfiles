@@ -7,10 +7,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    opencode = {
-      url = "github:sst/opencode";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   # ============================================================================
