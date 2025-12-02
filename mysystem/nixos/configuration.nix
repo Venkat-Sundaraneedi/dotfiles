@@ -58,7 +58,10 @@
     xkb.layout = "us";
   };
 
-  services.displayManager.gdm.enable = true;
+  services.displayManager = {
+    # gdm.enable = true;
+    cosmic-greeter.enable = true;
+  };
   services.desktopManager = {
     # gnome.enable = true;
     cosmic.enable = true;
