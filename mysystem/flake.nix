@@ -26,7 +26,7 @@
         ./nixos/configuration.nix
 
         # Hardware & drivers
-        ./nixos/modules/nvidia.nix
+        # ./nixos/modules/nvidia.nix
 
         # Services
         ./nixos/modules/docker.nix

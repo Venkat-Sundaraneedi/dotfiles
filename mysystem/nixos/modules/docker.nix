@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  hardware.nvidia-container-toolkit.enable = true;
+  # hardware.nvidia-container-toolkit.enable = true;
   # Enable Docker
   virtualisation.docker = {
     enable = true;
