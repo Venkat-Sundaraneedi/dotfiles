@@ -65,7 +65,10 @@
   };
   services.system76-scheduler.enable = true;
   environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = 1;
-
+  environment.cosmic.excludePackages = with pkgs; [
+    cosmic-edit
+    cosmic-term
+  ];
   nixpkgs.overlays = [
     (final: prev: {
       inherit
