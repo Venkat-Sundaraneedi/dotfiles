@@ -29,6 +29,8 @@ require("lazy").setup({
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
 
+-- " catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
+-- vim.cmd.colorscheme "catppuccin-frappe"
 require "options"
 require "autocmds"
 

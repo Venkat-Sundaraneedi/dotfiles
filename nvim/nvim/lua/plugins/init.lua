@@ -26,4 +26,6 @@ return {
       return require "configs.blink"
     end,
   },
+  { "catppuccin/nvim", name = "catppuccin" },
+
 }
