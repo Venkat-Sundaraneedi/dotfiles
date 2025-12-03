@@ -25,6 +25,5 @@ return {
     opts = function()
       return require "configs.blink"
     end,
-    opts_extend = { "sources.default" },
   },
 }
