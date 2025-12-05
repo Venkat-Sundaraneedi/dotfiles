@@ -14,10 +14,7 @@ keybinds clear-defaults=true {
         bind "Ctrl j" { MoveFocus "down"; }
         bind "Ctrl k" { MoveFocus "up"; }
         bind "Ctrl l" { MoveFocus "right"; }
-        // bind "Ctrl n" { NewPane; }
         bind "Ctrl o" { GoToNextTab; }
-        // bind "Ctrl p" { TogglePanePinned; SwitchToMode "locked"; }
-        // bind "Alt t" { ToggleFloatingPanes; }
     }
     pane {
         bind "left" { MoveFocus "left"; }
