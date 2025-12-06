@@ -161,6 +161,7 @@
   environment.systemPackages = with pkgs; [
     # Development - Languages & Runtimes
     nodejs_24
+    lua-language-server
     lua51Packages.lua
     luajitPackages.luarocks_bootstrap
 
