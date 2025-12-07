@@ -77,6 +77,11 @@ alias gi="git init"
 alias gcl="git clone"
 alias gs="git status --short"
 
+function stdrs
+   cd (rustc --print sysroot)/lib/rustlib/src/rust/library/
+   nvim
+end
+
 function neoup
   mise uninstall asdf:neovim@nightly
   mise use -g asdf:neovim@nightly

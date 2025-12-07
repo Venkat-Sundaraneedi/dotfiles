@@ -219,6 +219,7 @@
 
     mise
     usage
+    yazi
 
     #LSP's
     nil
