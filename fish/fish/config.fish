@@ -21,14 +21,6 @@ if not set -q ZELLIJ
     zellij
 end
 
-# ~/.config/fish/functions/fish_add_path.fish
-function fish_add_path --description "Add a path to fish_user_paths if it's not already there"
-    for p in $argv
-        if not contains $p $fish_user_paths
-            set -U fish_user_paths $fish_user_paths $p
-        end
-    end
-end
 
 fish_add_path "$HOME/.local/share/nvim/mason/bin"
 fish_add_path "$HOME/.bun/bin"
@@ -36,7 +28,8 @@ fish_add_path "$HOME/.cargo/bin"
 fish_add_path "$HOME/.local/bin"
 
 set -x FOUNDRY_DISABLE_NIGHTLY_WARNING 1
-set -Ux EDITOR nvim
+set -gx EDITOR nvim
+set -gx VISUAL nvim
 set -Ux NH_FLAKE "/home/greed/git/dotfiles/mysystem/"
 
 # Zoxide
@@ -77,9 +70,13 @@ alias gi="git init"
 alias gcl="git clone"
 alias gs="git status --short"
 
-function stdrs
-   cd (rustc --print sysroot)/lib/rustlib/src/rust/library/
-   nvim
+function y
+	set tmp (mktemp -t "yazi-cwd.XXXXXX")
+	yazi $argv --cwd-file="$tmp"
+	if read -z cwd < "$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+		builtin cd -- "$cwd"
+	end
+	rm -f -- "$tmp"
 end
 
 function neoup

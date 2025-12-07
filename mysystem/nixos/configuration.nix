@@ -219,7 +219,9 @@
 
     mise
     usage
-    yazi
+    poppler
+    resvg
+    imagemagick
 
     #LSP's
     nil
@@ -263,6 +265,16 @@
     #   enable = true;
     #   binfmt = true;
     # };
+
+    yazi = {
+      enable = true;
+    };
+
+    tmux = {
+      enable = true;
+      keyMode = "vi";
+      plugins = [];
+    };
 
     fish = {
       enable = true;
