@@ -18,19 +18,6 @@ return {
   },
 
   {
-    "saghen/blink.cmp",
-    version = "1.*",
-    event = { "InsertEnter", "CmdLineEnter" },
-    dependencies = {
-      "rafamadriz/friendly-snippets",
-    },
-    opts = function()
-      return require "configs.blink"
-    end,
-    -- opts_extend = { "sources.default" },
-  },
-
-  {
     "nvim-treesitter/nvim-treesitter-textobjects",
     branch = "main",
     lazy = false,
