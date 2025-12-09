@@ -17,7 +17,7 @@ keybinds clear-defaults=true {
         // bind "Ctrl n" { NewPane; }
         bind "Ctrl o" { GoToNextTab; }
         // bind "Ctrl p" { TogglePanePinned; SwitchToMode "locked"; }
-        // bind "Alt t" { ToggleFloatingPanes; }
+        bind "Alt t" { ToggleFloatingPanes; }
     }
     pane {
         bind "left" { MoveFocus "left"; }
@@ -360,7 +360,7 @@ copy_on_select true
 
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL
-scrollback_editor "/home/codezeros/.local/share/mise/installs/asdf-neovim/stable/bin/nvim"
+scrollback_editor "/home/codezeros/.local/share/mise/installs/asdf-neovim/nightly/bin/nvim"
 
 // A fixed name to always give the Zellij session.
 // Consider also setting `attach_to_session true,`

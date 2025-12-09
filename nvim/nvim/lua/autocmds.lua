@@ -32,6 +32,7 @@ vim.filetype.add {
   extension = {
     sw = "sway",
     move = "move",
+    log = "log",
   },
   filename = {
     ["Forc.toml"] = "toml", -- For Fuel project config files

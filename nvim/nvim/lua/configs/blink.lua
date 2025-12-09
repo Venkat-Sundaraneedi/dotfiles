@@ -17,13 +17,6 @@ local opts = {
     },
   },
 
-  accept = { auto_brackets = { enabled = true } },
-  -- list = {
-  --   selection = {
-  --     preselect = true,
-  --     auto_insert = true,
-  --   },
-  -- },
   signature = { enabled = true, window = { border = "single", show_documentation = false } },
   sources = { default = { "lsp", "snippets", "buffer", "path" } },
 
@@ -47,6 +40,13 @@ local opts = {
       window = { border = "single" },
     },
 
+    accept = { auto_brackets = { enabled = true } },
+    list = {
+      selection = {
+        preselect = true,
+        auto_insert = true,
+      },
+    },
     menu = require("nvchad.blink").menu,
   },
 }

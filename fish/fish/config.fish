@@ -24,15 +24,6 @@ if status is-interactive; and not set -q ZELLIJ
     end
 end
 
-# ~/.config/fish/functions/fish_add_path.fish
-function fish_add_path --description "Add a path to fish_user_paths if it's not already there"
-    for p in $argv
-        if not contains $p $fish_user_paths
-            set -U fish_user_paths $fish_user_paths $p
-        end
-    end
-end
-
 fish_add_path "$HOME/.local/share/nvim/mason/bin"
 fish_add_path "$HOME/.cyfrin/bin"
 fish_add_path "$HOME/.bun/bin"
@@ -79,6 +70,13 @@ alias gu="git pull"
 alias gi="git init"
 alias gcl="git clone"
 alias gs="git status --short"
+
+ function stdrs
+   set -l original_dir (pwd)
+   cd (rustc --print sysroot)/lib/rustlib/src/rust/library/core/src
+   nvim
+   cd $original_dir
+ end
 
 function neoup
   mise uninstall asdf:neovim@nightly
