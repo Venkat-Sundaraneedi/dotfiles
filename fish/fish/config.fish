@@ -34,7 +34,8 @@ fish_add_path "$HOME/.local/bin"
 fish_add_path "$HOME/.fuelup/bin"
 fish_add_path "$HOME/.foundry/bin"
 
-set -Ux EDITOR nvim
+set -gx EDITOR nvim
+set -gx VISUAL nvim
 # set -Ux HELIX_RUNTIME ~/projects/git/helix/runtime/
 # Zoxide
 set -gx _ZO_CD zi
