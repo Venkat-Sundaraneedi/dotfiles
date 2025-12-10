@@ -4,7 +4,7 @@ local options = {
     javascript = { "biome" },
     json = { "biome" },
     typescript = { "biome" },
-    move = { "movefmt" },
+    -- move = { "movefmt" },
   },
 
   formatters = {
