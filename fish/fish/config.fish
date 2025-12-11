@@ -21,7 +21,7 @@ if not set -q ZELLIJ
     zellij
 end
 
-
+fish_add_path "$HOME/.local/share/solana/install/active_release/bin"
 fish_add_path "$HOME/.local/share/nvim/mason/bin"
 fish_add_path "$HOME/.bun/bin"
 fish_add_path "$HOME/.cargo/bin"
