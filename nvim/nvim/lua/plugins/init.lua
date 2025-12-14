@@ -16,4 +16,9 @@ return {
   },
 
   { "catppuccin/nvim", name = "catppuccin" },
+
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
 }

@@ -138,6 +138,9 @@
   # ============================================================================
 
   fonts.fontconfig.enable = true;
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+  ];
 
   # ============================================================================
   # USERS
@@ -167,6 +170,7 @@
 
     # Development - Version Control
     git
+    nix-prefetch-github
     difftastic
     lazygit
     jujutsu
@@ -191,6 +195,10 @@
     fzf
     jq
     opencode
+    spotdl
+    spotify
+    rmpc
+    mpd
 
     # CLI - File Operations
     unzip
