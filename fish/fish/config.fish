@@ -17,9 +17,9 @@ if status is-interactive
 end
 
 # Automatically start Zellij if not already inside Zellij
-# if not set -q ZELLIJ
-#     zellij
-# end
+if not set -q ZELLIJ
+    zellij
+end
 
 fish_add_path "$HOME/.local/share/solana/install/active_release/bin"
 fish_add_path "$HOME/.local/share/nvim/mason/bin"

@@ -8,8 +8,10 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     loader = {
-      systemd-boot = {
+      grub = {
         enable = true;
+        devices = ["nodev"];
+        efiSupport = true;
         configurationLimit = 5;
       };
       efi.canTouchEfiVariables = true;
