@@ -15,6 +15,7 @@ keybinds clear-defaults=true {
         bind "Ctrl k" { MoveFocus "up"; }
         bind "Ctrl l" { MoveFocus "right"; }
         bind "Ctrl o" { GoToNextTab; }
+        bind "Alt t" { ToggleFloatingPanes;}
     }
     pane {
         bind "left" { MoveFocus "left"; }

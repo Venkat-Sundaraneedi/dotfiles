@@ -172,6 +172,7 @@
 
     # Development - Version Control
     git
+    gh
     nix-prefetch-github
     difftastic
     lazygit
@@ -184,6 +185,8 @@
     # Terminal & Multiplexers
     ghostty
     zellij
+    resonance
+    amberol
 
     # CLI - Modern Alternatives
     eza # ls replacement
@@ -257,6 +260,10 @@
       #   gcc gnumake pkg-config stdenv.cc.cc
       #   zlib openssl openssl.dev
       # ];
+    };
+
+    niri = {
+      enable = true;
     };
 
     direnv = {
