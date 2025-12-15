@@ -183,6 +183,8 @@
     repomix
 
     # Terminal & Multiplexers
+    fuzzel
+    swaylock
     ghostty
     zellij
     resonance
