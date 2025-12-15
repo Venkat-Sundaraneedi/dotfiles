@@ -7,18 +7,20 @@
 )
 
 (defsrc
-  s d f o l ;
+  w s d f i o l ;
 )
 
 (defalias
+  w (tap-hold 200 w lmet)
   s (tap-hold 200 s lctl)
   d (tap-hold 200 d lalt)
   f (tap-hold 200 f lsft)
+  i (tap-hold 200 i lmet)
   o (tap-hold 200 o lctl)
   l (tap-hold 200 l lalt)
   semicolon (tap-hold 200 ; lsft)
 )
 
 (deflayer base
-  @s @d @f @o @l @semicolon
+  @w @s @d @f @i @o @l @semicolon
 )

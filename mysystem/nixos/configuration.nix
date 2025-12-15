@@ -184,10 +184,11 @@
 
     # Terminal & Multiplexers
     fuzzel
+    waybar
+    swaybg
     swaylock
     ghostty
     zellij
-    resonance
     amberol
 
     # CLI - Modern Alternatives
