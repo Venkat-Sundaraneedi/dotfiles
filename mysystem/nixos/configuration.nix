@@ -23,8 +23,9 @@
   # ============================================================================
 
   networking = {
+    wireless.iwd.enable = true;
     hostName = "nixos";
-    networkmanager.enable = true;
+    networkmanager.enable = false;
     firewall.enable = true;
     # firewall.allowedTCPPorts = [ ];
     # firewall.allowedUDPPorts = [ ];
@@ -62,11 +63,8 @@
 
   services.displayManager = {
     gdm.enable = true;
-    # cosmic-greeter.enable = true; # throwing me into tty after authentication
-    # defaultSession = "cosmic";
   };
   services.desktopManager = {
-    # gnome.enable = true;
     cosmic.enable = true;
   };
   services.system76-scheduler.enable = true;
@@ -170,7 +168,8 @@
     lua51Packages.lua
     luajitPackages.luarocks_bootstrap
 
-    solana-cli
+    # solana-cli
+    bluetui
 
     # Development - Version Control
     git
@@ -186,12 +185,10 @@
 
     # Terminal & Multiplexers
     fuzzel
-    waybar
     swaybg
     swaylock
     ghostty
     zellij
-    amberol
 
     # CLI - Modern Alternatives
     eza # ls replacement
@@ -303,6 +300,7 @@
       useBabelfish = true;
       shellAliases = {
         devshell = "nix shell nixpkgs#glib nixpkgs#openssl nixpkgs#gcc nixpkgs#gnumake nixpkgs#pkg-config nixpkgs#stdenv.cc.cc nixpkgs#zlib nixpkgs#openssl.dev";
+        wifi = "impala";
       };
     };
 
