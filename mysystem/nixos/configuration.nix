@@ -170,6 +170,8 @@
     lua51Packages.lua
     luajitPackages.luarocks_bootstrap
 
+    solana-cli
+
     # Development - Version Control
     git
     gh
