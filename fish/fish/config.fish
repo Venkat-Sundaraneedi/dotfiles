@@ -31,6 +31,7 @@ set -x FOUNDRY_DISABLE_NIGHTLY_WARNING 1
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 set -Ux NH_FLAKE "/home/greed/git/dotfiles/mysystem/"
+set -gx GPG_TTY (tty)
 
 # Zoxide
 set -gx _ZO_CD zi

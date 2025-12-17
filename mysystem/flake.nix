@@ -20,7 +20,6 @@
   } @ inputs: {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
-      # specialArgs.inputs = inputs;
       modules = [
         # Core configuration
         ./nixos/configuration.nix

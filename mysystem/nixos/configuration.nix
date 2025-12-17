@@ -171,14 +171,16 @@
     # solana-cli
     bluetui
 
-    neomutt
-    mutt-wizard
+    aerc
+    notmuch
+    lynx
     isync
     msmtp
     pass
     gettext
     gpg-tui
     tldr
+    ggshield
 
     # Development - Version Control
     git
@@ -316,6 +318,7 @@
 
     gnupg.agent = {
       enable = true;
+      pinentryPackage = pkgs.pinentry-curses;
       enableSSHSupport = true;
     };
   };
