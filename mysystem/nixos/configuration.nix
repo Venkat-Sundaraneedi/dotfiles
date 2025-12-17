@@ -171,6 +171,15 @@
     # solana-cli
     bluetui
 
+    neomutt
+    mutt-wizard
+    isync
+    msmtp
+    pass
+    gettext
+    gpg-tui
+    tldr
+
     # Development - Version Control
     git
     gh
@@ -300,7 +309,6 @@
       useBabelfish = true;
       shellAliases = {
         devshell = "nix shell nixpkgs#glib nixpkgs#openssl nixpkgs#gcc nixpkgs#gnumake nixpkgs#pkg-config nixpkgs#stdenv.cc.cc nixpkgs#zlib nixpkgs#openssl.dev";
-        wifi = "impala";
       };
     };
 
