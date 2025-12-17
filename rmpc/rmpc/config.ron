@@ -4,6 +4,7 @@
     password: None,
     theme: None,
     cache_dir: None,
+    //cache_dir: "~/.cache/rmpc/",
     on_song_change: None,
     volume_step: 5,
     max_fps: 30,

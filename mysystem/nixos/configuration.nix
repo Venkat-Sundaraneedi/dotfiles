@@ -65,14 +65,14 @@
     gdm.enable = true;
   };
   services.desktopManager = {
-    cosmic.enable = true;
+    cosmic.enable = false;
   };
-  services.system76-scheduler.enable = true;
-  environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = 1;
-  environment.cosmic.excludePackages = with pkgs; [
-    cosmic-edit
-    cosmic-term
-  ];
+  services.system76-scheduler.enable = false;
+  # environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = 1;
+  # environment.cosmic.excludePackages = with pkgs; [
+  #   cosmic-edit
+  #   cosmic-term
+  # ];
   nixpkgs.overlays = [
     (final: prev: {
       inherit
@@ -91,6 +91,7 @@
   # AUDIO
   # ============================================================================
 
+  hardware.bluetooth.enable = true;
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
 
@@ -171,6 +172,7 @@
     # solana-cli
     bluetui
 
+    siyuan
     aerc
     notmuch
     lynx
@@ -181,6 +183,7 @@
     gpg-tui
     tldr
     ggshield
+    brightnessctl
 
     # Development - Version Control
     git
@@ -295,16 +298,6 @@
     #   enable = true;
     #   binfmt = true;
     # };
-
-    yazi = {
-      enable = true;
-    };
-
-    tmux = {
-      enable = true;
-      keyMode = "vi";
-      plugins = [];
-    };
 
     fish = {
       enable = true;

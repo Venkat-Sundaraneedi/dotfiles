@@ -190,27 +190,6 @@ layout {
 // spawn-at-startup "waybar"
 spawn-sh-at-startup "swaybg -i ~/Pictures/retro.png"
 
-// Define named workspaces to enable open-on-workspace rules for numbered workspaces.
-workspace "1"
-workspace "2"
-// Spawn applications on startup.
-spawn-at-startup "ghostty"
-spawn-at-startup "ghostty" "-e" "rmpc"
-spawn-at-startup "brave"
-// Assign windows to workspaces on startup.
-window-rule {
-    match app-id="ghostty"
-    open-on-workspace "1"
-}
-window-rule {
-    match app-id="ghostty" title=r#"rmpc"#
-    open-on-workspace "1"
-}
-window-rule {
-    match app-id="brave-browser"
-    open-on-workspace "2"
-}
-
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
