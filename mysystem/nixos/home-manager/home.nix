@@ -76,7 +76,9 @@
 
     # Media & Entertainment
     rmpc
+    mpd
     spotdl
+    recordbox
 
     # Other CLI
     brightnessctl
@@ -150,11 +152,6 @@
   };
 
   services = {
-    mpd = {
-      enable = true;
-      musicDirectory = "/home/greed/Music/";
-      playlistDirectory = "/home/greed/Music/Playlists/";
-    };
   };
 
   # Let Home Manager install and manage itself.
