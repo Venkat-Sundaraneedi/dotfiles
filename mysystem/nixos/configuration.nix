@@ -66,10 +66,6 @@
   services.displayManager = {
     gdm.enable = true;
   };
-  services.desktopManager = {
-    cosmic.enable = false;
-  };
-  services.system76-scheduler.enable = false;
   nixpkgs.overlays = [
     (final: prev: {
       inherit

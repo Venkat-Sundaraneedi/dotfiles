@@ -120,7 +120,9 @@
     brave
     discord
     siyuan
+
     atac
+    wiremix
 
     # Terminal & Multiplexers
     fuzzel
