@@ -24,9 +24,6 @@
         # Core configuration
         ./nixos/configuration.nix
 
-        # Hardware & drivers
-        # ./nixos/modules/nvidia.nix
-
         # Services
         ./nixos/modules/docker.nix
       ];

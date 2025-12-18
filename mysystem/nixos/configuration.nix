@@ -68,11 +68,6 @@
     cosmic.enable = false;
   };
   services.system76-scheduler.enable = false;
-  # environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = 1;
-  # environment.cosmic.excludePackages = with pkgs; [
-  #   cosmic-edit
-  #   cosmic-term
-  # ];
   nixpkgs.overlays = [
     (final: prev: {
       inherit
@@ -291,14 +286,7 @@
   # └─────────────────────────────────────┘
 
   programs = {
-    nix-ld = {
-      enable = true;
-      # libraries = with pkgs; [
-      #   gcc gnumake pkg-config stdenv.cc.cc
-      #   zlib openssl openssl.dev
-      # ];
-    };
-
+    nix-ld = {enable = true;};
     niri = {
       enable = true;
     };
