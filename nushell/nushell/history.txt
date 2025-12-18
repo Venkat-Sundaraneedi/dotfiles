@@ -1,0 +1,31 @@
+c
+clear
+l
+c
+clear
+ls
+cd conf
+cd 
+cd .config/
+c
+clear
+l
+ls
+cd nushell
+clear
+l
+ls
+clear
+ls
+nvim config.nu
+config nu --doc | nu-highlight | less -R
+config nu
+c
+clear
+ls
+clear
+ls
+exit
+clear
+ls
+exit

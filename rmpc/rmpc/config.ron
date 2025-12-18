@@ -3,8 +3,8 @@
     address: "127.0.0.1:6600",
     password: None,
     theme: None,
-    cache_dir: None,
-    //cache_dir: "~/.cache/rmpc/",
+    //cache_dir: None,
+    cache_dir: "~/.cache/rmpc/",
     on_song_change: None,
     volume_step: 5,
     max_fps: 30,
@@ -195,9 +195,9 @@
        //    name: "Playlists",
        //    pane: Pane(Playlists),
        //),
-       (
-           name: "Search",
-           pane: Pane(Search),
-       ),
+       //(
+       //    name: "Search",
+       //    pane: Pane(Search),
+       //),
     ],
 )

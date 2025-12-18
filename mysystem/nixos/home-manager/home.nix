@@ -149,6 +149,9 @@
     neovim = {
       enable = true;
     };
+    nushell = {
+      enable = true;
+    };
   };
 
   services = {
