@@ -128,6 +128,7 @@
 
     # Containers
     lazydocker
+    qbittorrent
 
     # Commented Out
     # solana-cli

@@ -104,7 +104,7 @@ layout {
     focus-ring {
         // Uncomment this line to disable the focus ring.
         off
-        width 1
+        width 0
         active-color "#7fc8ff"
         inactive-color "#505050"
     }
