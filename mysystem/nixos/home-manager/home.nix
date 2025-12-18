@@ -75,7 +75,6 @@
     pass
 
     # Media & Entertainment
-    # mpd
     rmpc
     spotdl
 
@@ -144,6 +143,9 @@
   };
 
   programs = {
+    neovim = {
+      enable = true;
+    };
   };
 
   services = {

@@ -160,10 +160,6 @@
   # └─────────────────────────────────────┘
 
   environment.systemPackages = with pkgs; [
-    # ┌─────────────────────────────────────┐
-    # │         DEVELOPMENT TOOLS           │
-    # └─────────────────────────────────────┘
-
     home-manager
     git
     curl
@@ -174,6 +170,7 @@
     wl-clipboard
     brave
     ghostty
+    neovim
   ];
 
   # ┌─────────────────────────────────────┐
@@ -182,10 +179,6 @@
 
   programs = {
     nix-ld = {enable = true;};
-
-    neovim = {
-      enable = true;
-    };
     niri = {
       enable = true;
     };
