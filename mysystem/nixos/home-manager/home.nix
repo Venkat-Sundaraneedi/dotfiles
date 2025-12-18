@@ -139,6 +139,9 @@
   home.file = {
   };
 
+  programs = {
+  };
+
   home.sessionVariables = {
     EDITOR = "nvim";
   };
