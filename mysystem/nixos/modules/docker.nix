@@ -12,6 +12,5 @@
     };
   };
 
-  # Docker Compose (v2, plugin-based)
   environment.systemPackages = with pkgs; [docker-compose];
 }

@@ -89,9 +89,9 @@
   # └─────────────────────────────────────┘
 
   hardware.bluetooth.enable = true;
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
 
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     alsa = {
@@ -99,7 +99,6 @@
       support32Bit = true;
     };
     pulse.enable = true;
-    # jack.enable = true;
   };
 
   # ┌─────────────────────────────────────┐
@@ -117,7 +116,6 @@
   # └─────────────────────────────────────┘
 
   services = {
-    # printing.enable = true;
     flatpak.enable = true;
     fwupd.enable = true;
     openssh.enable = true;
