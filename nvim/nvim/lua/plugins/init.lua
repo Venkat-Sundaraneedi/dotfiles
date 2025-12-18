@@ -17,8 +17,5 @@ return {
 
   { "catppuccin/nvim", name = "catppuccin" },
 
-  {
-    "christoomey/vim-tmux-navigator",
-    lazy = false,
-  },
+  { "nvim-mini/mini.surround", version = false, lazy = false },
 }
