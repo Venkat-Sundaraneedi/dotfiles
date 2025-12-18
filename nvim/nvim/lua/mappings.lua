@@ -6,8 +6,13 @@ local map = vim.keymap.set
 
 -- map("n", ";", ":", { desc = "CMD enter command mode" })
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+--
 
-map("n", "<C-h>", "<cmd>TmuxNavigateLeft<CR>", { desc = "window left" })
-map("n", "<C-l>", "<cmd>TmuxNavigateRight<CR>", { desc = "window right" })
-map("n", "<C-j>", "<cmd>TmuxNavigateDown<CR>", { desc = "window down" })
-map("n", "<C-k>", "<cmd>TmuxNavigateUp<CR>", { desc = "window up" })
+vim.api.nvim_create_autocmd("User", {
+  pattern = "VeryLazy",
+  callback = function()
+    vim.keymap.set({ "n", "x", "o" }, "f", function()
+      require("flash").jump()
+    end, { desc = "Flash Jump" })
+  end,
+})

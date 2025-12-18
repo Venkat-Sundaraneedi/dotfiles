@@ -17,5 +17,12 @@ return {
 
   { "catppuccin/nvim", name = "catppuccin" },
 
-  { "nvim-mini/mini.surround", version = false, lazy = false },
+  {
+    "nvim-mini/mini.surround",
+    version = false,
+    lazy = false,
+    config = function()
+      require("mini.surround").setup()
+    end,
+  },
 }
