@@ -39,6 +39,8 @@
 
   i18n = {
     defaultLocale = "en_IN";
+    defaultCharset = "UTF-8";
+    extraLocales = ["en_IN/UTF-8"];
     extraLocaleSettings = {
       LC_ADDRESS = "en_IN";
       LC_IDENTIFICATION = "en_IN";
