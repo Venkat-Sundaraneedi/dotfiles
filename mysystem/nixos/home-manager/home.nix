@@ -120,7 +120,6 @@
     brave
     discord
     siyuan
-    notion-app
 
     # Terminal & Multiplexers
     fuzzel
