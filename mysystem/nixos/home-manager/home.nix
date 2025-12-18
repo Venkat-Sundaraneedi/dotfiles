@@ -6,7 +6,6 @@
   home.username = "greed";
   home.homeDirectory = "/home/greed";
 
-  nixpkgs.config.allowUnfree = true;
   home.stateVersion = "25.11";
 
   home.packages = with pkgs; [
@@ -76,7 +75,7 @@
     pass
 
     # Media & Entertainment
-    mpd
+    # mpd
     rmpc
     spotdl
 
@@ -136,16 +135,26 @@
     # appimage-run
   ];
 
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
+
   home.file = {
   };
 
   programs = {
   };
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
+  services = {
+    mpd = {
+      enable = true;
+      musicDirectory = "/home/greed/Music/";
+      playlistDirectory = "/home/greed/Music/Playlists/";
+    };
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  nixpkgs.config.allowUnfree = true;
 }
