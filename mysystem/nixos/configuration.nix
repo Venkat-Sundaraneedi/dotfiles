@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   imports = [./hardware-configuration.nix];
 
-  # ============================================================================
-  # BOOT & KERNEL
-  # ============================================================================
+  # ┌─────────────────────────────────────┐
+  # │            BOOT & KERNEL            │
+  # └─────────────────────────────────────┘
 
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
@@ -18,9 +18,9 @@
     };
   };
 
-  # ============================================================================
-  # NETWORKING
-  # ============================================================================
+  # ┌─────────────────────────────────────┐
+  # │             NETWORKING              │
+  # └─────────────────────────────────────┘
 
   networking = {
     wireless.iwd.enable = true;
@@ -31,9 +31,9 @@
     # firewall.allowedUDPPorts = [ ];
   };
 
-  # ============================================================================
-  # LOCALIZATION
-  # ============================================================================
+  # ┌─────────────────────────────────────┐
+  # │            LOCALIZATION             │
+  # └─────────────────────────────────────┘
 
   time.timeZone = "Asia/Kolkata";
 
@@ -52,9 +52,9 @@
     };
   };
 
-  # ============================================================================
-  # DISPLAY SERVER & DESKTOP ENVIRONMENT
-  # ============================================================================
+  # ┌──────────────────────────────────────────┐
+  # │   DISPLAY SERVER & DESKTOP ENVIRONMENT   │
+  # └──────────────────────────────────────────┘
 
   services.xserver = {
     enable = true;
@@ -87,9 +87,9 @@
 
   nix.package = pkgs.lixPackageSets.stable.lix;
 
-  # ============================================================================
-  # AUDIO
-  # ============================================================================
+  # ┌─────────────────────────────────────┐
+  # │               AUDIO                 │
+  # └─────────────────────────────────────┘
 
   hardware.bluetooth.enable = true;
   services.pulseaudio.enable = false;
@@ -105,9 +105,9 @@
     # jack.enable = true;
   };
 
-  # ============================================================================
-  # HARDWARE
-  # ============================================================================
+  # ┌─────────────────────────────────────┐
+  # │             HARDWARE                │
+  # └─────────────────────────────────────┘
 
   services.xserver.videoDrivers = ["amdgpu"];
   hardware.graphics = {
@@ -115,9 +115,9 @@
     enable32Bit = true;
   };
 
-  # ============================================================================
-  # SERVICES
-  # ============================================================================
+  # ┌─────────────────────────────────────┐
+  # │             SERVICES                │
+  # └─────────────────────────────────────┘
 
   services = {
     # printing.enable = true;
@@ -134,18 +134,18 @@
     };
   };
 
-  # ============================================================================
-  # FONTS
-  # ============================================================================
+  # ┌─────────────────────────────────────┐
+  # │               FONTS                 │
+  # └─────────────────────────────────────┘
 
   fonts.fontconfig.enable = true;
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
 
-  # ============================================================================
-  # USERS
-  # ============================================================================
+  # ┌─────────────────────────────────────┐
+  # │               USERS                 │
+  # └─────────────────────────────────────┘
 
   users.users.greed = {
     isNormalUser = true;
@@ -158,116 +158,137 @@
     shell = pkgs.fish;
   };
 
-  # ============================================================================
-  # SYSTEM PACKAGES
-  # ============================================================================
+  # ┌─────────────────────────────────────┐
+  # │          SYSTEM PACKAGES            │
+  # └─────────────────────────────────────┘
 
   environment.systemPackages = with pkgs; [
-    # Development - Languages & Runtimes
-    nodejs_24
+    # ┌─────────────────────────────────────┐
+    # │         DEVELOPMENT TOOLS           │
+    # └─────────────────────────────────────┘
+
+    # Languages & Runtimes
+    bun
     lua-language-server
     lua51Packages.lua
     luajitPackages.luarocks_bootstrap
+    nodejs_24
 
-    # solana-cli
-    bluetui
-
-    siyuan
-    aerc
-    notmuch
-    lynx
-    isync
-    msmtp
-    pass
-    gettext
-    gpg-tui
-    tldr
-    ggshield
-    brightnessctl
-
-    # Development - Version Control
-    git
-    gh
-    nix-prefetch-github
+    # Version Control
     difftastic
-    lazygit
-    jujutsu
+    gh
+    git
     jjui
+    jujutsu
+    lazygit
+    nix-prefetch-github
 
-    # Development - Tools
+    # LSPs & Formatters
+    alejandra # nix formatter
+    nil
+
+    # Other Dev Tools
+    mise
     repomix
 
-    # Terminal & Multiplexers
-    fuzzel
-    swaybg
-    swaylock
-    ghostty
-    zellij
+    # ┌─────────────────────────────────────┐
+    # │            CLI TOOLS                │
+    # └─────────────────────────────────────┘
 
-    # CLI - Modern Alternatives
-    eza # ls replacement
+    # Modern Alternatives
     bat # cat replacement
-    ripgrep # grep replacement
-    fd # find replacement
-    zoxide # cd replacement
     dust # du replacement
+    eza # ls replacement
+    fd # find replacement
+    ripgrep # grep replacement
+    zoxide # cd replacement
 
-    # CLI - Search & Text Processing
+    # Search & Text Processing
     fzf
     jq
     opencode
-    spotdl
-    spotify
-    rmpc
-    mpd
 
-    # CLI - File Operations
+    # File Operations
     unzip
 
-    # CLI - Network Tools
-    wget
+    # Network Tools
     curl
+    wget
 
-    # System Monitoring
-    fastfetch
+    # Email & Communication
+    aerc
+    bluetui
+    isync
+    lynx
+    msmtp
+    notmuch
+    pass
+
+    # Media & Entertainment
+    mpd
+    rmpc
+    spotdl
+    spotify
+
+    # Other CLI
+    brightnessctl
+    gettext
+    ggshield
+    gpg-tui
+    imagemagick
+    poppler
+    resvg
+    tldr
+    usage
+
+    # ┌─────────────────────────────────────┐
+    # │           SYSTEM TOOLS              │
+    # └─────────────────────────────────────┘
+
+    # Monitoring
     btop
+    fastfetch
 
-    # System Utilities
+    # Utilities
     lshw
-    stow
     pciutils
+    stow
     wl-clipboard
 
     # Nix Helpers
     nh
     nix-output-monitor
-    nvd
-
-    television
     nix-search-tv
+    nvd
+    television
 
-    mise
-    usage
-    poppler
-    resvg
-    imagemagick
+    # ┌─────────────────────────────────────┐
+    # │           APPLICATIONS              │
+    # └─────────────────────────────────────┘
 
-    #LSP's
-    nil
-    alejandra # nix formatter
+    # GUI Applications
+    brave
+    discord
+    siyuan
+
+    # Terminal & Multiplexers
+    fuzzel
+    ghostty
+    swaybg
+    swaylock
+    zellij
 
     # Containers
     lazydocker
 
-    # Applications
-    brave
-    discord
+    # Commented Out
+    # solana-cli
     # appimage-run
   ];
 
-  # ============================================================================
-  # PROGRAMS
-  # ============================================================================
+  # ┌─────────────────────────────────────┐
+  # │             PROGRAMS                │
+  # └─────────────────────────────────────┘
 
   programs = {
     nix-ld = {
@@ -316,9 +337,9 @@
     };
   };
 
-  # ============================================================================
-  # NIX CONFIGURATION
-  # ============================================================================
+  # ┌─────────────────────────────────────┐
+  # │         NIX CONFIGURATION           │
+  # └─────────────────────────────────────┘
 
   nixpkgs.config.allowUnfree = true;
 
@@ -349,9 +370,9 @@
     };
   };
 
-  # ============================================================================
-  # SYSTEM
-  # ============================================================================
+  # ┌─────────────────────────────────────┐
+  # │              SYSTEM                 │
+  # └─────────────────────────────────────┘
 
   system.autoUpgrade.enable = true;
   system.autoUpgrade.allowReboot = false;

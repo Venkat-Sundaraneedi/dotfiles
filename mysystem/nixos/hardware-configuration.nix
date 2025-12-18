@@ -15,6 +15,10 @@
   boot.kernelModules = ["kvm-amd"];
   boot.extraModulePackages = [];
 
+  # ┌─────────────────────────────────────┐
+  # │           FILESYSTEMS               │
+  # └─────────────────────────────────────┘
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/ecf55b64-9288-4216-9e30-44d7f8c688aa";
     fsType = "ext4";
@@ -28,6 +32,10 @@
 
   swapDevices = [{device = "/dev/disk/by-uuid/4512b96c-7073-41d0-a994-764ff776a23b";}];
 
+  # ┌─────────────────────────────────────┐
+  # │           NETWORKING                │
+  # └─────────────────────────────────────┘
+
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
@@ -35,6 +43,10 @@
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlo1.useDHCP = lib.mkDefault true;
+
+  # ┌─────────────────────────────────────┐
+  # │             HARDWARE                │
+  # └─────────────────────────────────────┘
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode =

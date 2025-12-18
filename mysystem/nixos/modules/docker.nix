@@ -1,6 +1,8 @@
 {pkgs, ...}: {
-  # hardware.nvidia-container-toolkit.enable = true;
-  # Enable Docker
+  # ┌─────────────────────────────────────┐
+  # │       DOCKER CONFIGURATION          │
+  # └─────────────────────────────────────┘
+
   virtualisation.docker = {
     enable = true;
     enableOnBoot = true;

@@ -2,6 +2,10 @@
   description = "My personal flake templates";
 
   outputs = {self}: {
+    # ┌─────────────────────────────────────┐
+    # │            TEMPLATES                │
+    # └─────────────────────────────────────┘
+
     templates = {
       rust = {
         path = ./rust;

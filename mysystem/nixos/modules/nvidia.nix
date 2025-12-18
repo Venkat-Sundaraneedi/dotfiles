@@ -1,5 +1,8 @@
 {config, ...}: {
-  # Load NVIDIA driver for Xorg and Wayland
+  # ┌─────────────────────────────────────┐
+  # │      NVIDIA CONFIGURATION           │
+  # └─────────────────────────────────────┘
+
   services.xserver.videoDrivers = ["amdgpu" "nvidia"];
 
   hardware.nvidia = {

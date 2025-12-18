@@ -1,5 +1,13 @@
 {
+  # ┌─────────────────────────────────────┐
+  # │         FLAKE DESCRIPTION           │
+  # └─────────────────────────────────────┘
+
   description = "Rust development environment";
+
+  # ┌─────────────────────────────────────┐
+  # │            FLAKE INPUTS             │
+  # └─────────────────────────────────────┘
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
@@ -13,12 +21,19 @@
     };
   };
 
+  # ┌─────────────────────────────────────┐
+  # │           FLAKE OUTPUTS             │
+  # └─────────────────────────────────────┘
+
   outputs = {
     self,
     nixpkgs,
     naersk,
     rust-overlay,
   }: let
+    # ┌─────────────────────────────────────┐
+    # │         SYSTEM & PACKAGES           │
+    # └─────────────────────────────────────┘
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
@@ -28,6 +43,10 @@
     rustToolchain = pkgs.rust-bin.stable.latest.default;
     # rustToolchain = pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml;
   in {
+    # ┌─────────────────────────────────────┐
+    # │            PACKAGES                 │
+    # └─────────────────────────────────────┘
+
     packages.${system}.default =
       (naerskLib.override {
         cargo = rustToolchain;
@@ -41,6 +60,10 @@
           # pkgs.sqlite
         ];
       };
+
+    # ┌─────────────────────────────────────┐
+    # │           DEV SHELLS                │
+    # └─────────────────────────────────────┘
 
     devShells.${system}.default = pkgs.mkShell {
       buildInputs = with pkgs; [
