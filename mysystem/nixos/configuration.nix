@@ -189,10 +189,10 @@
       };
     };
 
-    # appimage = {
-    #   enable = true;
-    #   binfmt = true;
-    # };
+    appimage = {
+      enable = true;
+      binfmt = true;
+    };
 
     fish = {
       enable = true;
