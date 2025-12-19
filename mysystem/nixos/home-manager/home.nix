@@ -122,6 +122,7 @@
     siyuan
 
     atac
+    xh
     wiremix
 
     # Terminal & Multiplexers
