@@ -1,7 +1,0 @@
-[Desktop Entry]
-Name=Helium
-Exec=/home/greed/.local/bin/helium
-Icon=web-browser
-Type=Application
-Categories=Network;WebBrowser;
-MimeType=text/html;x-scheme-handler/http;x-scheme-handler/https;

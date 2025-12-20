@@ -33,6 +33,7 @@ set -gx VISUAL nvim
 # set -Ux NH_FLAKE "/home/greed/git/dotfiles/mysystem/"
 set -Ux NH_OS_FLAKE "/home/greed/git/dotfiles/mysystem/"
 set -Ux NH_HOME_FLAKE "/home/greed/git/dotfiles/mysystem/nixos/home-manager/"
+set -Ux ATAC_KEY_BINDINGS "/home/greed/.config/atac/vim_key_bindings.toml"
 
 
 set -gx GPG_TTY (tty)

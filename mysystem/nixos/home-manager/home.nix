@@ -132,6 +132,13 @@
     swaylock
     zellij
 
+    w3m
+    ddgr
+    surfraw
+
+    graphite-cli
+    radio-active
+
     # Containers
     lazydocker
     qbittorrent
