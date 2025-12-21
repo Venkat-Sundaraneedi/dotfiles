@@ -196,3 +196,214 @@ open --raw sbe25.xlsx | from xlsx
 tv nix
 home
 c
+cd Downloads/
+c
+xleak sbe25.xlsx
+c
+xleak --help
+tv nix
+xleak -i sbe25.xlsx
+c
+opencode
+c
+ll
+c
+l
+c
+cd jj
+c
+l
+ll
+c
+ls --help
+ls | where type = dir
+ls .| where type = dir
+ls | where type == dir
+c
+ls | where type == dir
+ll
+c
+ls --help
+ls -d
+ls
+ls -du
+ls -d
+cargo clear
+cargo clean
+c
+ls -d
+du
+dust
+c
+du
+c
+ls -d
+c
+cd
+c
+l
+c
+l
+cd Documents/
+c
+l
+n india.md
+c
+cd nirir
+c
+cd niri
+c
+n
+c
+l
+ll
+blue
+c
+l
+cd jj
+c
+cd fish
+c
+l
+cd functions/
+repomix
+rmf repomix_output.md
+cd nushell
+z
+c
+e
+exit
+l
+md testing
+l
+rmf testing/
+l
+md testing
+l
+rmf testing/
+c
+n
+md testing
+nu
+l
+rmf testing/
+md testing
+pwd
+exit
+l
+rmf testing/
+md testing
+rmf testing/
+n
+c
+cd
+c
+l
+cd jj
+c
+fish --help
+fish | home
+home |fish
+c
+opencode
+fish
+c
+cd
+c
+cd jj
+c
+l
+n
+z
+c
+n
+c
+which zellij
+cd zellij
+n
+echo $env.shell
+echo $env.SHELL
+cd my
+n
+lj
+bacon
+n
+sudo reboot now
+echo $env.SHELL
+c
+z
+c
+cd nushell
+c
+cd fish
+cd functions/
+repomix 
+cd nushell
+n
+rmf repomix_output.md
+c
+l
+mv functions/ nushell/
+l
+cd nushell/
+l
+n
+c
+exit
+n
+exit
+blue
+exit
+n
+c
+exit
+fish
+exit
+opencode
+z
+l
+cd jj
+c
+l
+bacon
+c
+cd git
+c
+l
+cd nixpkgs/
+c
+l
+git fetch ls result
+ls --help
+ls -f
+c
+ll
+c
+blue
+git fetch upstream
+c
+lg
+c
+cdd
+rmf nixpkgs/
+c
+l
+c
+l
+c
+gh repo lis
+c
+gh repo list
+gh repo clone nixpkgs
+l
+c
+cd jj
+cd jj
+cd jj
+c
+c
+cd jj
+c
+bacon
+opencode
+fish

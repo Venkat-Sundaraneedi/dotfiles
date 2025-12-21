@@ -78,7 +78,6 @@
     rmpc
     mpd
     spotdl
-    recordbox
 
     # Other CLI
     brightnessctl
@@ -119,7 +118,6 @@
     # GUI Applications
     brave
     discord
-    siyuan
 
     atac
     xh
@@ -136,7 +134,6 @@
     ddgr
     surfraw
     rtorrent
-    xleak
 
     graphite-cli
     radio-active
@@ -160,9 +157,6 @@
 
   programs = {
     neovim = {
-      enable = true;
-    };
-    nushell = {
       enable = true;
     };
   };

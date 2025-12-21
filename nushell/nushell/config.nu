@@ -125,4 +125,3 @@ $env.config.keybindings ++= [
         event: { send: OpenEditor }
     }
 ]
-
