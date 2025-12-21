@@ -135,6 +135,8 @@
     w3m
     ddgr
     surfraw
+    rtorrent
+    xleak
 
     graphite-cli
     radio-active

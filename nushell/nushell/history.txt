@@ -1,31 +1,198 @@
+exi
+exit
+e
+exit
 c
-clear
+exit
+e
+exit
+c
+l
+la
+ls
+c
+e
+exit
+c
+l
+ls
+la
+c
+l
+la
+ls
+l
+cd nushell/
+c
+l
+ls
+la
+c
 l
 c
-clear
+l
 ls
-cd conf
+cd nushell/
+c
+l
+c
+wifi
+c
+cd jj
 cd 
-cd .config/
+cd projects/rust/jj_learning/
 c
-clear
+l
+n flake.nix
+bacon
+n
+cd projects/rust/jj_learning/
+cd
+cd projects/rust/jj_learning/
+c
+bacon
+n
+c
+cd
+c
+cd projects/rust/jj_learning/
+c
+cd
+c
+cd jj
+c
+zoxide init --cmd cd nushell | save -f ~/.zoxide.nu
+cd
+c
+cd projects/rust/jj_learning/
+c
+cd
+c
+cd jj
+cd
+c
+n .zoxide.nu
+c
+cd nu
+c
+n
+cd jj
+c
+l
+touch mise.toml
+cdd
+cd jj_learning/
+rmf mise.toml
+c
+touch mise.toml
+l
+eza -l
+l
+c
 l
 ls
+c
+ls
+c
 cd nushell
-clear
+cn
+n
+c
+n
+c
+e
+exit
+c
+n
+c
+l
+cd
+c
 l
 ls
-clear
-ls
-nvim config.nu
-config nu --doc | nu-highlight | less -R
-config nu
 c
-clear
+l
+l --help
+ls -f
+c
+l --help
+c
+l
 ls
-clear
+c
+cd nushell
+n
+c
+l
+md 
+c
+mkdir traefik
+cd traefik/
+c
+l
+c
+n docker-compose.yaml
+ls /var/run
+n docker-compose.yaml
+c
+docker compose up 
+n docker-compose.yaml
+docker compose up 
+n docker-compose.yaml
+docker compose up 
+c
+blue
+c
+l
+c
 ls
-exit
-clear
-ls
-exit
+c
+l
+c
+la
+c
+cd nushell
+n
+c
+ll
+c
+cd
+c
+l
+ll
+c
+l
+ll
+c
+ll
+c
+cd
+c
+cd jj
+c
+l
+c
+lj
+c
+ll
+c
+l
+ansi a
+ansi --help
+c
+ansi --help
+c
+xh --help
+c
+l
+ll
+c
+cd Downloads/
+c
+l
+open --raw sbe25.xlsx 
+c
+open --raw sbe25.xlsx | from xlsx
+tv nix
+home
+c

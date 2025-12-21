@@ -28,9 +28,6 @@ fish_add_path "$HOME/.cargo/bin"
 fish_add_path "$HOME/.local/bin"
 
 set -x FOUNDRY_DISABLE_NIGHTLY_WARNING 1
-set -gx EDITOR nvim
-set -gx VISUAL nvim
-# set -Ux NH_FLAKE "/home/greed/git/dotfiles/mysystem/"
 set -Ux NH_OS_FLAKE "/home/greed/git/dotfiles/mysystem/"
 set -Ux NH_HOME_FLAKE "/home/greed/git/dotfiles/mysystem/nixos/home-manager/"
 set -Ux ATAC_KEY_BINDINGS "/home/greed/.config/atac/vim_key_bindings.toml"
@@ -42,10 +39,9 @@ set -gx GPG_TTY (tty)
 set -gx _ZO_CD zi
 zoxide init --cmd cd fish | source
 mise activate fish | source
-direnv hook fish | source
+# direnv hook fish | source
 
 # Foundry
-# set -gx fish_user_paths "$HOME/.foundry/bin" $fish_user_paths
 
 alias l="eza -l --group-directories-first --icons"
 alias la="eza -lah --group-directories-first --icons"
@@ -107,6 +103,16 @@ function gitc
     echo "Git user.email set to: venkat.sundaraneedi@codezeros.com"
 end
 
+function toggle_vi_mode
+    if test "$fish_bind_mode" = "default"
+        set fish_bind_mode insert
+        commandline -f repaint-mode
+    else
+        set fish_bind_mode default
+        commandline -f repaint-mode
+    end
+end
+
 fish_vi_key_bindings
 
 bind --mode default ctrl-k history-search-backward
@@ -117,6 +123,12 @@ bind --mode default ctrl-j history-search-forward
 # fish would wait for a "k" or other key to disambiguate
 bind -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"
 bind -M insert alt-l forward-char
+
+# Custom binds: alt+e to toggle vi mode, alt+o to edit command
+bind -M insert alt-e toggle_vi_mode
+bind -M default alt-e toggle_vi_mode
+bind -M insert alt-o edit_command_buffer
+bind -M default alt-o edit_command_buffer
 
 # After setting this, fish only waits 200ms for the "k",
 # or decides to treat the "j" as a separate sequence, inserting it.
