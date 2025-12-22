@@ -28,6 +28,8 @@ fish_add_path "$HOME/.cargo/bin"
 fish_add_path "$HOME/.local/bin"
 
 set -x FOUNDRY_DISABLE_NIGHTLY_WARNING 1
+set -gx EDITOR "nvim"
+set -gx VISUAL "nvim"
 set -Ux NH_OS_FLAKE "/home/greed/git/dotfiles/mysystem/"
 set -Ux NH_HOME_FLAKE "/home/greed/git/dotfiles/mysystem/nixos/home-manager/"
 set -Ux ATAC_KEY_BINDINGS "/home/greed/.config/atac/vim_key_bindings.toml"

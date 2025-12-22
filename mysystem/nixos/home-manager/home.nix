@@ -134,6 +134,7 @@
     ddgr
     surfraw
     rtorrent
+    acpi
 
     graphite-cli
     radio-active
