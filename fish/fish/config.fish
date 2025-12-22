@@ -45,6 +45,10 @@ mise activate fish | source
 
 # Foundry
 
+alias wifi="impala"
+alias blue="bluetui"
+alias battery="acpi -b"
+
 alias l="eza -l --group-directories-first --icons"
 alias la="eza -lah --group-directories-first --icons"
 alias ls="eza -lah --group-directories-first --icons --tree --level=2 --git-ignore"
@@ -59,8 +63,6 @@ alias c="clear"
 alias e="exit"
 alias z="zellij"
 alias n="nvim"
-alias wifi="impala"
-alias blue="bluetui"
 alias p="poetry"
 alias pya="source .venv/bin/activate.fish"
 alias pyd="deactivate"

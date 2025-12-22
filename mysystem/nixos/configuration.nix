@@ -112,6 +112,10 @@
   # └─────────────────────────────────────┘
 
   services = {
+    jackett = {
+      enable = true;
+      user = "greed";
+    };
     flatpak.enable = true;
     fwupd.enable = true;
     openssh.enable = true;
@@ -145,6 +149,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "jackett"
     ];
     shell = pkgs.fish;
   };
