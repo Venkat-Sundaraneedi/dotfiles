@@ -20,7 +20,7 @@ return {
     opts = {
       color_icons = true,
       override_by_extension = {
-        ["cairo"] = {
+        ["move"] = {
           icon = "󰪇",
           color = "#5f87d7",
           name = "Move",
