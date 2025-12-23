@@ -18,11 +18,11 @@ end
 
 mise activate fish | source
 # Automatically start Zellij if not already inside Zellij
-if status is-interactive; and not set -q ZELLIJ
-    if isatty
-        zellij
-    end
-end
+# if status is-interactive; and not set -q ZELLIJ
+#     if isatty
+#         zellij
+#     end
+# end
 
 fish_add_path "$HOME/.local/share/nvim/mason/bin"
 fish_add_path "$HOME/.cyfrin/bin"
@@ -56,6 +56,9 @@ alias lj="jjui"
 alias ld="lazydocker"
 alias c="clear"
 alias e="exit"
+alias wifi="impala"
+alias blue="bluetui"
+alias battery="acpi -b"
 alias n="nvim"
 alias p="poetry"
 alias pya="source .venv/bin/activate.fish"
