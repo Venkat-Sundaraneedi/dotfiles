@@ -7,9 +7,7 @@ return {
 
   {
     "neovim/nvim-lspconfig",
-    config = function()
-      require "configs.lspconfig"
-    end,
+    opts = require "configs.lspconfig",
   },
 
   {
@@ -18,79 +16,43 @@ return {
   },
 
   {
-    "nvim-treesitter/nvim-treesitter-textobjects",
-    branch = "main",
-    lazy = false,
-    after = "nvim-treesitter",
-    requires = "nvim-treesitter/nvim-treesitter",
+    "saghen/blink.cmp",
+    version = "1.*",
+    event = { "InsertEnter", "CmdLineEnter" },
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+    },
     opts = function()
-      return require "configs.treesitter-textobjects"
+      return require "configs.blink"
     end,
-    config = function(_, opts)
-      require("nvim-treesitter").setup { opts }
-    end,
+    opts_extend = { "sources.default" },
   },
+
   {
     "nvim-tree/nvim-web-devicons",
     opts = {
       color_icons = true,
       override_by_extension = {
-        ["move"] = {
+        ["cairo"] = {
           icon = "󰪇",
           color = "#5f87d7",
           name = "Move",
         },
-        ["ron"] = {
-          icon = "󰪇",
-          color = "#5f87d7",
-          name = "Move",
+        ["nr"] = {
+          icon = "", -- Logic gate/circuit diagram
+          color = "#d3869b", -- Muted purple
+          name = "Noir",
         },
       },
     },
   },
-  {
-    "fei6409/log-highlight.nvim",
-    opts = {},
-  },
 
   {
-    "OXY2DEV/markview.nvim",
+    "MeanderingProgrammer/render-markdown.nvim",
     lazy = false,
-    -- Completion for `blink.cmp`
-    dependencies = { "saghen/blink.cmp" },
-    opts = {
-      preview = {
-        icon_provider = "internal", -- "mini" or "devicons"
-      },
-    },
-  },
-
-  {
-    "obsidian-nvim/obsidian.nvim",
-    version = "*", -- recommended, use latest release instead of latest commit
-    ft = "markdown",
-    -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-    -- event = {
-    --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-    --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
-    --   -- refer to `:h file-pattern` for more examples
-    --   "BufReadPre path/to/my-vault/*.md",
-    --   "BufNewFile path/to/my-vault/*.md",
-    -- },
-    opts = {
-      legacy_commands = false, -- this will be removed in the next major release
-      workspaces = {
-        {
-          name = "personal",
-          path = "~/vaults/personal",
-        },
-        {
-          name = "work",
-          path = "~/vaults/work",
-        },
-      },
-
-      -- see below for full list of options 👇
-    },
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
   },
 }
