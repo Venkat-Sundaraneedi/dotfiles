@@ -120,6 +120,7 @@ limit = 0
   [ui.tracer]
     enabled = false
   [ui.colors]
+  "selected" = {bg="#333333"}
 
 [suggest]
   [suggest.exec]
