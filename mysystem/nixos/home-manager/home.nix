@@ -82,7 +82,7 @@
     # Other CLI
     brightnessctl
     gettext
-    ggshield
+    # ggshield
     gpg-tui
     imagemagick
     poppler
