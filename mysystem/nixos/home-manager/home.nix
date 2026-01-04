@@ -143,6 +143,8 @@
     lazydocker
     qbittorrent
 
+    retroarch-bare
+
     # Commented Out
     # solana-cli
     # appimage-run
@@ -157,6 +159,10 @@
   };
 
   programs = {
+    # retroarch = {
+    #   enable = true;
+    #   package = pkgs.retroarch-full;
+    # };
     neovim = {
       enable = true;
     };

@@ -1,3 +1,2 @@
 [tools]
-"asdf:neovim" = "nightly"
 tree-sitter = "0.26.2"
