@@ -170,6 +170,7 @@
     brave
     ghostty
     neovim
+    xwayland-satellite
   ];
 
   # ┌─────────────────────────────────────┐
