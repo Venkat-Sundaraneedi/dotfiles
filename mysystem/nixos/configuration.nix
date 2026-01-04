@@ -208,6 +208,7 @@
     };
 
     mtr.enable = true;
+    steam.enable = true;
 
     gnupg.agent = {
       enable = true;
