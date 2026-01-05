@@ -143,6 +143,9 @@
     lazydocker
     qbittorrent
 
+    # GUI file manager
+    nautilus
+
     # Commented Out
     # solana-cli
     # appimage-run
