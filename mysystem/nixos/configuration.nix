@@ -112,6 +112,7 @@
   # └─────────────────────────────────────┘
 
   services = {
+    # gvfs.enable = true; # Enable GVFS for GNOME
     jackett = {
       enable = true;
       user = "greed";
@@ -171,6 +172,9 @@
     ghostty
     neovim
     xwayland-satellite
+    # libmtp
+    # gvfs
+    simple-mtpfs
   ];
 
   # ┌─────────────────────────────────────┐
