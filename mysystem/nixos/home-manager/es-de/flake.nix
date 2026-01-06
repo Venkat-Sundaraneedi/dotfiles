@@ -3,8 +3,9 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
   outputs = {nixpkgs, ...}: let
-    # system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${pkgs.llvmpackages.stdenv.hostPlatform.system};
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+    stdenv = pkgs.stdenv;
     pname = "es-de";
     version = "3.4.0";
     src = pkgs.fetchurl {
@@ -13,7 +14,7 @@
     };
     appimageContents = pkgs.appimageTools.extract {inherit pname version src;};
   in {
-    packages.${pkgs.llvmpackages.stdenv.hostPlatform.system}.default = pkgs.appimageTools.wrapType2 {
+    packages.${stdenv.hostPlatform.system}.default = pkgs.appimageTools.wrapType2 {
       inherit pname version src;
       extraInstallCommands = ''
         install -m 444 -D ${appimageContents}/ES-DE.desktop -t $out/share/applications || true
