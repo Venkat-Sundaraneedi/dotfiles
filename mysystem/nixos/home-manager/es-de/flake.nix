@@ -5,7 +5,6 @@
   outputs = {nixpkgs, ...}: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    stdenv = pkgs.stdenv;
     pname = "es-de";
     version = "3.4.0";
     src = pkgs.fetchurl {
@@ -14,12 +13,12 @@
     };
     appimageContents = pkgs.appimageTools.extract {inherit pname version src;};
   in {
-    packages.${stdenv.hostPlatform.system}.default = pkgs.appimageTools.wrapType2 {
+    packages.${system}.default = pkgs.appimageTools.wrapType2 {
       inherit pname version src;
       extraInstallCommands = ''
-        install -m 444 -D ${appimageContents}/ES-DE.desktop -t $out/share/applications || true
-        substituteInPlace $out/share/applications/ES-DE.desktop \
-          --replace 'Exec=AppRun' 'Exec=${pname}' || true
+        install -m 444 -D ${appimageContents}/usr/share/applications/org.es_de.frontend.desktop -t $out/share/applications
+        substituteInPlace $out/share/applications/org.es_de.frontend.desktop \
+          --replace 'Exec=AppRun' 'Exec=${pname}'
         cp -r ${appimageContents}/usr/share/icons $out/share || true
       '';
       extraPkgs = pkgs:
