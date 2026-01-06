@@ -5,6 +5,7 @@
   outputs = {nixpkgs, ...}: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
+    stdenv = pkgs.stdenv; # Add this line for stdenv access
     pname = "es-de";
     version = "3.4.0";
     src = pkgs.fetchurl {
@@ -32,7 +33,7 @@
       meta = {
         description = "EmulationStation Desktop Edition - A frontend for browsing and launching games from your multi-platform game collection";
         homepage = "https://es-de.org";
-        platforms = [pkgs.stdenv.hostPlatform.system]; # Uses pkgs.stdenv (equivalent to your stdenv)
+        platforms = [stdenv.hostPlatform.system];
         license = pkgs.lib.licenses.mit;
       };
     };
