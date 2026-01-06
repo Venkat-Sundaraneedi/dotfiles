@@ -52,6 +52,7 @@
     zoxide # cd replacement
     somo # port monitor
     rustscan
+    file
 
     # Search & Text Processing
     fzf
