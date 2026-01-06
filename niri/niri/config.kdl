@@ -248,6 +248,11 @@ window-rule {
     open-floating true
 }
 
+// Auto-focus all newly opened windows.
+window-rule {
+    open-focused true
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
