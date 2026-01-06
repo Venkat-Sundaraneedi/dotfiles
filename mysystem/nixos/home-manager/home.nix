@@ -150,6 +150,7 @@
 
     # GUI file manager
     nautilus
+    androidenv.androidPkgs.platform-tools
 
     # Commented Out
     # solana-cli
