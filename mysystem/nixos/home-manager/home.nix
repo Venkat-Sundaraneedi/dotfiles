@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  es-de,
   ...
 }: {
   home.username = "greed";
@@ -14,6 +15,9 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+
+    # ES-DE AppImage wrapped as Nix package
+    es-de.packages.${pkgs.system}.default
 
     # Languages & Runtimes
     bun
