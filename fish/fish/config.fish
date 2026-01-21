@@ -17,12 +17,11 @@ if status is-interactive
 end
 
 mise activate fish | source
+atuin init fish | source
 # Automatically start Zellij if not already inside Zellij
-# if status is-interactive; and not set -q ZELLIJ
-#     if isatty
-#         zellij
-#     end
-# end
+if status is-interactive; and not set -q ZELLIJ
+        zellij
+end
 
 fish_add_path "$HOME/.local/share/nvim/mason/bin"
 fish_add_path "$HOME/.cyfrin/bin"
@@ -43,13 +42,12 @@ set -gx CXX "zig c++"
 # Zoxide
 set -gx _ZO_CD zi
 zoxide init --cmd cd fish | source
-# starship init fish | source
 
 # Foundry
 # set -gx fish_user_paths "$HOME/.foundry/bin" $fish_user_paths
 
 alias l='eza -l --icons --group-directories-first '
-alias nc="ncspot"
+alias la='eza -la --icons --group-directories-first '
 alias ls='eza --icons --group-directories-first --tree --level=2'
 alias rmf="rm -rf"
 alias cn="clear && nvim"
@@ -84,11 +82,19 @@ alias gs="git status --short"
    cd $original_dir
  end
 
-function neoup
-  mise uninstall asdf:neovim@nightly
-  mise use -g asdf:neovim@nightly
-  bun uninstall -g opencode-ai
-  bun install -g opencode-ai
+function cdp
+   set -l dir (fd . / --type d 2>/dev/null | fzf --preview 'eza -la --color=always {}' --preview-window=right:50%)
+   if test -n "$dir"
+       echo "$dir"
+   end
+end
+
+function cdf
+   set -l dir (fd . ~ --type d | fzf --preview 'eza -la --color=always {}' --preview-window=right:50%)
+   if test -n "$dir"
+       cd "$dir"
+       clear
+   end
 end
 
 function gitp
