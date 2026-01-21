@@ -36,6 +36,9 @@ fish_add_path "$HOME/.foundry/bin"
 
 set -gx EDITOR nvim
 set -gx VISUAL nvim
+
+set -gx CC "zig cc"
+set -gx CXX "zig c++"
 # set -Ux HELIX_RUNTIME ~/projects/git/helix/runtime/
 # Zoxide
 set -gx _ZO_CD zi
@@ -67,7 +70,6 @@ alias pyd="deactivate"
 alias ga="git add"
 alias gb="git branch"
 alias gc="git commit"
-alias gd="git diff --output-indicator-new=' ' --output-indicator-old=' '"
 alias gl="git log"
 alias gp="git push"
 alias gu="git pull"
