@@ -1,15 +1,5 @@
 function fish_greeting
     echo "Happy coding! May your commits be clean and your builds fast."
-    # echo (set_color cyan)"
-    #   _______
-    #  < fish! >
-    #   -------
-    #          \\
-    #           \\
-    #            /\\_/\\
-    #           ( o.o )
-    #            > ^ <
-    # "(set_color normal)
 end
 
 if status is-interactive
@@ -18,33 +8,32 @@ end
 
 mise activate fish | source
 atuin init fish | source
+
 # Automatically start Zellij if not already inside Zellij
 if status is-interactive; and not set -q ZELLIJ
-        zellij
+    zellij
 end
 
 fish_add_path "$HOME/.local/share/nvim/mason/bin"
 fish_add_path "$HOME/.cyfrin/bin"
 fish_add_path "$HOME/.bun/bin"
-fish_add_path "$HOME/.cargo/bin"
-fish_add_path "$HOME/.avm/bin"
+fish_add_path "$HOME/.config/cargo/bin"
 fish_add_path "$HOME/.local/share/solana/install/active_release/bin/"
 fish_add_path "$HOME/.local/bin"
-fish_add_path "$HOME/.fuelup/bin"
 fish_add_path "$HOME/.foundry/bin"
 
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 
-set -gx CC "zig cc"
-set -gx CXX "zig c++"
-# set -Ux HELIX_RUNTIME ~/projects/git/helix/runtime/
+set -gx RUSTUP_HOME "$HOME/.config/rustup"
+set -gx CARGO_HOME "$HOME/.config/cargo"
+
+# set -gx CC "zig cc"
+# set -gx CXX "zig c++"
+
 # Zoxide
 set -gx _ZO_CD zi
 zoxide init --cmd cd fish | source
-
-# Foundry
-# set -gx fish_user_paths "$HOME/.foundry/bin" $fish_user_paths
 
 alias l='eza -l --icons --group-directories-first '
 alias la='eza -la --icons --group-directories-first '
@@ -64,16 +53,6 @@ alias n="nvim"
 alias p="poetry"
 alias pya="source .venv/bin/activate.fish"
 alias pyd="deactivate"
-
-alias ga="git add"
-alias gb="git branch"
-alias gc="git commit"
-alias gl="git log"
-alias gp="git push"
-alias gu="git pull"
-alias gi="git init"
-alias gcl="git clone"
-alias gs="git status --short"
 
  function stdrs
    set -l original_dir (pwd)
@@ -113,18 +92,7 @@ end
 
 fish_vi_key_bindings
 
-bind --mode default ctrl-k history-search-backward
-bind --mode default ctrl-j history-search-forward
-
-# This binds the sequence j,k to switch to normal mode in vi mode.
-# If you kept it like that, every time you press "j",
-# fish would wait for a "k" or other key to disambiguate
-# bind -M insert -m default j,k cancel repaint-mode
-bind -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"   
 bind -M insert alt-l forward-char
-
-# After setting this, fish only waits 200ms for the "k",
-# or decides to treat the "j" as a separate sequence, inserting it.
 set -g fish_sequence_key_delay_ms 200
 
 fish_ssh_agent

@@ -22,3 +22,17 @@ fzf = "0.67.0"
 zoxide = "0.9.8"
 lazygit = "0.58.1"
 fd = "10.3.0"
+xh = "0.25.3"
+"cargo:somo" = "latest"
+"cargo:bacon" = "latest"
+ripgrep = "15.1.0"
+jq = "1.8.1"
+zls = "0.15.1"
+stylua = "2.3.1"
+"npm:oxfmt" = "latest"
+"npm:oxlint" = "latest"
+
+[settings]
+
+[settings.npm]
+package_manager = "bun"
