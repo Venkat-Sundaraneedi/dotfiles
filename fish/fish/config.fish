@@ -3,18 +3,19 @@ function fish_greeting
 end
 
 if status is-interactive
-    # Commands to run in interactive sessions can go here
 end
 
 mise activate fish | source
+pitchfork activate fish | source
 atuin init fish | source
 
-# Automatically start Zellij if not already inside Zellij
 if status is-interactive; and not set -q ZELLIJ
-    zellij
+  zellij
 end
 
+fish_add_path "/opt/android-sdk/platform-tools"
 fish_add_path "$HOME/.local/share/nvim/mason/bin"
+fish_add_path "$HOME/.local/share/mise/shims"
 fish_add_path "$HOME/.cyfrin/bin"
 fish_add_path "$HOME/.bun/bin"
 fish_add_path "$HOME/.config/cargo/bin"
@@ -22,14 +23,13 @@ fish_add_path "$HOME/.local/share/solana/install/active_release/bin/"
 fish_add_path "$HOME/.local/bin"
 fish_add_path "$HOME/.foundry/bin"
 
+
+set -gx CORE_RETROARCH /home/greed/.local/share/Steam/steamapps/common/RetroArch/cores/
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 
 set -gx RUSTUP_HOME "$HOME/.config/rustup"
 set -gx CARGO_HOME "$HOME/.config/cargo"
-
-# set -gx CC "zig cc"
-# set -gx CXX "zig c++"
 
 # Zoxide
 set -gx _ZO_CD zi
@@ -61,20 +61,20 @@ alias pyd="deactivate"
    cd $original_dir
  end
 
-function cdp
+ function cdp
    set -l dir (fd . / --type d 2>/dev/null | fzf --preview 'eza -la --color=always {}' --preview-window=right:50%)
    if test -n "$dir"
-       echo "$dir"
+     echo "$dir"
    end
-end
+ end
 
-function cdf
-   set -l dir (fd . ~ --type d | fzf --preview 'eza -la --color=always {}' --preview-window=right:50%)
+ function cdf
+   set -l dir (fd . / --type d | fzf --preview 'eza -la --color=always {}' --preview-window=right:50%)
    if test -n "$dir"
-       cd "$dir"
-       clear
+     cd "$dir"
+     clear
    end
-end
+ end
 
 function gitp
     git config --local user.name Venkat-Sundaraneedi
@@ -92,6 +92,7 @@ end
 
 fish_vi_key_bindings
 
+bind -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"   
 bind -M insert alt-l forward-char
 set -g fish_sequence_key_delay_ms 200
 

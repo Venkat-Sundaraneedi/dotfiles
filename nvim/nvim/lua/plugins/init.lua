@@ -20,14 +20,9 @@ return {
     opts = {
       color_icons = true,
       override_by_extension = {
-        ["move"] = {
-          icon = "󰪇",
-          color = "#5f87d7",
-          name = "Move",
-        },
         ["nr"] = {
-          icon = "", -- Logic gate/circuit diagram
-          color = "#d3869b", -- Muted purple
+          icon = "",
+          color = "#d3869b",
           name = "Noir",
         },
       },
@@ -37,7 +32,7 @@ return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
     lazy = false,
-    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
+    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},

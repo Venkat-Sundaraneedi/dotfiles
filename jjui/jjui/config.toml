@@ -70,7 +70,7 @@ split_parallel = ["alt+s"]
 squash = ["S"]
 restore = ["r"]
 absorb = ["A"]
-diff = ["d"]
+diff = ["d", "l"]
 select = ["m", " "]
 revisions_changing_file = ["*"]
 [keys.evolog]
@@ -132,16 +132,74 @@ mode = "off"
 [revisions]
 log_batching = true
 log_batch_size = 50
-template = 'builtin_log_compact'
+template = '''
+if(self.root(),
+  separate(" ",
+    change_id.shortest(8),
+    label("root", "root()"),
+    commit_id.shortest(8),
+    bookmarks,
+  ) ++ "\n",
+  label(
+    separate(" ",
+      if(current_working_copy, "working_copy"),
+      if(immutable, "immutable", "mutable"),
+      if(conflict, "conflicted"),
+    ),
+    concat(
+      separate(" ",
+        coalesce(
+          if(hidden, label("hidden", change_id.shortest(8))),
+          if(divergent, label("divergent", change_id.shortest(8))),
+          change_id.shortest(8)
+        ),
+        truncate_end(12, author.email()),
+        author.timestamp().local().format("%y/%m/%d %H:%M"),
+        bookmarks,
+        tags,
+        working_copies,
+        commit_id.shortest(8),
+        coalesce(
+          if(hidden, label("hidden", "(hidden)")),
+          if(divergent, label("divergent", "(divergent)")),
+        ),
+        if(conflict, label("conflict", "(conflict)")),
+        if(config("ui.show-cryptographic-signatures").as_boolean(),
+          if(signature, 
+            label("signature status", 
+              surround("[", "]", 
+                label(signature.status(), 
+                  coalesce(
+                    if(signature.status() == "good", "✓︎"),
+                    if(signature.status() == "unknown", "?"),
+                    "x"
+                  )
+                )
+              )
+            )
+          )
+        ),
+      ) ++ "\n",
+      separate(" ",
+        if(empty, label("empty", "(empty)")),
+        if(description,
+          description.first_line(),
+          label(if(empty, "empty"), label("description placeholder", "(no description set)")),
+        ),
+      ) ++ "\n",
+    ),
+  )
+)
+'''
 revset = "present(@) | ancestors(immutable_heads().., 20) | present(trunk())"
 
 [preview]
 revision_command = ["show", "--color", "always", "-r", "$change_id"]
 oplog_command = ["op", "show", "$operation_id", "--color", "always"]
 file_command = ["diff", "--color", "always", "-r", "$change_id", "$file"]
-position = "auto"
+position = "bottom"
 show_at_start = true
-width_percentage = 50.0
+width_percentage = 60.0
 width_increment_percentage = 5.0
 
 [oplog]

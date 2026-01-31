@@ -10,9 +10,15 @@ email = "venkat.subrahmanyam.34@gmail.com"
 paginate = "never"
 editor = "nvim"
 
-diff-formatter = ["difft","--color=always","$left","$right"]
+# Use difftastic with default settings (side-by-side for CLI)
+diff-formatter = ["difft", "--color=always", "$left", "$right"]
 default-command = "log"
 diff-editor = ":builtin"
 
 [remotes.origin]
 auto-track-bookmarks = "glob:*"
+
+[colors]
+# Remove underline from diff highlights while keeping colors
+"diff removed token" = { underline = false }
+"diff added token" = { underline = false }

@@ -1,1 +1,1 @@
-source "$HOME/.cargo/env.fish"
+source "$HOME/.config/cargo/env.fish"
