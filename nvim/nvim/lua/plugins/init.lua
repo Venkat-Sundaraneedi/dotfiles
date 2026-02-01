@@ -15,26 +15,18 @@ return {
     opts = require "configs.treesitter",
   },
 
-  {
-    "nvim-tree/nvim-web-devicons",
-    opts = {
-      color_icons = true,
-      override_by_extension = {
-        ["nr"] = {
-          icon = "",
-          color = "#d3869b",
-          name = "Noir",
-        },
-      },
-    },
-  },
+  -- {
+  --   "nvim-tree/nvim-web-devicons",
+  --   opts = {
+  --     color_icons = true,
+  --     override_by_extension = {
+  --       ["nr"] = {
+  --         icon = "",
+  --         color = "#d3869b",
+  --         name = "Noir",
+  --       },
+  --     },
+  --   },
+  -- },
 
-  {
-    "MeanderingProgrammer/render-markdown.nvim",
-    lazy = false,
-    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
-    ---@module 'render-markdown'
-    ---@type render.md.UserConfig
-    opts = {},
-  },
 }
