@@ -22,3 +22,10 @@ auto-track-bookmarks = "glob:*"
 # Remove underline from diff highlights while keeping colors
 "diff removed token" = { underline = false }
 "diff added token" = { underline = false }
+
+[aliases]
+init = ["git", "init"]
+fetch = ["git", "fetch"]
+push = ["git", "push"]
+clone = ["git", "clone"]
+remote = ["git", "remote"]
