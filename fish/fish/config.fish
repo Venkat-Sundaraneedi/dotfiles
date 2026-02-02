@@ -9,6 +9,13 @@ mise activate fish | source
 pitchfork activate fish | source
 atuin init fish | source
 
+complete -c j -w jj
+abbr -a jc 'jj git clone'
+abbr -a jf 'jj git fetch'
+abbr -a jp 'jj git push'
+abbr -a ji 'jj git init'
+abbr -a jr 'jj git remote'
+
 if status is-interactive; and not set -q ZELLIJ
   zellij
 end
@@ -41,6 +48,7 @@ alias ls='eza --icons --group-directories-first --tree --level=2'
 alias rmf="rm -rf"
 alias cn="clear && nvim"
 alias cdd="cd .."
+alias j="jj"
 alias lg="lazygit"
 alias lj="jjui"
 alias ld="lazydocker"
@@ -90,10 +98,27 @@ function gitc
     echo "Git user.email set to: venkat.sundaraneedi@codezeros.com"
 end
 
+function toggle_vi_mode
+    if test "$fish_bind_mode" = "default"
+        set fish_bind_mode insert
+        commandline -f repaint-mode
+    else
+        set fish_bind_mode default
+        commandline -f repaint-mode
+    end
+end
+
 fish_vi_key_bindings
 
-bind -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"   
+bind -M insert jk "if commandline -P; commandline -f cancel; else; set fish_bind_mode default; commandline -f backward-char force-repaint; end"  
 bind -M insert alt-l forward-char
+
+# Custom binds: alt+e to toggle vi mode, alt+o to edit command
+bind -M insert alt-e toggle_vi_mode
+bind -M default alt-e toggle_vi_mode
+bind -M insert alt-o edit_command_buffer
+bind -M default alt-o edit_command_buffer
+
 set -g fish_sequence_key_delay_ms 200
 
 fish_ssh_agent
