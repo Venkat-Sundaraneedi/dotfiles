@@ -1,6 +1,7 @@
 # theme = "onedark"
 theme = "gruvbox-material"
 # theme = "ashen"
+
 # ====================================================================================================
 
 [editor]
@@ -9,59 +10,32 @@ continue-comments = false
 bufferline = "multiple"
 trim-final-newlines = true
 trim-trailing-whitespace = true
-clipboard-provider = "wayland"
+clipboard-provider = "x-clip"
 line-number = "relative"
 color-modes = true
-auto-pairs = true
-auto-format = true
 completion-trigger-len = 1
 true-color = true
 mouse = false
 
-# ====================================================================================================
-
-[editor.auto-save]
-after-delay.enable = false
-after-delay.timeout = 500
+soft-wrap.enable = true
+cursor-shape.insert = "bar"
+file-picker.hidden = false
 
 # ====================================================================================================
 
-[editor.statusline]
-left = [
-  "mode",
-  "spinner",
-  "file-name",
-  "read-only-indicator",
-  "file-modification-indicator",
-]
-center = []
-right = [
-  "version-control",
-  "spacer",
-  "diagnostics",
-  "total-line-numbers",
-  "position",
-  "file-encoding",
-  "file-type",
-]
-separator = "│"
-mode.normal = "NOR"
-mode.insert = "INS"
-mode.select = "SEL"
-diagnostics = ["warning", "error"]
-workspace-diagnostics = ["warning", "error"]
+[editor.lsp]
+display-progress-messages = true
+# display-inlay-hints = true
 
 # ====================================================================================================
 
-[editor.cursor-shape]
-insert = "bar"
-normal = "block"
-select = "block"
-
 # ====================================================================================================
-
-[editor.file-picker]
-hidden = false
+# TODO
+# a.in selection mode (visual) go to word with gw/s while maintaining the selection
+# b.in selection mode move the selected content with alt + h,j,k,l
+# c.add old files picker
+# d.when closing and opening files the cursor should remember the previous position the same goes with copying the entire file
+# ====================================================================================================
 
 # ====================================================================================================
 
@@ -70,47 +44,38 @@ hidden = false
 "S-h" = "goto_line_start"
 "S-l" = "goto_line_end"
 "f" = ["normal_mode", "collapse_selection"]
-";" = "toggle_comments"
-"g" = { "a" = "goto_last_line", "e" = "no_op" }
-
-"s" = "goto_word"
 "S" = "select_regex"
+"space" = { ";" = "toggle_comments" }
 
 [keys.normal]
-"A-v" = ["goto_line_start","select_mode","goto_line_end"]
+"A-v" = ["goto_line_end", "select_mode", "goto_line_start"]
 "A-e" = "match_brackets"
 "C-c" = "@%y"
 "S-h" = ["insert_at_line_start", "normal_mode"]
 "S-l" = "goto_line_end"
 "tab" = ":buffer-next"
 "f" = "collapse_selection"
-"D" = ["select_mode","goto_line_end","delete_selection"]
+"D" = ["select_mode", "goto_line_end", "delete_selection"]
 "s" = "goto_word"
-"S" = "select_regex"
 "S-tab" = ":buffer-previous"
-"g" = { "a" = "goto_last_line", "e" = "no_op" }
 ";" = { "e" = ":write-quit-all", "w" = ":write-all", "s" = "search", "n" = ":quit-all!" }
 
 [keys.normal.space]
 ";" = "toggle_comments"
 "o" = ":config-reload"
-"a" = "file_explorer"
-"e" = "file_picker"
+# "a" = "file_explorer"
+# "e" = "file_picker"
 
-"F" = "no_op"
-# "a" = "no_op"
+# "F" = "no_op"
 "r" = "no_op"
 "'" = "no_op"
-"E" = "no_op"
-# "y" = "no_op"
-"Y" = "no_op"
+# "Y" = "no_op"
 "P" = "no_op"
 "d" = "no_op"
 "D" = "no_op"
 "C" = "no_op"
-# "g" = "no_op"
-"S" = "no_op"
-"j" = "no_op"
+# "S" = "no_op"
+# "j" = "no_op"
 "/" = "no_op"
 "?" = "no_op"
 "A-c" = "no_op"
@@ -122,7 +87,6 @@ hidden = false
 [keys.normal.space.s]
 "k" = "command_palette"
 "g" = "global_search"
-"b" = "search"
 "d" = "diagnostics_picker"
 "D" = "workspace_diagnostics_picker"
 
