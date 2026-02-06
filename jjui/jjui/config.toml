@@ -191,7 +191,8 @@ if(self.root(),
   )
 )
 '''
-revset = "present(@) | ancestors(immutable_heads().., 20) | present(trunk())"
+# revset = "present(@) | ancestors(immutable_heads().., 20) | present(trunk())"
+revset = "present(@) | ancestors(bookmarks() | tracked_remote_bookmarks(), 5) | present(trunk())"
 
 [preview]
 revision_command = ["show", "--color", "always", "-r", "$change_id"]
