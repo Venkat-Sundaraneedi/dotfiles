@@ -208,3 +208,6 @@ limit = 200
 
 [git]
 default_remote = "origin"
+
+[ssh]
+hijack_askpass = true
