@@ -25,7 +25,7 @@ file-picker.hidden = false
 
 [editor.lsp]
 display-progress-messages = true
-# display-inlay-hints = true
+display-inlay-hints = true
 
 # ====================================================================================================
 
@@ -48,37 +48,32 @@ display-progress-messages = true
 "space" = { ";" = "toggle_comments" }
 
 [keys.normal]
-"A-v" = ["goto_line_end", "select_mode", "goto_line_start"]
 "A-e" = "match_brackets"
 "C-c" = "@%y"
 "S-h" = ["insert_at_line_start", "normal_mode"]
 "S-l" = "goto_line_end"
 "tab" = ":buffer-next"
-"f" = "collapse_selection"
-"D" = ["select_mode", "goto_line_end", "delete_selection"]
-"s" = "goto_word"
 "S-tab" = ":buffer-previous"
-";" = { "e" = ":write-quit-all", "w" = ":write-all", "s" = "search", "n" = ":quit-all!" }
 
 [keys.normal.space]
 ";" = "toggle_comments"
 "o" = ":config-reload"
-# "a" = "file_explorer"
-# "e" = "file_picker"
+"A" = "file_explorer"
+"a" = "file_explorer_in_current_buffer_directory"
+"e" = "file_picker_in_current_buffer_directory"
+"E" = "file_picker_in_current_directory"
 
-# "F" = "no_op"
-"r" = "no_op"
-"'" = "no_op"
-# "Y" = "no_op"
-"P" = "no_op"
-"d" = "no_op"
-"D" = "no_op"
-"C" = "no_op"
-# "S" = "no_op"
-# "j" = "no_op"
-"/" = "no_op"
-"?" = "no_op"
-"A-c" = "no_op"
+"F" = "no_op"   #file picker at currernt working directory moved to space.E
+"r" = "no_op"   #rename symbol now achieved by space.c.r
+"'" = "no_op"   #open last picker
+"Y" = "no_op"   #yank main selection to the clipboard
+"P" = "no_op"   #paster clipboard before selection
+"d" = "no_op"   #diagnostics picker moved to space.s.d
+"D" = "no_op"   #diagnostics picker moved to space.s.D
+"C" = "no_op"   #block commnet/uncomment selection
+"/" = "no_op"   #global search moved to space.s.g
+"?" = "no_op"   #command palette moved to space.s.k
+"A-c" = "no_op" #line comment/uncomment selections
 
 [keys.normal.space.c]
 "a" = "code_action"
