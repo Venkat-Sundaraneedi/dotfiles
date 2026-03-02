@@ -45,7 +45,7 @@ alias l='eza -l --icons --group-directories-first '
 alias la='eza -la --icons --group-directories-first '
 alias ls='eza --icons --group-directories-first --tree --level=2'
 alias rmf="rm -rf"
-alias cn="clear && hx"
+alias cn="clear && nvim"
 alias cdd="cd .."
 alias j="jj"
 alias lg="lazygit"
