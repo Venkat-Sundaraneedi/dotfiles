@@ -34,6 +34,12 @@ set -gx CORE_RETROARCH /home/greed/.local/share/Steam/steamapps/common/RetroArch
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 
+set -gx FLAKE /home/codezeros/.config/nix_system
+set -gx NH_HOME_FLAKE /home/codezeros/.config/nix_system
+
+# set -gx SCCACHE_REDIS_ENDPOINT "redis://192.168.109.33:6379"
+# set -gx SCCACHE_REDIS_PASSWORD supersecretpassword
+
 set -gx RUSTUP_HOME "$HOME/.config/rustup"
 set -gx CARGO_HOME "$HOME/.config/cargo"
 
