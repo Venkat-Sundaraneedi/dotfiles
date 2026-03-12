@@ -3,17 +3,20 @@
   "mcp": {
     "context7": {
       "type": "local",
-      "command": ["bunx", "-y", "@upstash/context7-mcp@latest"],
-      "enabled": true
-    },
-    "solana-mcp-server": {
-      "type": "remote",
-      "url": "https://mcp.solana.com/mcp",
+      "command": [
+        "bunx",
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ],
       "enabled": true
     },
     "firecrawl-mcp": {
       "type": "local",
-      "command": ["bunx", "-y", "firecrawl-mcp"],
+      "command": [
+        "bunx",
+        "-y",
+        "firecrawl-mcp"
+      ],
       "enabled": true,
       "environment": {
         "FIRECRAWL_API_URL": "http://localhost:3002"
@@ -21,7 +24,6 @@
     }
   },
   "plugin": [
-    "oh-my-opencode@latest",
     "@plannotator/opencode@latest",
     "cc-safety-net",
     "@ramtinj95/opencode-tokenscope"
